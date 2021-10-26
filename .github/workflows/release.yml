@@ -19,7 +19,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        apt install -y zip unzip
+        sudo apt install -y zip unzip
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
