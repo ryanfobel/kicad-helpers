@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: PCB fabrication files
+    name: Generate KiCad outputs
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -23,8 +23,6 @@ jobs:
       with:
         # Required - kibot config file
         config: config.kibot.yaml
-        # optional - prefix to output defined in config
-        #dir: gerbers
         # optional - schematic file
         schema: '40-channel-hv-switching-board.sch'
         # optional - PCB design file
@@ -32,11 +30,21 @@ jobs:
     - name: Generate BOM
       run: |
         python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
-    - name: upload results
+    - name: Export schematics as svgs
+      run: eeschema_do export -a -f svg 40-channel-hv-switching-board.sch svg/
+    - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
       with:
-        name: outputs
-        path: |
-          gerbers
-          40-channel-hv-switching-board-BOM.csv
-          
+        name: BOM
+        path: 40-channel-hv-switching-board-BOM.csv
+    - name: Upload gerbers
+      uses: actions/upload-artifact@v2
+      with:
+        name: gerbers
+        path: gerbers
+    - name: Upload svgs
+      uses: actions/upload-artifact@v2
+      with:
+        name: svg
+        path: svg
+
