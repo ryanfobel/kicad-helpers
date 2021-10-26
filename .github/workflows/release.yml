@@ -23,9 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Get the version
-      id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
     - uses: INTI-CMNB/KiBot@v1
       with:
         # Required - kibot config file
@@ -35,12 +32,8 @@ jobs:
         # optional - PCB design file
         board: '40-channel-hv-switching-board.kicad_pcb'
     - name: Generate BOM
-      env:
-          VERSION: ${{ steps.get_version.outputs.VERSION }}
       run: |
-        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM-${VERSION}.csv"
-        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip gerbers
-        zip -rj 40-channel-hv-switching-board-docs-${VERSION}.zip docs
+        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
         ls -l *
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
@@ -57,10 +50,22 @@ jobs:
       with:
         name: docs
         path: docs
+    - name: Get the version
+      if: startsWith(github.ref, 'refs/tags/v')
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+    - name: Zip artifacts for release
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+      run: |
+        mv 40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
+        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip gerbers
+        zip -rj 40-channel-hv-switching-board-docs-${VERSION}.zip docs
     - name: Create release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "*.zip,*BOM.csv"
+        artifacts: "*.zip,*-BOM-*.csv"
         #bodyFile: "body.md"
         token: ${{ secrets.GITHUB_TOKEN }}
