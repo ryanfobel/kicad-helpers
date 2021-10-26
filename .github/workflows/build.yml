@@ -1,0 +1,25 @@
+name: Kicad project
+
+on:
+  push:
+    branches: '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Generate BOM
+      run: |
+        python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
+    #- name: Create Release
+    #  uses: ncipollo/release-action@v1.8.10
