@@ -1,0 +1,15 @@
+(module 5x1_3.9mm_DMF_Electrode_Array (layer F.Cu) (tedit 4B919468)
+  (tags "5x1 Array DMF 3.9mm")
+  (attr smd)
+  (fp_text reference E (at -1.22428 -1.39954) (layer F.SilkS) hide
+    (effects (font (size 1.016 0.762) (thickness 0.1524)))
+  )
+  (fp_text value Val** (at 0.0508 1.30048) (layer F.SilkS) hide
+    (effects (font (size 0.762 0.762) (thickness 0.1524)))
+  )
+  (pad 1 smd rect (at 0 0) (size 3.8989 3.8989) (layers F.Cu F.Mask))
+  (pad 2 smd rect (at 4.0005 0) (size 3.8989 3.8989) (layers F.Cu F.Mask))
+  (pad 3 smd rect (at 8.001 0) (size 3.8989 3.8989) (layers F.Cu F.Mask))
+  (pad 4 smd rect (at 11.99896 0) (size 3.8989 3.8989) (layers F.Cu F.Mask))
+  (pad 5 smd rect (at 15.99946 0) (size 3.8989 3.8989) (layers F.Cu F.Mask))
+)
