@@ -42,9 +42,9 @@ jobs:
       with:
         name: gerbers
         path: gerbers
-    - name: Upload svgs
+    - name: Upload docs
       uses: actions/upload-artifact@v2
       with:
-        name: svg
-        path: svg
+        name: docs
+        path: docs
 

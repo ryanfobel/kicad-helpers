@@ -31,3 +31,9 @@ outputs:
       - '3.3V'
       - 'GND'
       - 'Back'
+  - name: 'print_sch'
+    comment: "Print schematic (SVG)"
+    type: svg_sch_print
+    dir: .
+    options:
+      output: 'docs/svg/%f-%i%v.%x'
