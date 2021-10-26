@@ -1,14 +1,11 @@
 kibot:
   version: 1
 
-preflight:
-  run_drc: false
-
 outputs:
   - name: 'gerbers'
     comment: "Gerbers for the board house"
     type: gerber
-    dir: gerber
+    dir: gerbers
     options:
       # generic layer options
       exclude_edge_layer: false
