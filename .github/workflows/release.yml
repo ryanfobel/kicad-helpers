@@ -2,7 +2,10 @@ name: Kicad project
 
 on:
   push:
-    branches: '**'
+    branches:
+      - '**'
+    tags:
+      - 'v**'
 
 jobs:
   build:
@@ -30,8 +33,7 @@ jobs:
     - name: Generate BOM
       run: |
         python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
-    - name: Export schematics as svgs
-      run: eeschema_do export -a -f svg 40-channel-hv-switching-board.sch svg/
+        ls -l *
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
       with:
@@ -47,4 +49,10 @@ jobs:
       with:
         name: docs
         path: docs
-
+    - name: Create release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "docs,gerbers,*BOM.csv"
+        #bodyFile: "body.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
