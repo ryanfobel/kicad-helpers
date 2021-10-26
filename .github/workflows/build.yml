@@ -59,9 +59,9 @@ jobs:
       env:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
       run: |
+        zip -r 40-channel-hv-switching-board-${VERSION}.zip docs gerbers 40-channel-hv-switching-board-BOM.csv
         mv 40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
         zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip gerbers
-        zip -r 40-channel-hv-switching-board-docs-${VERSION}.zip docs
     - name: Create release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: ncipollo/release-action@v1
