@@ -19,20 +19,23 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        ls -l
     - uses: INTI-CMNB/KiBot@v1
       with:
         # Required - kibot config file
         config: config.kibot.yaml
         # optional - prefix to output defined in config
-        dir: gerbers
+        #dir: gerbers
         # optional - schematic file
-        schema: '40-channel HV switching board.sch'
+        schema: '40-channel-hv-switching-board.sch'
         # optional - PCB design file
-        board: '40-channel HV switching board.kicad_pcb'
+        board: '40-channel-hv-switching-board.kicad_pcb'
     - name: Generate BOM
       run: |
-        python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
+        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
         ls -l
+        ls -l gerbers
+        ls -l gerber
     #- name: upload results
     #  uses: actions/upload-artifact@v2
     #  with:
