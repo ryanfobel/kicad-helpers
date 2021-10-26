@@ -1,0 +1,71 @@
+name: Kicad project
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - 'v**'
+
+jobs:
+  build:
+    name: Generate KiCad outputs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        sudo apt install -y zip unzip
+        python -m pip install --upgrade pip
+        python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - uses: INTI-CMNB/KiBot@v1
+      with:
+        # Required - kibot config file
+        config: config.kibot.yaml
+        # optional - schematic file
+        schema: '40-channel-hv-switching-board.sch'
+        # optional - PCB design file
+        board: '40-channel-hv-switching-board.kicad_pcb'
+    - name: Generate BOM
+      run: |
+        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
+        ls -l *
+    - name: Upload BOM artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: BOM
+        path: 40-channel-hv-switching-board-BOM.csv
+    - name: Upload gerbers
+      uses: actions/upload-artifact@v2
+      with:
+        name: gerbers
+        path: gerbers
+    - name: Upload docs
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs
+    - name: Get the version
+      if: startsWith(github.ref, 'refs/tags/v')
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+    - name: Zip artifacts for release
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+      run: |
+        zip -r 40-channel-hv-switching-board-${VERSION}.zip docs gerbers 40-channel-hv-switching-board-BOM.csv
+        mv 40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
+        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip gerbers
+    - name: Create release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "*.zip,*-BOM-*.csv"
+        #bodyFile: "body.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
