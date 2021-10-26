@@ -31,7 +31,7 @@ jobs:
         board: '40-channel HV switching board.kicad_pcb'
     - name: Generate BOM
       run: |
-        python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
+        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
         ls -l
     #- name: upload results
     #  uses: actions/upload-artifact@v2
