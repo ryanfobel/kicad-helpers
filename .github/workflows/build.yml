@@ -21,5 +21,9 @@ jobs:
     - name: Generate BOM
       run: |
         python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
+    - uses: actions/upload-artifact@v2
+      with:
+        name: BOM
+        path: "40-channel HV switching board_BOM.csv"
     #- name: Create Release
     #  uses: ncipollo/release-action@v1.8.10
