@@ -21,12 +21,14 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - uses: INTI-CMNB/KiBot@v1
       with:
-      # Required - kibot config file
+        # Required - kibot config file
         config: config.kibot.yaml
-      # optional - schematic file
-        schema: '*.sch'
-      # optional - PCB design file
-        board: '*.kicad_pcb'
+        # optional - prefix to output defined in config
+        dir: gerbers
+        # optional - schematic file
+        schema: '40-channel HV switching board.sch'
+        # optional - PCB design file
+        board: '40-channel HV switching board.kicad_pcb'
     - name: Generate BOM
       run: |
         python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
