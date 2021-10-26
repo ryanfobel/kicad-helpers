@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: PCB fabrication files
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -18,12 +19,23 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - uses: INTI-CMNB/KiBot@v1
+      with:
+      # Required - kibot config file
+        config: config.kibot.yaml
+      # optional - prefix to output defined in config
+        dir: output
+      # optional - schematic file
+        schema: '*.sch'
+      # optional - PCB design file
+        board: '*.kicad_pcb'
     - name: Generate BOM
       run: |
         python -m kifield --group -aq -x "40-channel HV switching board.sch" -i "40-channel HV switching board_BOM.csv"
-    - uses: actions/upload-artifact@v2
+    - name: upload results
+      uses: actions/upload-artifact@v2
       with:
-        name: BOM
-        path: "40-channel HV switching board_BOM.csv"
+        name: output
+        path: output        
     #- name: Create Release
     #  uses: ncipollo/release-action@v1.8.10
