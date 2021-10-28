@@ -2,9 +2,17 @@
 
 This project contains some examples and utility scripts for managing [KiCad] projects.
 
-## Git actions
+## Github actions
 
-### 1. Auto-generate gerbers.zip
+### Auto-generate manufacturing outputs
+
+* Generate manufacturer-specific assets (configured in `.kicad_helpers_config/manufacturing`)
+* Generate PCBWay assets
+* Add assembly photos
+* Add git commit hash to asset names
+* Add position files
+
+## Gitlab pipeline
 
 * https://gitlab.com/pardeelab/mango-control-board.kicad/-/blob/main/.gitlab-ci.yml
 
@@ -34,6 +42,11 @@ being tracked by `git`.
 $ git config --global filter.kicad_project.clean "sed -E 's/^update=.*$/update=Date/'"
 $ git config --global filter.kicad_project.smudge cat
 ```
+
+## Notebooks
+
+* sync BOM/KiCad schematic file
+* update stock levels from Octopart, kitspace
 
 [KiCad]: https://www.kicad.org/
 [plotkicad]: https://jnavila.github.io/plotkicadsch/
