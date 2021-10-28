@@ -44,8 +44,8 @@ jobs:
         python -m kifield --group -aq -x "${{ env.PROJECT_NAME }}.sch" -i "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv"
     - name: Copy assembly photos to manufacturing
       run: |
-        cp docs/png/Front.png manufacturing/default/assembly_photos/Front.png
-        cp docs/png/Back.png manufacturing/default/assembly_photos/Back.png
+        cp docs/png/front.png manufacturing/default/assembly_photos/front.png
+        cp docs/png/back.png manufacturing/default/assembly_photos/back.png
         cp -r manufacturing/default/assembly_photos/*.png manufacturing/PCBWay/assembly_photos/
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
