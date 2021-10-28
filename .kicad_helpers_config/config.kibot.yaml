@@ -67,14 +67,37 @@ outputs:
       units: millimeters # Units used for the positions.
       output: '%i.%x' # Output file name (%i='top_pos'|'bottom_pos'|'both_pos', %x='pos'|'csv'). Affected by global options.
 
-  - name: print_sch
+  - name: print_sch_svg
     comment: "Print schematic (SVG)"
     type: svg_sch_print
     dir: .
     options:
       output: 'docs/svg/%f-%i%v.%x'
 
-  - name: print_svg
+  - name: print_sch_pdf
+    comment: "Print schematic (PDF)"
+    type: pdf_sch_print
+    dir: .
+    options:
+      output: 'docs/pdf/%f-%i%v.%x'
+
+  - name: print_pcb_pdf
+    comment: "Print svg"
+    type: pdf_pcb_print
+    dir: .
+    options:
+      output: 'docs/svg/%f-%i%v.%x'
+    layers:
+      - copper
+      - F.SilkS
+      - B.SilkS
+      - F.Mask
+      - B.Mask
+      - F.Paste
+      - B.Paste
+      - Edge.Cuts
+
+  - name: print_pcb_svg
     comment: "Print svg"
     type: svg
     dir: .
