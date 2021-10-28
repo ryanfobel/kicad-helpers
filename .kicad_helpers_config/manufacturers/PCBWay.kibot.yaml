@@ -1,6 +1,7 @@
 # Gerber and drill files for PCBWay, with stencil (solder paste)
 # URL: https://www.pcbway.com
-# Based on setting used by Gerber Zipper (https://github.com/g200kg/kicad-gerberzipper)
+# Based on https://github.com/INTI-CMNB/KiBot/blob/59e3c517340e4c6b4bc739955cf47c739ec27978/docs/samples/PCBWay.kibot.yaml
+#   which was based on the configuration used by Gerber Zipper (https://github.com/g200kg/kicad-gerberzipper)
 kibot:
   version: 1
 
@@ -55,16 +56,3 @@ outputs:
       pth_id: ''
       npth_id: '-NPTH'
       output: "%f%i.drl"
-
-  - name: PCBWay
-    comment: ZIP file for PCBWay
-    type: compress
-    dir: manufacturing/PCBWay
-    options:
-      format: ZIP
-      files:
-        - from_output: PCBWay_gerbers
-          dest: /
-        - from_output: PCBWay_drill
-          dest: /
-
