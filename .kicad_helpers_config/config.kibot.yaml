@@ -5,6 +5,7 @@ import:
   - manufacturers/PCBWay.kibot.yaml
 
 outputs:
+
   - name: gerbers
     comment: Gerbers compatible with PCBWay
     type: gerber
@@ -55,12 +56,23 @@ outputs:
       pth_id: ''
       npth_id: '-NPTH'
       output: "%f%i.drl"
+
+  - name: generate_pos
+    comment: "Generate position file"
+    type: position
+    dir: manufacturing
+    format: 'ASCII' # [ASCII,CSV] Format for the position file.
+    separate_files_for_front_and_back: true
+    units: millimeters # Units used for the positions.
+    output: '%i.%x' # Output file name (%i='top_pos'|'bottom_pos'|'both_pos', %x='pos'|'csv'). Affected by global options.
+
   - name: print_sch
     comment: "Print schematic (SVG)"
     type: svg_sch_print
     dir: .
     options:
       output: 'docs/svg/%f-%i%v.%x'
+
   - name: print_svg
     comment: "Print svg"
     dir: .
