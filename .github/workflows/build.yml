@@ -11,6 +11,8 @@ jobs:
   build:
     name: Generate KiCad outputs
     runs-on: ubuntu-latest
+    env:
+      PROJECT_NAME: "40-channel-hv-switching-board"
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -28,27 +30,42 @@ jobs:
         # Required - kibot config file
         config: .kicad_helpers_config/config.kibot.yaml
         # optional - schematic file
-        schema: '40-channel-hv-switching-board.sch'
+        schema: '${{ env.PROJECT_NAME }}.sch'
         # optional - PCB design file
-        board: '40-channel-hv-switching-board.kicad_pcb'
+        board: '${{ env.PROJECT_NAME }}.kicad_pcb'
+    - name: Get the commit hash
+      id: get_commit_hash
+      run: echo ::set-output name=GIT_HASH::$(git rev-parse --short "$GITHUB_SHA")
     - name: Generate BOM
       run: |
-        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "manufacturing/40-channel-hv-switching-board-BOM.csv"
-        ls -l
+        sudo chown -R runner:docker manufacturing
+        mkdir -p manufacturing/default/assembly_photos
+        mkdir -p manufacturing/PCBWay/assembly_photos
+        python -m kifield --group -aq -x "${{ env.PROJECT_NAME }}.sch" -i "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv"
+    - name: Copy assembly photos to manufacturing
+      run: |
+        cp docs/png/Front.png manufacturing/default/assembly_photos/Front.png
+        cp docs/png/Back.png manufacturing/default/assembly_photos/Back.png
+        cp -r manufacturing/default/assembly_photos/*.png manufacturing/PCBWay/assembly_photos/
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
       with:
-        name: BOM
-        path: manufacturing/40-channel-hv-switching-board-BOM.csv
-    - name: Upload gerbers
+        name: ${{ env.PROJECT_NAME }}-BOM-${{ steps.get_commit_hash.outputs.GIT_HASH }}
+        path: manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv
+    - name: Upload default manufacturing files
       uses: actions/upload-artifact@v2
       with:
-        name: gerbers
-        path: manufacturing/gerbers
+        name: ${{ env.PROJECT_NAME }}-default-manufacturing-files-${{ steps.get_commit_hash.outputs.GIT_HASH }}
+        path: manufacturing/default
+    - name: Upload PCBWay manufacturing files
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.PROJECT_NAME }}-PCBWay-manufacturing-files-${{ steps.get_commit_hash.outputs.GIT_HASH }}
+        path: manufacturing/PCBWay
     - name: Upload docs
       uses: actions/upload-artifact@v2
       with:
-        name: docs
+        name: ${{ env.PROJECT_NAME }}-docs-${{ steps.get_commit_hash.outputs.GIT_HASH }}
         path: docs
     - name: Get the version
       if: startsWith(github.ref, 'refs/tags/v')
@@ -59,9 +76,11 @@ jobs:
       env:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
       run: |
-        zip -r 40-channel-hv-switching-board-manufacturing-files-${VERSION}.zip docs manufacturing
-        mv manufacturing/40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
-        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip manufacturing/gerbers
+        cd manufacturing/default && zip -r ../../${{ env.PROJECT_NAME }}-default-manufacturing-files-${VERSION}.zip * && cd ../..
+        cd manufacturing/PCBWay && zip -r ../../${{ env.PROJECT_NAME }}-PCBWay-manufacturing-files-${VERSION}.zip * && cd ../..
+        zip -r ${{ env.PROJECT_NAME }}-docs-${VERSION}.zip docs
+        mv manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv ${{ env.PROJECT_NAME }}-BOM-${VERSION}.csv
+        zip -rj ${{ env.PROJECT_NAME }}-gerbers-${VERSION}.zip manufacturing/default
     - name: Create release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: ncipollo/release-action@v1

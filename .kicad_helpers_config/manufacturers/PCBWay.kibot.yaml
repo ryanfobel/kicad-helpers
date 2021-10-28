@@ -56,3 +56,13 @@ outputs:
       pth_id: ''
       npth_id: '-NPTH'
       output: "%f%i.drl"
+
+  - name: PCBWay_position
+    comment: Generate position file compatible with PCBWay
+    type: position
+    dir: manufacturing/PCBWay/position
+    options:
+      format: 'ASCII' # [ASCII,CSV] Format for the position file.
+      separate_files_for_front_and_back: true
+      units: millimeters # Units used for the positions.
+      output: '%i.%x' # Output file name (%i='top_pos'|'bottom_pos'|'both_pos', %x='pos'|'csv'). Affected by global options.
