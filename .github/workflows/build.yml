@@ -2,9 +2,8 @@ name: Kicad project
 
 on:
   push:
-    paths:
-    - '**.sch'
-    - '**.kicad_pcb'
+    branches:
+      - '**'
     tags:
       - 'v**'
 
