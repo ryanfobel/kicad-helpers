@@ -7,7 +7,6 @@ This project contains some examples and utility scripts for managing [KiCad] pro
 ### Auto-generate manufacturing outputs
 
 * Generate manufacturer-specific assets (configured in `.kicad_helpers_config/manufacturing`)
-manufacturing/defaults/gerbers
 
 ```      
 .
@@ -29,7 +28,7 @@ manufacturing/defaults/gerbers
 ```
 
 * Generate PCBWay assets
-* Add assembly photos to 
+* Add assembly photos
 * Add git commit hash to asset names
 * Add position files
 * Generate Github release on tag push
