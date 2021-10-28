@@ -2,8 +2,9 @@ name: Kicad project
 
 on:
   push:
-    branches:
-      - '**'
+    paths:
+    - '**.sch'
+    - '**.kicad_pcb'
     tags:
       - 'v**'
 
@@ -26,7 +27,7 @@ jobs:
     - uses: INTI-CMNB/KiBot@v1
       with:
         # Required - kibot config file
-        config: config.kibot.yaml
+        config: .kicad_helpers_config/config.kibot.yaml
         # optional - schematic file
         schema: '40-channel-hv-switching-board.sch'
         # optional - PCB design file
