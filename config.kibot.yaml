@@ -35,8 +35,8 @@ outputs:
       - 'B.Mask'
       - 'F.Paste'
       - 'B.Paste'
-      - 'F.Silk'
-      - 'B.Silk'
+      - 'F.SilkS'
+      - 'B.SilkS'
       - 'Edge.Cuts'
   - name: 'print_sch'
     comment: "Print schematic (SVG)"
