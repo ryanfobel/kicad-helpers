@@ -42,6 +42,7 @@ jobs:
         mkdir -p manufacturing/default/assembly_photos
         mkdir -p manufacturing/PCBWay/assembly_photos
         python -m kifield --group -aq -x "${{ env.PROJECT_NAME }}.sch" -i "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv"
+        cp "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv" "manufacturing/PCBWay/${{ env.PROJECT_NAME }}-BOM.csv"
     - name: Copy assembly photos to manufacturing
       run: |
         cp docs/png/front.png manufacturing/default/assembly_photos/front.png
