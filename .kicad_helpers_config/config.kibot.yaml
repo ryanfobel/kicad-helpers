@@ -82,11 +82,11 @@ outputs:
       output: 'docs/pdf/%f-%i%v.%x'
 
   - name: print_pcb_pdf
-    comment: "Print svg"
-    type: pdf_pcb_print
+    comment: "Print pdf"
+    type: pdf
     dir: .
     options:
-      output: 'docs/svg/%f-%i%v.%x'
+      output: 'docs/pdf/%f-%i%v.%x'
     layers:
       - copper
       - F.SilkS
