@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.9
     - name: Install dependencies
       run: |
         sudo apt install -y zip unzip
@@ -33,7 +33,7 @@ jobs:
         board: '40-channel-hv-switching-board.kicad_pcb'
     - name: Generate BOM
       run: |
-        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "40-channel-hv-switching-board-BOM.csv"
+        python -m kifield --group -aq -x "40-channel-hv-switching-board.sch" -i "manufacturing/40-channel-hv-switching-board-BOM.csv"
         ls -l *
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
@@ -44,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: gerbers
-        path: gerbers
+        path: manufacturing/gerbers
     - name: Upload docs
       uses: actions/upload-artifact@v2
       with:
@@ -59,9 +59,9 @@ jobs:
       env:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
       run: |
-        zip -r 40-channel-hv-switching-board-${VERSION}.zip docs gerbers 40-channel-hv-switching-board-BOM.csv
-        mv 40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
-        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip gerbers
+        zip -r 40-channel-hv-switching-board-manufacturing-files-${VERSION}.zip docs manufacturing
+        mv manufacturing/40-channel-hv-switching-board-BOM.csv 40-channel-hv-switching-board-BOM-${VERSION}.csv
+        zip -rj 40-channel-hv-switching-board-gerbers-${VERSION}.zip manufacturing/gerbers
     - name: Create release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: ncipollo/release-action@v1

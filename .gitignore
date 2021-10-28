@@ -3,3 +3,6 @@ _autosave*
 *cache.*
 *.xml
 *.csv
+.ipynb_checkpoints
+.env
+*.ipynb
