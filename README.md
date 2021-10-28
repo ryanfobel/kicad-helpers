@@ -9,7 +9,7 @@ This project contains some examples and utility scripts for managing [KiCad] pro
 * Generate manufacturer-specific assets (configured in `.kicad_helpers_config/manufacturing`)
 manufacturing/defaults/gerbers
 
-```sh                     
+```      
 .
 ├── manufacturing
     ├── default
