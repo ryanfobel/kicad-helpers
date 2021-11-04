@@ -6,3 +6,5 @@ _autosave*
 .ipynb_checkpoints
 .env
 *.pyc
+build
+dist
