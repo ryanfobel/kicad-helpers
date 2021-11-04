@@ -5,4 +5,4 @@ _autosave*
 *.csv
 .ipynb_checkpoints
 .env
-*.ipynb
+*.pyc
