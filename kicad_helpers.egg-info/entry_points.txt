@@ -1,3 +1,0 @@
-[console_scripts]
-kh_init = kicad_helpers.init_project:init_github_workflows
-

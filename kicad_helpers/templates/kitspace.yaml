@@ -1,8 +1,8 @@
-summary: A description for your project
+summary: {{ summary }}
 
-site: https://example.com # A site you would like to link to (include http:// or https://) # A site you would like to link to (include http:// or https://)
+site: {{ site }} # A site you would like to link to (include http:// or https://)
 
-color: black # for example # for example
+color: {{ color }} # for example
    # The solder resist color of the preview rendering. If left undefined "green" is used. Can be one of:
        # - green
        # - red
@@ -13,7 +13,7 @@ color: black # for example # for example
        # - purple
        # - yellow
 
-bom: manufacturing/default/40-channel-hv-switching-board.csv
+bom: manufacturing/default/{{ project_name }}.csv
   # A path to your 1-click-bom in case it isn't `1-click-bom.tsv`. Supported extensions are:
   # - .tsv
   # - .csv
@@ -25,7 +25,7 @@ gerbers: manufacturing/default/gerbers # A path to your folder of gerbers in cas
 
 eda:
   type: kicad # or eagle
-  pcb: 40-channel-hv-switching-board.kicad_pcb # your/eagle.brd
+  pcb: {{ project_name }}.kicad_pcb # your/eagle.brd
 
 readme: README.md # A path to your README file in case it isn't in the repository root directory.
 
