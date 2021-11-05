@@ -1,8 +1,8 @@
-summary: A description for your project
+summary: A description for your project # A description for your project
 
-site: https://example.com # A site you would like to link to (include http:// or https://) # A site you would like to link to (include http:// or https://)
+site: https://example.com # A site you would like to link to (include http:// or https://)
 
-color: black # for example # for example
+color: black # for example
    # The solder resist color of the preview rendering. If left undefined "green" is used. Can be one of:
        # - green
        # - red

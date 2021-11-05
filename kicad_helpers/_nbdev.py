@@ -9,10 +9,10 @@ index = {"get_project_root": "00_core.ipynb",
          "get_gitignore_list": "00_core.ipynb",
          "in_gitignore": "00_core.ipynb",
          "say_hello": "00_core.ipynb",
-         "copy_templates": "01_initialize_new_project.ipynb"}
+         "update_templates": "01_update_project.ipynb"}
 
 modules = ["core.py",
-           "init_project.py"]
+           "update_project.py"]
 
 doc_url = "https://ryanfobel.github.io/kicad_helpers/"
 
