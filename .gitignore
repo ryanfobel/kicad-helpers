@@ -5,4 +5,8 @@ _autosave*
 *.csv
 .ipynb_checkpoints
 .env
-*.ipynb
+*.pyc
+build
+dist
+*.egg-info
+__pycache__

@@ -1,0 +1,6 @@
+include settings.ini
+include LICENSE.md
+include CONTRIBUTING.md
+include README.md
+graft kicad_helpers/templates
+recursive-exclude * __pycache__

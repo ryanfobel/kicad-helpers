@@ -1,1 +1,2 @@
-*.pro filter=kicad_project
+**/*.ipynb filter=clean-nbs
+**/*.ipynb diff=ipynb
