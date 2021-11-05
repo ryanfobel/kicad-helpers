@@ -1,4 +1,4 @@
-summary: {{ summary }}
+summary: {{ summary }} # A description for your project
 
 site: {{ site }} # A site you would like to link to (include http:// or https://)
 

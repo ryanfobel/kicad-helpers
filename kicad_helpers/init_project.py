@@ -8,11 +8,6 @@ import pkg_resources
 
 import jinja2
 from fastcore.script import *
-from yaml import load, dump
-try:
-    from yaml import CLoader as Loader, CDumper as Dumper
-except ImportError:
-    from yaml import Loader, Dumper
 
 from kicad_helpers import get_project_root, get_project_metadata, get_gitignore_list, in_gitignore
 
@@ -23,6 +18,7 @@ def copy_templates():
     # in the `.gitignore` list) as jinja2 templates.
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
     PROJECT_ROOT = get_project_root()
+    metadata = get_project_metadata()
 
     file_list = []
     for root, dirs, files in os.walk(templates_path):
@@ -43,4 +39,4 @@ def copy_templates():
                         template = jinja2.Template(f.read())
 
                     with open(dst_path, "w") as f:
-                        f.write(template.render(**get_project_metadata()))
+                        f.write(template.render(**metadata))

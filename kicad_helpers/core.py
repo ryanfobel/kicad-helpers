@@ -9,6 +9,11 @@ import os
 import subprocess
 
 import git
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
 
 # Cell
 def get_project_root():
@@ -37,11 +42,11 @@ def get_project_metadata():
                 "color": "black # for example"
     }
 
-    # If there's an existing `kicad.yaml` file, those settings override the defaults.
     try:
+        # If there's an existing `kicad.yaml` file, those settings override the defaults.
         with open(os.path.join(PROJECT_ROOT, "kitspace.yaml")) as f:
             metadata.update({k: v for k, v in load(f, Loader=Loader).items() if k in ["summary", "site", "color"]})
-    except:
+    except FileNotFoundError:
         pass
 
     # Add the project name
