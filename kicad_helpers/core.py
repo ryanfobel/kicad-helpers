@@ -39,7 +39,7 @@ def get_project_metadata():
     # Default metadata if there's no existing `kicad.yaml` file.
     metadata = {"summary": "A description for your project",
                 "site": "https://example.com # A site you would like to link to (include http:// or https://)",
-                "color": "black # for example"
+                "color": "black"
     }
 
     try:
