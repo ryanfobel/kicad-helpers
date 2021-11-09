@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name sci-bots)(type Legacy)(uri ${KIPRJMOD}/library/sci-bots.lib)(options "")(descr ""))
-)

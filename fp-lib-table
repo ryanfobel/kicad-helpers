@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name Sci-Bots)(type KiCad)(uri "$(KIPRJMOD)\\library\\Sci-Bots.pretty")(options "")(descr ""))
-)
