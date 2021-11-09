@@ -8,7 +8,6 @@ index = {"get_project_root": "00_core.ipynb",
          "get_project_metadata": "00_core.ipynb",
          "get_gitignore_list": "00_core.ipynb",
          "in_gitignore": "00_core.ipynb",
-         "say_hello": "00_core.ipynb",
          "update_templates": "01_update_project.ipynb"}
 
 modules = ["core.py",
