@@ -1,0 +1,53 @@
+name: Build, Test, Package
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - 'v**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.8'
+        architecture: 'x64'
+    - name: Install the library
+      run: |
+        pip install nbdev jupyter wheel twine
+        pip install -e .
+    - name: Read all notebooks
+      run: |
+        nbdev_read_nbs
+    - name: Check if all notebooks are cleaned
+      run: |
+        echo "Check we are starting with clean git checkout"
+        if [ -n "$(git status -uno -s)" ]; then echo "git status is not clean"; false; fi
+        echo "Trying to strip out notebooks"
+        nbdev_clean_nbs
+        echo "Check that strip out was unnecessary"
+        git status -s # display the status to see which nbs need cleaning up
+        if [ -n "$(git status -uno -s)" ]; then echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_git_hooks"; false; fi
+    - name: Check if there is no diff library/notebooks
+      run: |
+        if [ -n "$(nbdev_diff_nbs)" ]; then echo -e "!!! Detected difference between the notebooks and the library"; false; fi
+    - name: Run tests
+      run: |
+        nbdev_test_nbs
+    - name: Get the version
+      if: startsWith(github.ref, 'refs/tags/v')
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+    - name: Publish to PyPi
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+        VERSION: ${{ steps.get_version.outputs.VERSION }}
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: |
+        sed -i "s/version =.*/version = $VERSION/g" settings.ini
+        make pypi
