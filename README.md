@@ -44,6 +44,12 @@ kh_update --help
       --root ROOT  project root directory (default: .)
 
 
+The following templates are installed by default:
+* [.github/workflows/build.yml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml): a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.
+* [kitspace.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/kitspace.yaml): metadata file for the [kitspace](https://kitspace.org/) service
+* [.kicad_helpers_config/config.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/config.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
+* [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
+
 To overwrite existing templates, run the command with the `--overwrite` flag, e.g.:
 
 ```sh
@@ -54,6 +60,8 @@ kh_update --v --overwrite
     Rendering kitspace.yaml template.
     .github/workflows/build.yml already exists
     Rendering .github/workflows/build.yml template.
+    .ipynb_checkpoints/kitspace-checkpoint.yaml already exists
+    Rendering .ipynb_checkpoints/kitspace-checkpoint.yaml template.
     .kicad_helpers_config/config.kibot.yaml already exists
     Rendering .kicad_helpers_config/config.kibot.yaml template.
     .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
