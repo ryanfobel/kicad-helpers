@@ -1,13 +1,9 @@
-# Title
-
+# kicad-helpers
+> Scripts, templates, and examples for managing KiCad projects.
 
 
 [![Build, Test, Package](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml/badge.svg)](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/kicad-helpers.svg)](https://pypi.python.org/pypi/kicad-helpers/)
-
-# kicad-helpers
-
-> Scripts, templates, and examples for managing KiCad projects.
 
 ## Project goals:
 
@@ -28,11 +24,6 @@ Navigate to the directory containing your KiCad project.
 
 ```sh
 cd KICAD/PROJECT/PATH
-```
-
-```sh
-%%sh
-kh_update --help
 ```
 
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
