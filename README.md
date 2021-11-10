@@ -7,8 +7,8 @@
 
 ## Project goals:
 
-* provide a sensible default project structure and scripts for managing KiCad projects with git
-* automate anything that can be automated (update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
+* provide a sensible default structure and scripts for managing KiCad projects
+* automate everything that can be automated (update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
 * configure git and KiCad to play nicely together
 * support customization via command line arguments, environment variables, etc.
 * make everything easy to install/setup/use
