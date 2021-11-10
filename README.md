@@ -7,7 +7,7 @@
 
 ## Project goals:
 
-* provide a sensible default project structure/actions for KiCad projects managed with git
+* provide a sensible default project structure and scripts for managing KiCad projects with git
 * automate anything that can be automated (update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
 * configure git and KiCad to play nicely together
 * support customization via command line arguments, environment variables, etc.
@@ -48,7 +48,7 @@ The following templates are installed by default:
 * [.github/workflows/build.yml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml): a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.
 * [kitspace.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/kitspace.yaml): metadata file for the [kitspace](https://kitspace.org/) service
 * [.kicad_helpers_config/config.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/config.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
-* [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
+* [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): [KiBot](https://github.com/INTI-CMNB/KiBot) configuration to generate manufacturing files for [PCBWay](https://www.pcbway.com/)
 
 To overwrite existing templates, run the command with the `--overwrite` flag, e.g.:
 
