@@ -26,6 +26,12 @@ Navigate to the directory containing your KiCad project.
 cd KICAD/PROJECT/PATH
 ```
 
+Run the kh_update script to update project templates.
+
+```sh
+kh_update --help
+```
+
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
     
     Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
@@ -36,4 +42,20 @@ cd KICAD/PROJECT/PATH
       --v          verbose (default: False)
       --overwrite  overwrite existing templates (default: False)
       --root ROOT  project root directory (default: .)
+
+
+To overwrite existing templates, run the command with the `--overwrite` flag, e.g.:
+
+```sh
+kh_update --v --overwrite
+```
+
+    kitspace.yaml already exists
+    Rendering kitspace.yaml template.
+    .github/workflows/build.yml already exists
+    Rendering .github/workflows/build.yml template.
+    .kicad_helpers_config/config.kibot.yaml already exists
+    Rendering .kicad_helpers_config/config.kibot.yaml template.
+    .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
+    Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
 

@@ -78,6 +78,15 @@ nb_path: "notebooks/index.ipynb"
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Run the kh_update script to update project templates.</p>
+<div class="highlight"><pre><span></span>kh_update --help
+</pre></div>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -98,6 +107,43 @@ optional arguments:
   --v          verbose (default: False)
   --overwrite  overwrite existing templates (default: False)
   --root ROOT  project root directory (default: .)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To overwrite existing templates, run the command with the <code>--overwrite</code> flag, e.g.:</p>
+<div class="highlight"><pre><span></span>kh_update --v --overwrite
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>kitspace.yaml already exists
+Rendering kitspace.yaml template.
+.github/workflows/build.yml already exists
+Rendering .github/workflows/build.yml template.
+.kicad_helpers_config/config.kibot.yaml already exists
+Rendering .kicad_helpers_config/config.kibot.yaml template.
+.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
+Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
 </pre>
 </div>
 </div>
