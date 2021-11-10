@@ -39,6 +39,24 @@ nb_path: "notebooks/01_update_project.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;/tmp/ipykernel_15067/3818306265.py&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">38</span>
+<span class="ansi-red-fg">    next</span>
+    ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -53,8 +71,10 @@ nb_path: "notebooks/01_update_project.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/update_project.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>root</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/update_project.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:<code>&lt;verbose&gt;</code>, <strong><code>overwrite</code></strong>:<code>&lt;overwrite existing templates&gt;</code>, <strong><code>root</code></strong>:<code>str &lt;project root directory&gt;</code>=<em><code>'.'</code></em>)</p>
 </blockquote>
+<p>Update project templates from the <code>kicad_helpers/templates</code> directory (ignoring anything in the
+project's <code>.gitignore</code> list).</p>
 
 </div>
 
@@ -73,14 +93,8 @@ nb_path: "notebooks/01_update_project.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
-
-<span class="kn">from</span> <span class="nn">kicad_helpers</span> <span class="kn">import</span> <span class="n">setup_test_repo</span>
-
-<span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
-<span class="n">setup_test_repo</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
-<span class="n">update_templates</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>%%sh
+kh_update --help
 </pre></div>
 
     </div>
@@ -92,19 +106,58 @@ nb_path: "notebooks/01_update_project.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Cloning into &#39;/tmp/tmp0f_48enu&#39;...
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_update [-h] [--v] [--o] [--root ROOT]
+
+Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
+list).
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --v          verbose (default: False)
+  --o          overwrite existing templates (default: False)
+  --root ROOT  project root directory (default: .)
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%sh
+kh_update --v --overwrite
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/tmp/tmp0f_48enu/kitspace.yaml already exists
-/tmp/tmp0f_48enu/.github/workflows/build.yml already exists
-/tmp/tmp0f_48enu/.kicad_helpers_config/config.kibot.yaml already exists
-/tmp/tmp0f_48enu/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
+<pre>kitspace.yaml already exists
+Rendering kitspace.yaml template.
+.github/workflows/build.yml already exists
+Rendering .github/workflows/build.yml template.
+.ipynb_checkpoints/kitspace-checkpoint.yaml already exists
+Rendering .ipynb_checkpoints/kitspace-checkpoint.yaml template.
+.kicad_helpers_config/config.kibot.yaml already exists
+Rendering .kicad_helpers_config/config.kibot.yaml template.
+.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
+Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
 </pre>
 </div>
 </div>
@@ -134,31 +187,6 @@ tree --dirsfirst -d -I <span class="k">$(</span>python -c <span class="s2">&quot
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.
-├── docs
-│   ├── png
-│   └── src
-├── library
-└── manufacturing
-    └── default
-        ├── assembly_photos
-        ├── gerbers
-        └── position
-
-9 directories
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

@@ -13,12 +13,16 @@ from kicad_helpers import get_git_root, get_project_metadata, get_gitignore_list
 
 # Cell
 @call_parse
-def update_templates(root=None):
-    # Render all files in the `templates` directory (ignoring anything that is
-    # in the `.gitignore` list) as jinja2 templates.
+def update_templates(v:Param("verbose", bool),
+                     overwrite:Param("overwrite existing templates", bool),
+                     root:Param("project root directory", str)="."):
+    """
+    Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the
+    project's `.gitignore` list).
+    """
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
 
-    if root is None:
+    if root == ".":
         # Use defaults
         root = get_git_root(".")
 
@@ -40,10 +44,15 @@ def update_templates(root=None):
                     os.makedirs(os.path.split(dst_path)[0], exist_ok=True)
 
                     if os.path.exists(dst_path):
-                        print(f"{dst_path} already exists")
+                        if v:
+                            print(f"{ path } already exists")
+                        if not overwrite:
+                            continue
 
                     with open(src_path) as f:
                         template = jinja2.Template(f.read())
 
                     with open(dst_path, "w") as f:
+                        if v:
+                            print(f"Rendering { path } template.")
                         f.write(template.render(**metadata))
