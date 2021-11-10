@@ -19,6 +19,6 @@ entries:
       title: Test `kicad-helpers` scripts on a demo repository
       url: /tests
     output: web
-    title: kicad-helpers
+    title: kicad_helpers
   output: web
   title: Sidebar
