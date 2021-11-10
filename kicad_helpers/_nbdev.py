@@ -14,8 +14,8 @@ index = {"get_git_root": "00_core.ipynb",
 modules = ["core.py",
            "update_project.py"]
 
-doc_url = "https://ryanfobel.github.io/kicad_helpers/"
+doc_url = "https://ryanfobel.github.io/kicad-helpers/"
 
-git_url = "https://github.com/ryanfobel/kicad_helpers/tree/main/"
+git_url = "https://github.com/ryanfobel/kicad-helpers/tree/main/"
 
 def custom_doc_links(name): return None
