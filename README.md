@@ -20,13 +20,13 @@
 
 ## How to use
 
-Navigate to the directory containing your KiCad project.
+Navigate to the directory containing your KiCad project:
 
 ```sh
 cd KICAD/PROJECT/PATH
 ```
 
-Run the kh_update script to update project templates.
+Run the `kh_update` script to update all project templates:
 
 ```sh
 kh_update --help
