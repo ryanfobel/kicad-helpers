@@ -17,8 +17,8 @@ def update_templates(v:Param("verbose", bool),
                      overwrite:Param("overwrite existing templates", bool),
                      root:Param("project root directory", str)="."):
     """
-    Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the
-    project's `.gitignore` list).
+    Update project templates from the `kicad_helpers/templates` directory
+    (ignoring anything in the project's `.gitignore` list).
     """
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
 

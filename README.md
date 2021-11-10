@@ -23,7 +23,7 @@
 Navigate to the directory containing your KiCad project:
 
 ```sh
-cd KICAD/PROJECT/PATH
+cd kicad/project/path
 ```
 
 Run the `kh_update` script to update all project templates:
@@ -50,7 +50,7 @@ The following templates are installed by default:
 * [.kicad_helpers_config/config.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/config.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
 * [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): [KiBot](https://github.com/INTI-CMNB/KiBot) configuration to generate manufacturing files for [PCBWay](https://www.pcbway.com/)
 
-To overwrite existing templates, run the command with the `--overwrite` flag, e.g.:
+To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 
 ```sh
 kh_update --v --overwrite
