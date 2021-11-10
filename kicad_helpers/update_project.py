@@ -9,25 +9,32 @@ import pkg_resources
 import jinja2
 from fastcore.script import *
 
-from kicad_helpers import get_project_root, get_project_metadata, get_gitignore_list, in_gitignore
+from kicad_helpers import get_git_root, get_project_metadata, get_gitignore_list, in_gitignore
 
 # Cell
 @call_parse
-def update_templates():
+def update_templates(root=None):
     # Render all files in the `templates` directory (ignoring anything that is
     # in the `.gitignore` list) as jinja2 templates.
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
-    PROJECT_ROOT = get_project_root()
-    metadata = get_project_metadata()
+
+    if root is None:
+        # Use defaults
+        root = get_git_root(".")
+
+        # Override with environment variable if set
+        root = os.getenv("KH_PROJECT_ROOT", root)
+
+    metadata = get_project_metadata(root)
 
     file_list = []
-    for root, dirs, files in os.walk(templates_path):
+    for root_, dirs, files in os.walk(templates_path):
         if len(files):
             for file in files:
-                path = os.path.join(root[len(templates_path) + 1:], file)
+                path = os.path.join(root_[len(templates_path) + 1:], file)
                 if not in_gitignore(path):
                     src_path = os.path.abspath(os.path.join(templates_path, path))
-                    dst_path = os.path.abspath(os.path.join(PROJECT_ROOT, path))
+                    dst_path = os.path.abspath(os.path.join(root, path))
 
                     # Create the `dst_path` directory if it doesn't exist
                     os.makedirs(os.path.split(dst_path)[0], exist_ok=True)
