@@ -11,13 +11,13 @@ entries:
       url: /
     - output: web,pdf
       title: kicad-helpers
-      url: /core
+      url: core.html
     - output: web,pdf
       title: update_project
-      url: /update_project
+      url: update_project.html
     - output: web,pdf
       title: Test `kicad-helpers` scripts on a demo repository
-      url: /tests
+      url: tests.html
     output: web
     title: kicad_helpers
   output: web
