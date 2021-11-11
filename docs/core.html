@@ -202,7 +202,7 @@ nb_path: "notebooks/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>)</p>
+<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -231,12 +231,6 @@ nb_path: "notebooks/00_core.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
 <span class="n">setup_test_repo</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_project_name() = </span><span class="si">{</span> <span class="n">get_project_name</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_project_metadata() = </span><span class="si">{</span> <span class="n">get_project_metadata</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_schematic_path() = </span><span class="si">{</span> <span class="n">get_schematic_path</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_bom_path() = </span><span class="si">{</span> <span class="n">get_bom_path</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">get_project_name</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;40-channel-hv-switching-board&quot;</span>
-<span class="k">assert</span> <span class="n">get_project_metadata</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="s1">&#39;DropBot v3 40-channel high-voltage switching board&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;project_name&#39;</span><span class="p">:</span> <span class="s1">&#39;40-channel-hv-switching-board&#39;</span><span class="p">}</span>
 </pre></div>
 
     </div>
@@ -249,7 +243,7 @@ nb_path: "notebooks/00_core.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Cloning into &#39;/tmp/tmpo6n6gt92&#39;...
+<pre>Cloning into &#39;/tmp/tmp68ivtbi0&#39;...
 </pre>
 </div>
 </div>
@@ -259,38 +253,9 @@ nb_path: "notebooks/00_core.ipynb"
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>get_project_name() = 40-channel-hv-switching-board
 get_project_metadata() = {&#39;summary&#39;: &#39;DropBot v3 40-channel high-voltage switching board&#39;, &#39;site&#39;: &#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;, &#39;color&#39;: &#39;black&#39;, &#39;project_name&#39;: &#39;40-channel-hv-switching-board&#39;}
-get_schematic_path() = /tmp/tmpo6n6gt92/40-channel-hv-switching-board.sch
+get_schematic_path() = /tmp/tmp68ivtbi0/40-channel-hv-switching-board.sch
+get_bom_path() = /tmp/tmp68ivtbi0/manufacturing/default/40-channel-hv-switching-board-BOM.csv
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Updating files: 100% (58/58), done.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_17721/3283489848.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;get_project_metadata() = { get_project_metadata(temp_dir) }&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;get_schematic_path() = { get_schematic_path(temp_dir) }&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;get_bom_path() = { get_bom_path(temp_dir) }&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">assert</span> get_project_name<span class="ansi-blue-fg">(</span>temp_dir<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#34;40-channel-hv-switching-board&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-green-fg">assert</span> get_project_metadata<span class="ansi-blue-fg">(</span>temp_dir<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#39;summary&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;DropBot v3 40-channel high-voltage switching board&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;site&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;color&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;black&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;project_name&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;40-channel-hv-switching-board&#39;</span><span class="ansi-blue-fg">}</span>
-
-<span class="ansi-green-fg">/tmp/ipykernel_17721/131960259.py</span> in <span class="ansi-cyan-fg">get_bom_path</span><span class="ansi-blue-fg">(root)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> 
-<span class="ansi-green-intense-fg ansi-bold">     40</span> <span class="ansi-green-fg">def</span> get_bom_path<span class="ansi-blue-fg">(</span>root<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 41</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span>root<span class="ansi-blue-fg">,</span> manufacturing<span class="ansi-blue-fg">,</span> get_project_name<span class="ansi-blue-fg">(</span>root<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#34;_BOM.csv&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;manufacturing&#39; is not defined</pre>
 </div>
 </div>
 
@@ -329,8 +294,8 @@ get_schematic_path() = /tmp/tmpo6n6gt92/40-channel-hv-switching-board.sch
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>get_project_name() = 40-channel-hv-switching-board
 get_project_metadata() = {&#39;summary&#39;: &#39;DropBot v3 40-channel high-voltage switching board&#39;, &#39;site&#39;: &#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;, &#39;color&#39;: &#39;black&#39;, &#39;project_name&#39;: &#39;40-channel-hv-switching-board&#39;}
-get_schematic_path() = /tmp/tmpo6n6gt92/40-channel-hv-switching-board.sch
-get_bom_path() = /tmp/tmpo6n6gt92/manufacturing/default/40-channel-hv-switching-board-BOM.csv
+get_schematic_path() = /tmp/tmp68ivtbi0/40-channel-hv-switching-board.sch
+get_bom_path() = /tmp/tmp68ivtbi0/manufacturing/default/40-channel-hv-switching-board-BOM.csv
 </pre>
 </div>
 </div>
@@ -352,7 +317,7 @@ get_bom_path() = /tmp/tmpo6n6gt92/manufacturing/default/40-channel-hv-switching-
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -376,7 +341,7 @@ get_bom_path() = /tmp/tmpo6n6gt92/manufacturing/default/40-channel-hv-switching-
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
+<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/core.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
 </blockquote>
 
 </div>

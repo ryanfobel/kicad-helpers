@@ -24,7 +24,7 @@ jobs:
         sudo apt install -y zip unzip
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python -m pip install kicad_helpers .
     - uses: INTI-CMNB/KiBot@v1
       with:
         # Required - kibot config file
@@ -41,8 +41,11 @@ jobs:
         sudo chown -R runner:docker manufacturing
         mkdir -p manufacturing/default/assembly_photos
         mkdir -p manufacturing/PCBWay/assembly_photos
-        python -m kifield --group -aq -x "${{ env.PROJECT_NAME }}.sch" -i "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv"
+        kh_sch_to_bom
         cp "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv" "manufacturing/PCBWay/${{ env.PROJECT_NAME }}-BOM.csv"
+    - name: Run tests
+      run: |
+        kh_test
     - name: Copy assembly photos to manufacturing
       run: |
         cp docs/png/front.png manufacturing/default/assembly_photos/front.png

@@ -67,6 +67,7 @@ def get_schematic_path(root="."):
     return os.path.join(root, get_project_name(root) + ".sch")
 
 def get_bom_path(root="."):
+    root = _set_root(root)
     return os.path.join(root, "manufacturing", "default", get_project_name(root) + "-BOM.csv")
 
 # Cell

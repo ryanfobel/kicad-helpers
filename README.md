@@ -42,7 +42,7 @@ kh_update --help
       --v          verbose (default: False)
       --overwrite  overwrite existing templates (default: False)
       --root ROOT  project root directory (default: .)
-
+    
 
 The following templates are installed by default:
 * [.github/workflows/build.yml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml): a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.
@@ -64,4 +64,4 @@ kh_update --v --overwrite
     Rendering .kicad_helpers_config/config.kibot.yaml template.
     .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
     Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-
+    
