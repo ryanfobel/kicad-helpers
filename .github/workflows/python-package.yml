@@ -37,6 +37,7 @@ jobs:
         if [ -n "$(nbdev_diff_nbs)" ]; then echo -e "!!! Detected difference between the notebooks and the library"; false; fi
     - name: Run tests
       run: |
+        kh_setup_test_repo
         nbdev_test_nbs
     - name: Get the version
       if: startsWith(github.ref, 'refs/tags/v')

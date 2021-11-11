@@ -15,6 +15,7 @@ try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
     from yaml import Loader, Dumper
+from fastcore.script import *
 
 # Cell
 def get_git_root(path="."):
@@ -65,7 +66,8 @@ def get_bom_path(root="."):
     return os.path.join(root, "manufacturing", "default", get_project_name(root) + "-BOM.csv")
 
 # Cell
-def setup_test_repo(root):
+@call_parse
+def setup_test_repo(root:Param("project root directory", str)="_temp"):
     cwd = os.getcwd()
     if os.path.exists(root):
         repo = git.Repo(root)
