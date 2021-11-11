@@ -1,4 +1,4 @@
-name: Kicad project
+name: manufacturing-outputs
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         sudo apt install -y zip unzip
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
-        python -m pip install kicad_helpers .
+        python -m pip install kicad_helpers
     - uses: INTI-CMNB/KiBot@v1
       with:
         # Required - kibot config file
