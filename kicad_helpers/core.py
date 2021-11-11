@@ -23,12 +23,6 @@ def get_git_root(path="."):
     return git_repo.git.rev_parse("--show-toplevel")
 
 # Cell
-# Set the PROJECT ROOT environment variable
-#PROJECT_ROOT = get_git_root()
-#os.environ["KH_PROJECT_ROOT"] = PROJECT_ROOT
-#assert(os.getenv("KH_PROJECT_ROOT") == PROJECT_ROOT)
-
-# Cell
 def _set_root(root):
     if root == ".":
         # Use defaults
@@ -72,7 +66,18 @@ def get_bom_path(root="."):
 
 # Cell
 def setup_test_repo(root):
-    subprocess.check_call(f"git clone https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }", shell=True)
+    cwd = os.getcwd()
+    if os.path.exists(root):
+        repo = git.Repo(root)
+        try:
+            os.chdir(root)
+            if str(repo.active_branch) != "main":
+                subprocess.check_output(f"git checkout main", shell=True)
+            subprocess.check_output(f"git pull", shell=True)
+        finally:
+            os.chdir(cwd)
+    else:
+        subprocess.check_call(f"git clone https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }", shell=True)
 
 # Cell
 def get_gitignore_list(root="."):

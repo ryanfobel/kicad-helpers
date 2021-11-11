@@ -5,6 +5,7 @@ __all__ = ['update_templates']
 # Cell
 import os
 import pkg_resources
+import subprocess
 
 import jinja2
 from fastcore.script import *

@@ -10,14 +10,14 @@ import os
 
 from fastcore.script import *
 import pandas as pd
-from kicad_helpers import setup_test_repo, get_project_name, get_schematic_path, get_bom_path
+from kicad_helpers import get_git_root, setup_test_repo, get_project_name, get_schematic_path, get_bom_path
 from .core import _set_root
 
 # Cell
 @call_parse
-def sch_to_bom(v:Param("verbose", bool),
-               overwrite:Param("update existing schematic", bool),
-               root:Param("project root directory", str)="."):
+def sch_to_bom(root:Param("project root directory", str)=".",
+               v:Param("verbose", bool)=False,
+               overwrite:Param("update existing schematic", bool)=False):
     """
     Update/create BOM from KiCad schematic.
     """
@@ -25,9 +25,9 @@ def sch_to_bom(v:Param("verbose", bool),
     subprocess.check_output(f"{ sys.executable } -m kifield --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }", shell=True)
 
 @call_parse
-def bom_to_sch(v:Param("verbose", bool),
-               overwrite:Param("update existing schematic", bool),
-               root:Param("project root directory", str)="."):
+def bom_to_sch(root:Param("project root directory", str)=".",
+               v:Param("verbose", bool)=False,
+               overwrite:Param("update existing schematic", bool)=False):
     """
     Update KiCad schematic from BOM file.
     """

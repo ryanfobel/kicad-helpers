@@ -4,11 +4,12 @@ __all__ = ['test_notebooks']
 
 # Cell
 import os
+import subprocess
 
 from fastcore.script import *
 from nbdev.test import *
 from nbdev.test import nbglob, num_cpus, parallel, _test_one, Path
-from kicad_helpers import setup_test_repo, get_project_name, get_schematic_path, get_bom_path
+from kicad_helpers import get_git_root, setup_test_repo, get_project_name, get_schematic_path, get_bom_path
 from .core import _set_root
 
 # Cell
@@ -24,7 +25,7 @@ def test_notebooks(fname:Param("A notebook name or glob to convert", str)=None,
     root = _set_root(root)
     if flags is not None: flags = flags.split(' ')
     if fname is None:
-        fname=os.path.join(root, "tests", "*.ipynb")
+        fname = os.path.join(root, "tests", "*.ipynb")
     files = nbglob(fname, recursive=False)
     files = [Path(f).absolute() for f in sorted(files)]
     assert len(files) > 0, "No files to test found."
