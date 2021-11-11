@@ -47,7 +47,7 @@ nb_path: "notebooks/01_update_project.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/update_project.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/update_project.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Update project templates from the <code>kicad_helpers/templates</code> directory
 (ignoring anything in the project's <code>.gitignore</code> list).</p>
@@ -84,29 +84,6 @@ kh_update --help
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
-
-Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
-list).
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --v          verbose (default: False)
-  --overwrite  overwrite existing templates (default: False)
-  --root ROOT  project root directory (default: .)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -122,27 +99,6 @@ kh_update --v --overwrite
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>kitspace.yaml already exists
-Rendering kitspace.yaml template.
-.github/workflows/build.yml already exists
-Rendering .github/workflows/build.yml template.
-.kicad_helpers_config/config.kibot.yaml already exists
-Rendering .kicad_helpers_config/config.kibot.yaml template.
-.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
-Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -168,31 +124,6 @@ tree --dirsfirst -d -I <span class="k">$(</span>python -c <span class="s2">&quot
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.
-├── docs
-│   ├── png
-│   └── src
-├── library
-└── manufacturing
-    └── default
-        ├── assembly_photos
-        ├── gerbers
-        └── position
-
-9 directories
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

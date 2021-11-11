@@ -10,6 +10,7 @@ import jinja2
 from fastcore.script import *
 
 from kicad_helpers import get_git_root, get_project_metadata, get_gitignore_list, in_gitignore
+from .core import _set_root
 
 # Cell
 @call_parse
@@ -21,14 +22,7 @@ def update_templates(v:Param("verbose", bool),
     (ignoring anything in the project's `.gitignore` list).
     """
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
-
-    if root == ".":
-        # Use defaults
-        root = get_git_root(".")
-
-        # Override with environment variable if set
-        root = os.getenv("KH_PROJECT_ROOT", root)
-
+    root = _set_root(root)
     metadata = get_project_metadata(root)
 
     file_list = []

@@ -3,16 +3,22 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"get_git_root": "00_core.ipynb",
-         "PROJECT_ROOT": "00_core.ipynb",
          "get_project_name": "00_core.ipynb",
          "get_project_metadata": "00_core.ipynb",
+         "get_schematic_path": "00_core.ipynb",
+         "get_bom_path": "00_core.ipynb",
          "setup_test_repo": "00_core.ipynb",
          "get_gitignore_list": "00_core.ipynb",
          "in_gitignore": "00_core.ipynb",
-         "update_templates": "01_update_project.ipynb"}
+         "update_templates": "01_update_project.ipynb",
+         "test_notebooks": "02_tests.ipynb",
+         "sch_to_bom": "03_bom.ipynb",
+         "bom_to_sch": "03_bom.ipynb"}
 
 modules = ["core.py",
-           "update_project.py"]
+           "update_project.py",
+           "test.py",
+           "bom.py"]
 
 doc_url = "https://ryanfobel.github.io/kicad-helpers/"
 
