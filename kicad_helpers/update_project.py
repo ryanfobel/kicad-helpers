@@ -10,7 +10,7 @@ import subprocess
 import jinja2
 from fastcore.script import *
 
-from kicad_helpers import get_git_root, get_project_metadata, get_gitignore_list, in_gitignore
+from kicad_helpers import get_git_root, setup_test_repo, get_project_metadata, get_gitignore_list, in_gitignore
 from .core import _set_root
 
 # Cell

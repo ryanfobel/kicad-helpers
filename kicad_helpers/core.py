@@ -68,18 +68,7 @@ def get_bom_path(root="."):
 # Cell
 @call_parse
 def setup_test_repo(root:Param("project root directory", str)="_temp"):
-    cwd = os.getcwd()
-    if os.path.exists(root):
-        repo = git.Repo(root)
-        try:
-            os.chdir(root)
-            if str(repo.active_branch) != "main":
-                subprocess.check_output(f"git checkout main", shell=True)
-            subprocess.check_output(f"git checkout .", shell=True)
-            subprocess.check_output(f"git pull", shell=True)
-        finally:
-            os.chdir(cwd)
-    else:
+    if not os.path.exists(root):
         subprocess.check_call(f"git clone https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }", shell=True)
 
 # Cell
