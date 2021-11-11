@@ -73,6 +73,7 @@ def setup_test_repo(root):
             os.chdir(root)
             if str(repo.active_branch) != "main":
                 subprocess.check_output(f"git checkout main", shell=True)
+            subprocess.check_output(f"git checkout .", shell=True)
             subprocess.check_output(f"git pull", shell=True)
         finally:
             os.chdir(cwd)
