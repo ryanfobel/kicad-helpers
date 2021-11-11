@@ -1,4 +1,4 @@
-name: manufacturing-outputs
+name: tests
 
 on:
   push:
