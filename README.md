@@ -86,7 +86,7 @@ To see the options that are available, run the command:
 ## Import data from the BOM into the KiCad schematic
 
 ```sh
-> kh_sch_to_bom
+> kh_sch_to_bom --v
 ```
 
     /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
