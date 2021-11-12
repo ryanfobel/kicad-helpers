@@ -36,6 +36,13 @@ nb_path: "notebooks/02_utilities.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Project-metadata/configuration">Project metadata/configuration<a class="anchor-link" href="#Project-metadata/configuration"> </a></h1><p>Metadata and configuration for the project are stored in the <code>.kicad_helpers_config</code> directory (including <a href="https://github.com/INTI-CMNB/KiBot">kibot</a> config files for producting manufacturing outputs via continuous integration). Additional metadata (e.g., project summary, website, and manufacturing details) is stored in the project's <code>kitspace.yaml</code> file which makes it easy for other people to manufacture boards using <a href="https://kitspace.org/">https://kitspace.org/</a>.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -67,13 +74,6 @@ nb_path: "notebooks/02_utilities.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Project-metadata/configuration">Project metadata/configuration<a class="anchor-link" href="#Project-metadata/configuration"> </a></h1><p>Metadata and configuration for the project are stored in the <code>.kicad_helpers_config</code> directory (including <a href="https://github.com/INTI-CMNB/KiBot">kibot</a> config files for producting manufacturing outputs via continuous integration). Additional metadata (e.g., project summary, website, and manufacturing details) is stored in the project's <code>kitspace.yaml</code> file which makes it easy for other people to manufacture boards using <a href="https://kitspace.org/">https://kitspace.org/</a>.</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -85,7 +85,174 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_project_name" class="doc_header"><code>get_project_name</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_name</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'_temp'</code></em>)</p>
+</blockquote>
+<p>Setup a test KiCad repository to test against.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_project_name" class="doc_header"><code>get_project_name</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_name</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Get the project name based on the name of the KiCad <code>*.pro</code> file.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_project_metadata" class="doc_header"><code>get_project_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Get the project metatdata from the <code>kitspace.yaml</code> file.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_schematic_path" class="doc_header"><code>get_schematic_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Get the path to the KiCad schematic.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_bom_path" class="doc_header"><code>get_bom_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bom_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Get the path to the BOM.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -102,23 +269,6 @@ nb_path: "notebooks/02_utilities.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_project_metadata" class="doc_header"><code>get_project_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -133,31 +283,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_schematic_path" class="doc_header"><code>get_schematic_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_bom_path" class="doc_header"><code>get_bom_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bom_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -188,129 +314,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'_temp'</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_git_root</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">),</span> <span class="s2">&quot;_temp&quot;</span><span class="p">)</span>
-<span class="n">setup_test_repo</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_project_name() = </span><span class="si">{</span> <span class="n">get_project_name</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_project_metadata() = </span><span class="si">{</span> <span class="n">get_project_metadata</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_schematic_path() = </span><span class="si">{</span> <span class="n">get_schematic_path</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get_bom_path() = </span><span class="si">{</span> <span class="n">get_bom_path</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">get_project_name</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;40-channel-hv-switching-board&quot;</span>
-<span class="k">assert</span> <span class="n">get_project_metadata</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="s1">&#39;DropBot v3 40-channel high-voltage switching board&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;project_name&#39;</span><span class="p">:</span> <span class="s1">&#39;40-channel-hv-switching-board&#39;</span><span class="p">}</span>
-<span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">get_schematic_path</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
-<span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">get_bom_path</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>get_project_name() = 40-channel-hv-switching-board
-get_project_metadata() = {&#39;summary&#39;: &#39;DropBot v3 40-channel high-voltage switching board&#39;, &#39;site&#39;: &#39;https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad&#39;, &#39;color&#39;: &#39;black&#39;, &#39;project_name&#39;: &#39;40-channel-hv-switching-board&#39;}
-get_schematic_path() = /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
-get_bom_path() = /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
+<h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
 </blockquote>
 
 </div>
