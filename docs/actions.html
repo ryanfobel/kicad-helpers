@@ -265,6 +265,37 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Running <code>kh_sch_to_bom</code> within your project dictory will generate a BOM file (e.g., <code>manufacturing/default/project-name-BOM.csv</code>) by extracting fields from the KiCad schematic file (e.g., <code>project-name.sch</code>).</p>
+<div class="highlight"><pre><span></span>&gt; kh_sch_to_bom --v
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Here's an example of a BOM extracted from a KiCad schematic.</p>
 
 </div>
@@ -572,6 +603,37 @@ optional arguments:
   --root ROOT  project root directory (default: .)
   --v          verbose (default: False)
   --overwrite  update existing schematic (default: False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Running <code>kh_bom_to_sch</code> within your project dictory will read the BOM file (e.g., <code>manufacturing/default/project-name-BOM.csv</code>), and import the fields back into the KiCad schematic file (e.g., <code>project-name.sch</code>).</p>
+<div class="highlight"><pre><span></span>&gt; kh_sch_to_bom --v
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
 
 </pre>
 </div>
