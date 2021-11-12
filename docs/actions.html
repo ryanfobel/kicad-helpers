@@ -224,6 +224,52 @@ Rendering tests/tests.ipynb template.
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function can also be called via a command line script:</p>
+<div class="highlight"><pre><span></span>&gt; kh_sch_to_bom --help
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_sch_to_bom [-h] [--root ROOT] [--v] [--overwrite]
+
+Update/create BOM from KiCad schematic.
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --root ROOT  project root directory (default: .)
+  --v          verbose (default: False)
+  --overwrite  update existing schematic (default: False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here's an example of a BOM extracted from a KiCad schematic.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -494,6 +540,45 @@ Rendering tests/tests.ipynb template.
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function can also be called via a command line script:</p>
+<div class="highlight"><pre><span></span>&gt; kh_bom_to_sch --help
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_bom_to_sch [-h] [--root ROOT] [--v] [--overwrite]
+
+Update KiCad schematic from BOM file.
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --root ROOT  project root directory (default: .)
+  --v          verbose (default: False)
+  --overwrite  update existing schematic (default: False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
