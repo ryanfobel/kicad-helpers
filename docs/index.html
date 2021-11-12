@@ -249,45 +249,11 @@ optional arguments:
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Traceback (most recent call last):
-  File &#34;/home/ryan/miniconda3/envs/kh/bin/kh_test&#34;, line 33, in &lt;module&gt;
-    sys.exit(load_entry_point(&#39;kicad-helpers&#39;, &#39;console_scripts&#39;, &#39;kh_test&#39;)())
-  File &#34;/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py&#34;, line 107, in _f
-    tfunc(**merge(args, args_from_prog(func, xtra)))
-  File &#34;/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/test.py&#34;, line 40, in test_notebooks
-    raise Exception(msg + &#39;\n&#39;.join([f.name for p,f in zip(passed,files) if not p]))
-Exception: The following notebooks failed:
-Tests.ipynb
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+All tests are passing!
+
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_16795/2064004735.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#hide_input</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>subprocess<span class="ansi-blue-fg">.</span>check_output<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;kh_test --root { root }&#34;</span><span class="ansi-blue-fg">,</span> shell<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">check_output</span><span class="ansi-blue-fg">(timeout, *popenargs, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    422</span>         kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;input&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> empty
-<span class="ansi-green-intense-fg ansi-bold">    423</span> 
-<span class="ansi-green-fg">--&gt; 424</span><span class="ansi-red-fg">     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-</span><span class="ansi-green-intense-fg ansi-bold">    425</span>                **kwargs).stdout
-<span class="ansi-green-intense-fg ansi-bold">    426</span> 
-
-<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    526</span>         retcode <span class="ansi-blue-fg">=</span> process<span class="ansi-blue-fg">.</span>poll<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    527</span>         <span class="ansi-green-fg">if</span> check <span class="ansi-green-fg">and</span> retcode<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 528</span><span class="ansi-red-fg">             raise CalledProcessError(retcode, process.args,
-</span><span class="ansi-green-intense-fg ansi-bold">    529</span>                                      output=stdout, stderr=stderr)
-<span class="ansi-green-intense-fg ansi-bold">    530</span>     <span class="ansi-green-fg">return</span> CompletedProcess<span class="ansi-blue-fg">(</span>process<span class="ansi-blue-fg">.</span>args<span class="ansi-blue-fg">,</span> retcode<span class="ansi-blue-fg">,</span> stdout<span class="ansi-blue-fg">,</span> stderr<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">CalledProcessError</span>: Command &#39;kh_test --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp&#39; returned non-zero exit status 1.</pre>
 </div>
 </div>
 

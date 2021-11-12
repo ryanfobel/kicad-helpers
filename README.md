@@ -103,44 +103,9 @@ kh_sch_to_bom
 kh_test
 ```
 
-    Traceback (most recent call last):
-      File "/home/ryan/miniconda3/envs/kh/bin/kh_test", line 33, in <module>
-        sys.exit(load_entry_point('kicad-helpers', 'console_scripts', 'kh_test')())
-      File "/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py", line 107, in _f
-        tfunc(**merge(args, args_from_prog(func, xtra)))
-      File "/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/test.py", line 40, in test_notebooks
-        raise Exception(msg + '\n'.join([f.name for p,f in zip(passed,files) if not p]))
-    Exception: The following notebooks failed:
-    Tests.ipynb
-
-
-
-    ---------------------------------------------------------------------------
-
-    CalledProcessError                        Traceback (most recent call last)
-
-    /tmp/ipykernel_16795/2064004735.py in <module>
-          1 #hide_input
-    ----> 2 print(subprocess.check_output(f"kh_test --root { root }", shell=True).decode("utf-8"))
+    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+    All tests are passing!
     
-
-    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in check_output(timeout, *popenargs, **kwargs)
-        422         kwargs['input'] = empty
-        423 
-    --> 424     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-        425                **kwargs).stdout
-        426 
-
-
-    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-        526         retcode = process.poll()
-        527         if check and retcode:
-    --> 528             raise CalledProcessError(retcode, process.args,
-        529                                      output=stdout, stderr=stderr)
-        530     return CompletedProcess(process.args, retcode, stdout, stderr)
-
-
-    CalledProcessError: Command 'kh_test --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp' returned non-zero exit status 1.
 
 
 ## Contributors
