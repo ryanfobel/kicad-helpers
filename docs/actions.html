@@ -49,12 +49,8 @@ nb_path: "notebooks/00_actions.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
-<p>Install various templates from the <code>kicad_helpers/templates</code> directory (ignoring anything in the project's
-<code>.gitignore</code> list). Similar to <code>nbdev</code>: <a href="https://nbdev.fast.ai/tutorial.html#Set-up-Repo">nbdev_new</a>. Templates
-are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a>
-folder, and are included with the python package by adding the followingline to the <code>MANIFEST.in</code> file:</p>
-
-<pre><code>graft kicad_helpers/templates</code></pre>
+<p>Install various templates from the <code>kicad_helpers/templates</code> directory
+(ignoring anything in the project's <code>.gitignore</code> list).</p>
 
 </div>
 
@@ -73,6 +69,15 @@ folder, and are included with the python package by adding the followingline to 
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similar to <a href="https://nbdev.fast.ai/tutorial.html#Set-up-Repo">nbdev_new</a>. Templates are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a> folder and are included with the python package by adding the followingline to the <code>MANIFEST.in</code> file:</p>
+
+<pre><code>graft kicad_helpers/templates</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span>&gt; kh_update --help
@@ -209,7 +214,7 @@ Rendering tests/tests.ipynb template.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update/create BOM from KiCad schematic.</p>
 
@@ -483,7 +488,7 @@ Rendering tests/tests.ipynb template.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update KiCad schematic from BOM file.</p>
 

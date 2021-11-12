@@ -21,13 +21,8 @@ def update_templates(v:Param("verbose", bool),
                      overwrite:Param("overwrite existing templates", bool),
                      root:Param("project root directory", str)="."):
     """
-    Install various templates from the `kicad_helpers/templates` directory (ignoring anything in the project's
-    `.gitignore` list). Similar to `nbdev`: [nbdev_new](https://nbdev.fast.ai/tutorial.html#Set-up-Repo). Templates
-    are stored in the [kicad_helpers/templates](https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates)
-    folder, and are included with the python package by adding the followingline to the `MANIFEST.in` file:
-    ```
-    graft kicad_helpers/templates
-    ```
+    Install various templates from the `kicad_helpers/templates` directory
+    (ignoring anything in the project's `.gitignore` list).
     """
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
     root = _set_root(root)
