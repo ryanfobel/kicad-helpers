@@ -10,17 +10,14 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: kicad-helpers
-      url: core.html
+      title: Actions
+      url: actions.html
     - output: web,pdf
-      title: update_project
-      url: update_project.html
+      title: Tests
+      url: test.html
     - output: web,pdf
-      title: Test `kicad-helpers` scripts on a demo repository
-      url: tests.html
-    - output: web,pdf
-      title: Title
-      url: bom.html
+      title: Utilities
+      url: utilities.html
     output: web
     title: kicad_helpers
   output: web

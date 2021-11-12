@@ -1,9 +1,8 @@
 {
   "kicad_helpers": {
     "Overview": "/",
-    "kicad-helpers": "core.html",
-    "update_project": "update_project.html",
-    "Test `kicad-helpers` scripts on a demo repository": "tests.html",
-    "Title": "bom.html"
+    "Actions": "actions.html",
+    "Tests": "test.html",
+    "Utilities": "utilities.html"
   }
 }

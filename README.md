@@ -18,18 +18,26 @@
 
 `pip install kicad_helpers`
 
-## How to use
+## Setup a new project
 
-Navigate to the directory containing your KiCad project:
+Open a command line shell and navigate to the directory containing your KiCad project. Then run the `kh_update` script to apply various project templates to the project directory:
 
 ```sh
 cd kicad/project/path
+kh_update --help
 ```
 
-Run the `kh_update` script to update all project templates:
+By default, this will install the following templates:
+* [.github/workflows/build.yml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml): a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.
+* [kitspace.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/kitspace.yaml): metadata file for the [kitspace](https://kitspace.org/) service
+* [.kicad_helpers_config/config.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/config.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
+* [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): [KiBot](https://github.com/INTI-CMNB/KiBot) configuration to generate manufacturing files for [PCBWay](https://www.pcbway.com/)
+
+
+To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 
 ```sh
-kh_update --help
+kh_update --v --overwrite
 ```
 
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
@@ -42,29 +50,55 @@ kh_update --help
       --v          verbose (default: False)
       --overwrite  overwrite existing templates (default: False)
       --root ROOT  project root directory (default: .)
+    
 
 
-The following templates are installed by default:
-* [.github/workflows/build.yml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml): a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.
-* [kitspace.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/kitspace.yaml): metadata file for the [kitspace](https://kitspace.org/) service
-* [.kicad_helpers_config/config.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/config.kibot.yaml): configuration file for [KiBot](https://github.com/INTI-CMNB/KiBot) which allow automation of various KiCad actions
-* [.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml](https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml): [KiBot](https://github.com/INTI-CMNB/KiBot) configuration to generate manufacturing files for [PCBWay](https://www.pcbway.com/)
-
-To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
+To see the options that are available, run the command:
 
 ```sh
-kh_update --v --overwrite
+kh_update --help
 ```
 
     kitspace.yaml already exists
     Rendering kitspace.yaml template.
+    settings.ini already exists
+    Rendering settings.ini template.
     .github/workflows/build.yml already exists
     Rendering .github/workflows/build.yml template.
     .kicad_helpers_config/config.kibot.yaml already exists
     Rendering .kicad_helpers_config/config.kibot.yaml template.
     .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
     Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-    tests/Tests.ipynb already exists
-    Rendering tests/Tests.ipynb template.
+    tests/tests.ipynb already exists
+    Rendering tests/tests.ipynb template.
+    
+
+
+## Export a BOM from the KiCad schematic.
+
+```sh
+kh_sch_to_bom --v
+```
+
+    
+
+
+## Import data from the BOM into the KiCad schematic.
+
+```sh
+kh_sch_to_bom
+```
+
+    
+
+
+## Run all tests in the `tests` directory
+
+```sh
+kh_test
+```
+
+    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+    All tests are passing!
     
 

@@ -66,14 +66,9 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Navigate to the directory containing your KiCad project:</p>
+<h2 id="Setup-a-new-project">Setup a new project<a class="anchor-link" href="#Setup-a-new-project"> </a></h2><p>Open a command line shell and navigate to the directory containing your KiCad project. Then run the <code>kh_update</code> script to apply various project templates to the project directory:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> kicad/project/path
+kh_update --help
 </pre></div>
 
 </div>
@@ -81,46 +76,7 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run the <code>kh_update</code> script to update all project templates:</p>
-<div class="highlight"><pre><span></span>kh_update --help
-</pre></div>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
-
-Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
-list).
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --v          verbose (default: False)
-  --overwrite  overwrite existing templates (default: False)
-  --root ROOT  project root directory (default: .)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The following templates are installed by default:</p>
+<p>By default, this will install the following templates:</p>
 <ul>
 <li><a href="https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/.github/workflows/build.yml">.github/workflows/build.yml</a>: a github workflow for updating the BOM, producing manufacturing files, running tests, generating documentation, etc.</li>
 <li><a href="https://github.com/ryanfobel/kicad-helpers/blob/main/kicad_helpers/templates/kitspace.yaml">kitspace.yaml</a>: metadata file for the <a href="https://kitspace.org/">kitspace</a> service</li>
@@ -150,16 +106,147 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
+
+Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
+list).
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --v          verbose (default: False)
+  --overwrite  overwrite existing templates (default: False)
+  --root ROOT  project root directory (default: .)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see the options that are available, run the command:</p>
+<div class="highlight"><pre><span></span>kh_update --help
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>kitspace.yaml already exists
 Rendering kitspace.yaml template.
+settings.ini already exists
+Rendering settings.ini template.
 .github/workflows/build.yml already exists
 Rendering .github/workflows/build.yml template.
 .kicad_helpers_config/config.kibot.yaml already exists
 Rendering .kicad_helpers_config/config.kibot.yaml template.
 .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
 Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-tests/Tests.ipynb already exists
-Rendering tests/Tests.ipynb template.
+tests/tests.ipynb already exists
+Rendering tests/tests.ipynb template.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Export-a-BOM-from-the-KiCad-schematic.">Export a BOM from the KiCad schematic.<a class="anchor-link" href="#Export-a-BOM-from-the-KiCad-schematic."> </a></h2><div class="highlight"><pre><span></span>kh_sch_to_bom --v
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Import-data-from-the-BOM-into-the-KiCad-schematic.">Import data from the BOM into the KiCad schematic.<a class="anchor-link" href="#Import-data-from-the-BOM-into-the-KiCad-schematic."> </a></h2><div class="highlight"><pre><span></span>kh_sch_to_bom
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Run-all-tests-in-the-tests-directory">Run all tests in the <code>tests</code> directory<a class="anchor-link" href="#Run-all-tests-in-the-tests-directory"> </a></h2><div class="highlight"><pre><span></span>kh_test
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+All tests are passing!
 
 </pre>
 </div>
