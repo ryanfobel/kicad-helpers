@@ -46,10 +46,10 @@ def update_templates(v:Param("verbose", bool),
                     os.makedirs(os.path.split(dst_path)[0], exist_ok=True)
 
                     if os.path.exists(dst_path):
-                        if v:
-                            print(f"{ path } already exists")
-                            exists_flag = True
                         if not overwrite:
+                            if v:
+                                print(f"{ path } already exists")
+                                exists_flag = True
                             continue
 
                     with open(src_path) as f:

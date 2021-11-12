@@ -42,17 +42,11 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 > kh_update --v --overwrite
 ```
 
-    kitspace.yaml already exists
     Rendering kitspace.yaml template.
-    settings.ini already exists
     Rendering settings.ini template.
-    .github/workflows/build.yml already exists
     Rendering .github/workflows/build.yml template.
-    .kicad_helpers_config/config.kibot.yaml already exists
     Rendering .kicad_helpers_config/config.kibot.yaml template.
-    .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml already exists
     Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-    tests/tests.ipynb already exists
     Rendering tests/tests.ipynb template.
     
 
@@ -104,11 +98,6 @@ To see the options that are available, run the command:
 ```sh
 > kh_test
 ```
-
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
-    All tests are passing!
-    
-
 
 ## Contributors
 
