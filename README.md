@@ -74,7 +74,7 @@ kh_update --help
     
 
 
-## Export a BOM from the KiCad schematic.
+## Export a BOM from the KiCad schematic
 
 ```sh
 kh_sch_to_bom --v
@@ -84,7 +84,7 @@ kh_sch_to_bom --v
     
 
 
-## Import data from the BOM into the KiCad schematic.
+## Import data from the BOM into the KiCad schematic
 
 ```sh
 kh_sch_to_bom
