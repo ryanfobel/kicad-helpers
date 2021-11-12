@@ -36,18 +36,6 @@ nb_path: "notebooks/00_actions.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="update_templates">update_templates<a class="anchor-link" href="#update_templates"> </a></h2><p>Installs various templates from the <code>kicad_helpers/templates</code> directory (ignoring anything in the project's
-<code>.gitignore</code> list). Similar to <code>nbdev</code>: <a href="https://nbdev.fast.ai/tutorial.html#Set-up-Repo">nbdev_new</a>. Templates
-are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a>
-folder, and are included with the python package by adding the followingline to the <code>MANIFEST.in</code> file:</p>
-
-<pre><code>graft kicad_helpers/templates</code></pre>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -61,8 +49,12 @@ folder, and are included with the python package by adding the followingline to 
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
-<p>Update project templates from the <code>kicad_helpers/templates</code> directory
-(ignoring anything in the project's <code>.gitignore</code> list).</p>
+<p>Install various templates from the <code>kicad_helpers/templates</code> directory (ignoring anything in the project's
+<code>.gitignore</code> list). Similar to <code>nbdev</code>: <a href="https://nbdev.fast.ai/tutorial.html#Set-up-Repo">nbdev_new</a>. Templates
+are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a>
+folder, and are included with the python package by adding the followingline to the <code>MANIFEST.in</code> file:</p>
+
+<pre><code>graft kicad_helpers/templates</code></pre>
 
 </div>
 
@@ -77,27 +69,6 @@ folder, and are included with the python package by adding the followingline to 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># See: https://github.com/devbisme/KiField/issues/59#issuecomment-952298997</span>
-<span class="k">if</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;kifield&quot;</span><span class="p">,</span> <span class="s2">&quot;--help&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;addquantidty&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">install_python_package</span><span class="p">(</span><span class="s2">&quot;git+https://github.com/ryanfobel/KiField.git@add-quantity&quot;</span><span class="p">)</span>
-<span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_git_root</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">),</span> <span class="s2">&quot;_temp&quot;</span><span class="p">)</span>
-<span class="n">setup_test_repo</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -192,16 +163,6 @@ Rendering tests/tests.ipynb template.
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cd </span><span class="si">{</span> <span class="n">root</span> <span class="si">}</span><span class="s2"> &amp;&amp; tree --dirsfirst -d -I $(python -c </span><span class="se">\&quot;</span><span class="s2">from kicad_helpers.utilities import get_gitignore_list; print(&#39;kicad_helpers|&#39; + get_gitignore_list())</span><span class="se">\&quot;</span><span class="s2">) .&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -245,7 +206,7 @@ Rendering tests/tests.ipynb template.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update/create BOM from KiCad schematic.</p>
 
@@ -263,49 +224,12 @@ Rendering tests/tests.ipynb template.
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
-</blockquote>
-<p>Update KiCad schematic from BOM file.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sch_to_bom</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">get_bom_path</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
-<span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -548,16 +472,31 @@ Rendering tests/tests.ipynb template.
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bom_to_sch</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+</blockquote>
+<p>Update KiCad schematic from BOM file.</p>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
