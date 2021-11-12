@@ -8,7 +8,7 @@
 ## Project goals
 
 * provide a sensible default structure and scripts for managing KiCad projects
-* automate everything that can be automated with continuous integrations scripts (e.g., update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
+* automate everything that can be automated with continuous integrations scripts (e.g., [update BOMs](./00_actions.ipynb), produce manufacturing files, [run tests](./01_test.ipynb), generate documentation, etc.)
 * configure git and KiCad to play nicely together
 * support customization via command line arguments, environment variables, etc.
 * make everything easy to install/setup/use
