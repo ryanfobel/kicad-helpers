@@ -27,8 +27,8 @@ def update_templates(v:Param("verbose", bool),
     templates_path = os.path.abspath(pkg_resources.resource_filename('kicad_helpers', 'templates'))
     root = _set_root(root)
     metadata = get_project_metadata(root)
-
     file_list = []
+    exists_flag = False
     for root_, dirs, files in os.walk(templates_path):
         if len(files):
             for file in files:
@@ -43,6 +43,7 @@ def update_templates(v:Param("verbose", bool),
                     if os.path.exists(dst_path):
                         if v:
                             print(f"{ path } already exists")
+                            exists_flag = True
                         if not overwrite:
                             continue
 
@@ -53,6 +54,9 @@ def update_templates(v:Param("verbose", bool),
                         if v:
                             print(f"Rendering { path } template.")
                         f.write(template.render(**metadata))
+
+    if not overwrite and exists_flag:
+        print("To overwrite existing files, use the --overwrite flag.")
 
 # Cell
 @call_parse

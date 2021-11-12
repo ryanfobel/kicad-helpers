@@ -20,11 +20,11 @@
 
 ## Setup a new project
 
-Open a command line shell and navigate to the directory containing your KiCad project. Then run the `kh_update` script to apply various project templates to the project directory:
+Open a command line shell and navigate to the directory containing your KiCad project. Then run `kh_update` to apply various project templates to the project directory:
 
 ```sh
 cd kicad/project/path
-kh_update --help
+kh_update
 ```
 
 By default, this will install the following templates:
@@ -38,25 +38,6 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 
 ```sh
 kh_update --v --overwrite
-```
-
-    usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
-    
-    Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
-    list).
-    
-    optional arguments:
-      -h, --help   show this help message and exit
-      --v          verbose (default: False)
-      --overwrite  overwrite existing templates (default: False)
-      --root ROOT  project root directory (default: .)
-    
-
-
-To see the options that are available, run the command:
-
-```sh
-kh_update --help
 ```
 
     kitspace.yaml already exists
@@ -74,12 +55,32 @@ kh_update --help
     
 
 
+To see the options that are available, run the command:
+
+```sh
+kh_update --help
+```
+
+    usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
+    
+    Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
+    list).
+    
+    optional arguments:
+      -h, --help   show this help message and exit
+      --v          verbose (default: False)
+      --overwrite  overwrite existing templates (default: False)
+      --root ROOT  project root directory (default: .)
+    
+
+
 ## Export a BOM from the KiCad schematic.
 
 ```sh
 kh_sch_to_bom --v
 ```
 
+    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
     
 
 
@@ -89,6 +90,7 @@ kh_sch_to_bom --v
 kh_sch_to_bom
 ```
 
+    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
     
 
 
@@ -102,3 +104,7 @@ kh_test
     All tests are passing!
     
 
+
+## Contributors
+
+* Ryan Fobel ([@ryanfobel](https://github.com/ryanfobel))

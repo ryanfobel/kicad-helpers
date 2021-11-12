@@ -66,9 +66,9 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup-a-new-project">Setup a new project<a class="anchor-link" href="#Setup-a-new-project"> </a></h2><p>Open a command line shell and navigate to the directory containing your KiCad project. Then run the <code>kh_update</code> script to apply various project templates to the project directory:</p>
+<h2 id="Setup-a-new-project">Setup a new project<a class="anchor-link" href="#Setup-a-new-project"> </a></h2><p>Open a command line shell and navigate to the directory containing your KiCad project. Then run <code>kh_update</code> to apply various project templates to the project directory:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> kicad/project/path
-kh_update --help
+kh_update
 </pre></div>
 
 </div>
@@ -91,46 +91,6 @@ kh_update --help
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To overwrite existing templates, run <code>kh_update</code> with the <code>--overwrite</code> flag:</p>
 <div class="highlight"><pre><span></span>kh_update --v --overwrite
-</pre></div>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
-
-Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
-list).
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --v          verbose (default: False)
-  --overwrite  overwrite existing templates (default: False)
-  --root ROOT  project root directory (default: .)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To see the options that are available, run the command:</p>
-<div class="highlight"><pre><span></span>kh_update --help
 </pre></div>
 
 </div>
@@ -171,6 +131,46 @@ Rendering tests/tests.ipynb template.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>To see the options that are available, run the command:</p>
+<div class="highlight"><pre><span></span>kh_update --help
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
+
+Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
+list).
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --v          verbose (default: False)
+  --overwrite  overwrite existing templates (default: False)
+  --root ROOT  project root directory (default: .)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Export-a-BOM-from-the-KiCad-schematic.">Export a BOM from the KiCad schematic.<a class="anchor-link" href="#Export-a-BOM-from-the-KiCad-schematic."> </a></h2><div class="highlight"><pre><span></span>kh_sch_to_bom --v
 </pre></div>
 
@@ -187,7 +187,8 @@ Rendering tests/tests.ipynb template.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
+<pre>/home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
+
 </pre>
 </div>
 </div>
@@ -216,7 +217,8 @@ Rendering tests/tests.ipynb template.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
+<pre>/home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
+
 </pre>
 </div>
 </div>
@@ -258,6 +260,15 @@ All tests are passing!
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Contributors">Contributors<a class="anchor-link" href="#Contributors"> </a></h2><ul>
+<li>Ryan Fobel (<a href="https://github.com/ryanfobel">@ryanfobel</a>)</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
  
 
