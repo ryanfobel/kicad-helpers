@@ -1,11 +1,11 @@
-# kicad-helpers
+# Welcome to kicad-helpers
 > Scripts, templates, and examples for managing KiCad projects.
 
 
 [![Build, Test, Package](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml/badge.svg)](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/kicad-helpers.svg)](https://pypi.python.org/pypi/kicad-helpers/)
 
-## Project goals:
+## Project goals
 
 * provide a sensible default structure and scripts for managing KiCad projects
 * automate everything that can be automated (update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
