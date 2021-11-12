@@ -48,10 +48,13 @@ def _set_root(root):
 # Cell
 def get_project_name(root="."):
     """Get the project name based on the name of the KiCad `*.pro` file.
+    ```
+    > get_project_name()
+    "40-channel-hv-switching-board"
+    ```
     """
     root = _set_root(root)
     return os.path.splitext(os.path.split(glob.glob(os.path.join(root, "*.pro"))[0])[1])[0]
-
 
 # Cell
 def get_project_metadata(root="."):
