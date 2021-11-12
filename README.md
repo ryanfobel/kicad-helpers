@@ -16,15 +16,17 @@
 
 ## Install
 
-`pip install kicad_helpers`
+```sh
+> pip install kicad_helpers
+```
 
 ## Setup a new project
 
 Open a command line shell and navigate to the directory containing your KiCad project. Then run `kh_update` to apply various project templates to the project directory:
 
 ```sh
-cd kicad/project/path
-kh_update
+> cd kicad/project/path
+> kh_update
 ```
 
 By default, this will install the following templates:
@@ -37,7 +39,7 @@ By default, this will install the following templates:
 To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 
 ```sh
-kh_update --v --overwrite
+> kh_update --v --overwrite
 ```
 
     kitspace.yaml already exists
@@ -58,7 +60,7 @@ kh_update --v --overwrite
 To see the options that are available, run the command:
 
 ```sh
-kh_update --help
+> kh_update --help
 ```
 
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
@@ -80,7 +82,7 @@ kh_update --help
 ## Export a BOM from the KiCad schematic
 
 ```sh
-kh_sch_to_bom --v
+> kh_sch_to_bom --v
 ```
 
     /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
@@ -90,7 +92,7 @@ kh_sch_to_bom --v
 ## Import data from the BOM into the KiCad schematic
 
 ```sh
-kh_sch_to_bom
+> kh_sch_to_bom
 ```
 
     /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
@@ -100,12 +102,47 @@ kh_sch_to_bom
 ## Run all tests in the `tests` directory
 
 ```sh
-kh_test
+> kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
-    All tests are passing!
+    Traceback (most recent call last):
+      File "/home/ryan/miniconda3/envs/kh/bin/kh_test", line 33, in <module>
+        sys.exit(load_entry_point('kicad-helpers', 'console_scripts', 'kh_test')())
+      File "/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py", line 107, in _f
+        tfunc(**merge(args, args_from_prog(func, xtra)))
+      File "/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/test.py", line 40, in test_notebooks
+        raise Exception(msg + '\n'.join([f.name for p,f in zip(passed,files) if not p]))
+    Exception: The following notebooks failed:
+    Tests.ipynb
+
+
+
+    ---------------------------------------------------------------------------
+
+    CalledProcessError                        Traceback (most recent call last)
+
+    /tmp/ipykernel_21507/2064004735.py in <module>
+          1 #hide_input
+    ----> 2 print(subprocess.check_output(f"kh_test --root { root }", shell=True).decode("utf-8"))
     
+
+    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in check_output(timeout, *popenargs, **kwargs)
+        422         kwargs['input'] = empty
+        423 
+    --> 424     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+        425                **kwargs).stdout
+        426 
+
+
+    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)
+        526         retcode = process.poll()
+        527         if check and retcode:
+    --> 528             raise CalledProcessError(retcode, process.args,
+        529                                      output=stdout, stderr=stderr)
+        530     return CompletedProcess(process.args, retcode, stdout, stderr)
+
+
+    CalledProcessError: Command 'kh_test --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp' returned non-zero exit status 1.
 
 
 ## Contributors

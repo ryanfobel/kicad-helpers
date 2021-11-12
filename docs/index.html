@@ -59,7 +59,8 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install kicad_helpers</code></p>
+<div class="highlight"><pre><span></span>&gt; pip install kicad_helpers
+</pre></div>
 
 </div>
 </div>
@@ -67,8 +68,8 @@ nb_path: "notebooks/index.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Setup-a-new-project">Setup a new project<a class="anchor-link" href="#Setup-a-new-project"> </a></h2><p>Open a command line shell and navigate to the directory containing your KiCad project. Then run <code>kh_update</code> to apply various project templates to the project directory:</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> kicad/project/path
-kh_update
+<div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> kicad/project/path
+&gt; kh_update
 </pre></div>
 
 </div>
@@ -90,7 +91,7 @@ kh_update
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To overwrite existing templates, run <code>kh_update</code> with the <code>--overwrite</code> flag:</p>
-<div class="highlight"><pre><span></span>kh_update --v --overwrite
+<div class="highlight"><pre><span></span>&gt; kh_update --v --overwrite
 </pre></div>
 
 </div>
@@ -132,7 +133,7 @@ Rendering tests/tests.ipynb template.
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To see the options that are available, run the command:</p>
-<div class="highlight"><pre><span></span>kh_update --help
+<div class="highlight"><pre><span></span>&gt; kh_update --help
 </pre></div>
 
 </div>
@@ -174,7 +175,7 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Export-a-BOM-from-the-KiCad-schematic">Export a BOM from the KiCad schematic<a class="anchor-link" href="#Export-a-BOM-from-the-KiCad-schematic"> </a></h2><div class="highlight"><pre><span></span>kh_sch_to_bom --v
+<h2 id="Export-a-BOM-from-the-KiCad-schematic">Export a BOM from the KiCad schematic<a class="anchor-link" href="#Export-a-BOM-from-the-KiCad-schematic"> </a></h2><div class="highlight"><pre><span></span>&gt; kh_sch_to_bom --v
 </pre></div>
 
 </div>
@@ -204,7 +205,7 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Import-data-from-the-BOM-into-the-KiCad-schematic">Import data from the BOM into the KiCad schematic<a class="anchor-link" href="#Import-data-from-the-BOM-into-the-KiCad-schematic"> </a></h2><div class="highlight"><pre><span></span>kh_sch_to_bom
+<h2 id="Import-data-from-the-BOM-into-the-KiCad-schematic">Import data from the BOM into the KiCad schematic<a class="anchor-link" href="#Import-data-from-the-BOM-into-the-KiCad-schematic"> </a></h2><div class="highlight"><pre><span></span>&gt; kh_sch_to_bom
 </pre></div>
 
 </div>
@@ -234,7 +235,7 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Run-all-tests-in-the-tests-directory">Run all tests in the <code>tests</code> directory<a class="anchor-link" href="#Run-all-tests-in-the-tests-directory"> </a></h2><div class="highlight"><pre><span></span>kh_test
+<h2 id="Run-all-tests-in-the-tests-directory">Run all tests in the <code>tests</code> directory<a class="anchor-link" href="#Run-all-tests-in-the-tests-directory"> </a></h2><div class="highlight"><pre><span></span>&gt; kh_test
 </pre></div>
 
 </div>
@@ -249,11 +250,45 @@ optional arguments:
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
-All tests are passing!
-
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Traceback (most recent call last):
+  File &#34;/home/ryan/miniconda3/envs/kh/bin/kh_test&#34;, line 33, in &lt;module&gt;
+    sys.exit(load_entry_point(&#39;kicad-helpers&#39;, &#39;console_scripts&#39;, &#39;kh_test&#39;)())
+  File &#34;/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py&#34;, line 107, in _f
+    tfunc(**merge(args, args_from_prog(func, xtra)))
+  File &#34;/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/test.py&#34;, line 40, in test_notebooks
+    raise Exception(msg + &#39;\n&#39;.join([f.name for p,f in zip(passed,files) if not p]))
+Exception: The following notebooks failed:
+Tests.ipynb
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_21507/2064004735.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#hide_input</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>subprocess<span class="ansi-blue-fg">.</span>check_output<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;kh_test --root { root }&#34;</span><span class="ansi-blue-fg">,</span> shell<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">check_output</span><span class="ansi-blue-fg">(timeout, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    422</span>         kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;input&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> empty
+<span class="ansi-green-intense-fg ansi-bold">    423</span> 
+<span class="ansi-green-fg">--&gt; 424</span><span class="ansi-red-fg">     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+</span><span class="ansi-green-intense-fg ansi-bold">    425</span>                **kwargs).stdout
+<span class="ansi-green-intense-fg ansi-bold">    426</span> 
+
+<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    526</span>         retcode <span class="ansi-blue-fg">=</span> process<span class="ansi-blue-fg">.</span>poll<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    527</span>         <span class="ansi-green-fg">if</span> check <span class="ansi-green-fg">and</span> retcode<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 528</span><span class="ansi-red-fg">             raise CalledProcessError(retcode, process.args,
+</span><span class="ansi-green-intense-fg ansi-bold">    529</span>                                      output=stdout, stderr=stderr)
+<span class="ansi-green-intense-fg ansi-bold">    530</span>     <span class="ansi-green-fg">return</span> CompletedProcess<span class="ansi-blue-fg">(</span>process<span class="ansi-blue-fg">.</span>args<span class="ansi-blue-fg">,</span> retcode<span class="ansi-blue-fg">,</span> stdout<span class="ansi-blue-fg">,</span> stderr<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">CalledProcessError</span>: Command &#39;kh_test --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp&#39; returned non-zero exit status 1.</pre>
 </div>
 </div>
 
