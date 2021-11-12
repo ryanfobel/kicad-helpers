@@ -1,5 +1,5 @@
 # Welcome to kicad-helpers
-> Scripts, templates, and examples for managing KiCad projects.
+> Scripts, templates, and examples for managing KiCad projects
 
 
 [![Build, Test, Package](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml/badge.svg)](https://github.com/ryanfobel/kicad-helpers/actions/workflows/python-package.yml)
@@ -8,7 +8,7 @@
 ## Project goals
 
 * provide a sensible default structure and scripts for managing KiCad projects
-* automate everything that can be automated (update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
+* automate everything that can be automated with continuous integrations scripts (e.g., update BOMs, produce manufacturing files, run tests, generate documentation, etc.)
 * configure git and KiCad to play nicely together
 * support customization via command line arguments, environment variables, etc.
 * make everything easy to install/setup/use
@@ -63,8 +63,11 @@ kh_update --help
 
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
     
-    Update project templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
-    list).
+    Install various templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
+    list). Similar to `nbdev`: [nbdev_new](https://nbdev.fast.ai/tutorial.html#Set-up-Repo). Templates are stored in the
+    [kicad_helpers/templates](https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates) folder, and are
+    included with the python package by adding the followingline to the `MANIFEST.in` file: ``` graft
+    kicad_helpers/templates ```
     
     optional arguments:
       -h, --help   show this help message and exit
@@ -100,9 +103,44 @@ kh_sch_to_bom
 kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
-    All tests are passing!
+    Traceback (most recent call last):
+      File "/home/ryan/miniconda3/envs/kh/bin/kh_test", line 33, in <module>
+        sys.exit(load_entry_point('kicad-helpers', 'console_scripts', 'kh_test')())
+      File "/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py", line 107, in _f
+        tfunc(**merge(args, args_from_prog(func, xtra)))
+      File "/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/test.py", line 40, in test_notebooks
+        raise Exception(msg + '\n'.join([f.name for p,f in zip(passed,files) if not p]))
+    Exception: The following notebooks failed:
+    Tests.ipynb
+
+
+
+    ---------------------------------------------------------------------------
+
+    CalledProcessError                        Traceback (most recent call last)
+
+    /tmp/ipykernel_16795/2064004735.py in <module>
+          1 #hide_input
+    ----> 2 print(subprocess.check_output(f"kh_test --root { root }", shell=True).decode("utf-8"))
     
+
+    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in check_output(timeout, *popenargs, **kwargs)
+        422         kwargs['input'] = empty
+        423 
+    --> 424     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+        425                **kwargs).stdout
+        426 
+
+
+    ~/miniconda3/envs/kh/lib/python3.9/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)
+        526         retcode = process.poll()
+        527         if check and retcode:
+    --> 528             raise CalledProcessError(retcode, process.args,
+        529                                      output=stdout, stderr=stderr)
+        530     return CompletedProcess(process.args, retcode, stdout, stderr)
+
+
+    CalledProcessError: Command 'kh_test --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp' returned non-zero exit status 1.
 
 
 ## Contributors
