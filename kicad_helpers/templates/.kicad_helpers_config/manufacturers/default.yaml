@@ -1,15 +1,12 @@
-# Gerber and drill files for PCBWay, with stencil (solder paste)
-# URL: https://www.pcbway.com
-# Based on https://github.com/INTI-CMNB/KiBot/blob/59e3c517340e4c6b4bc739955cf47c739ec27978/docs/samples/PCBWay.kibot.yaml
-#   which was based on the configuration used by Gerber Zipper (https://github.com/g200kg/kicad-gerberzipper)
 kibot:
   version: 1
 
 outputs:
-  - name: PCBWay_gerbers
-    comment: Gerbers compatible with PCBWay
+
+  - name: gerbers
+    comment: Gerbers
     type: gerber
-    dir: manufacturing/PCBWay/gerbers
+    dir: manufacturing/default/gerbers
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -38,10 +35,10 @@ outputs:
       - B.Paste
       - Edge.Cuts
 
-  - name: PCBWay_drill
-    comment: Drill files compatible with PCBWay
+  - name: drill
+    comment: Drill files
     type: excellon
-    dir: manufacturing/PCBWay/gerbers
+    dir: manufacturing/default/gerbers
     options:
       metric_units: false
       minimal_header: true
@@ -57,10 +54,10 @@ outputs:
       npth_id: '-NPTH'
       output: "%f%i.drl"
 
-  - name: PCBWay_position
-    comment: Generate position file compatible with PCBWay
+  - name: generate_pos
+    comment: "Generate position file"
     type: position
-    dir: manufacturing/PCBWay/position
+    dir: manufacturing/default/position
     options:
       format: 'ASCII' # [ASCII,CSV] Format for the position file.
       separate_files_for_front_and_back: true

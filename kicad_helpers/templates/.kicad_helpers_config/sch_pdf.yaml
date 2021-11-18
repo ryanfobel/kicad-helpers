@@ -1,0 +1,18 @@
+kibot:
+  version: 1
+
+outputs:
+
+  - name: print_sch_svg
+    comment: "Print schematic (SVG)"
+    type: svg_sch_print
+    dir: .
+    options:
+      output: 'docs/svg/%f-%i%v.%x'
+
+  - name: print_sch_pdf
+    comment: "Print schematic (PDF)"
+    type: pdf_sch_print
+    dir: .
+    options:
+      output: 'docs/pdf/%f-%i%v.%x'

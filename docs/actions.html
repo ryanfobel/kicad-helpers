@@ -136,51 +136,14 @@ optional arguments:
 <pre>Rendering kitspace.yaml template.
 Rendering settings.ini template.
 Rendering .github/workflows/build.yml template.
-Rendering .kicad_helpers_config/config.kibot.yaml template.
-Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
+Rendering .kicad_helpers_config/pcb_pdf.yaml template.
+Rendering .kicad_helpers_config/pcb_svg.yaml template.
+Rendering .kicad_helpers_config/sch_pdf.yaml template.
+Rendering .kicad_helpers_config/sch_svg.yaml template.
+Rendering .kicad_helpers_config/manufacturers/all.yaml template.
+Rendering .kicad_helpers_config/manufacturers/default.yaml template.
+Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
 Rendering tests/tests.ipynb template.
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Project-structure">Project structure<a class="anchor-link" href="#Project-structure"> </a></h1><p>Here's an example showing the recommended KiCad project structure.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.
-├── docs
-│   ├── png
-│   ├── src
-│   └── svg
-├── library
-├── manufacturing
-│   └── default
-│       ├── assembly_photos
-│       ├── gerbers
-│       └── position
-└── tests
-
-11 directories
 
 </pre>
 </div>
@@ -645,6 +608,142 @@ optional arguments:
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default", manufacturer name, or "all""=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Export manufacturing files (gerber, drill, and position) by running kibot in a local docker container.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function can also be called via a command line script:</p>
+<blockquote><p>kh_export_man --help</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_export_man [-h] [--root ROOT] [--manufacturer MANUFACTURER] [--v] [--output OUTPUT]
+
+Export manufacturing files (gerber, drill, and position) by running kibot in a local docker container.
+
+optional arguments:
+  -h, --help                   show this help message and exit
+  --root ROOT                  project root directory (default: .)
+  --manufacturer MANUFACTURER  &#34;default&#34;, manufacturer name, or &#34;all&#34; (default: default)
+  --v                          verbose (default: False)
+  --output OUTPUT              output path relative to ROOT (default: .)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Running <code>kh_export_man</code> within your project dictory will export default manufacturing outputs (e.g., gerber, drill, and position files).</p>
+<div class="highlight"><pre><span></span>&gt; kh_export_man --output .output
+&gt; tree .outputs
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.
+└── manufacturing
+    └── default
+        ├── gerbers
+        │   ├── 40-channel-hv-switching-board-NPTH.drl
+        │   ├── 40-channel-hv-switching-board.drl
+        │   ├── 40-channel-hv-switching-board.gbl
+        │   ├── 40-channel-hv-switching-board.gbo
+        │   ├── 40-channel-hv-switching-board.gbp
+        │   ├── 40-channel-hv-switching-board.gbs
+        │   ├── 40-channel-hv-switching-board.gl2
+        │   ├── 40-channel-hv-switching-board.gl3
+        │   ├── 40-channel-hv-switching-board.gm1
+        │   ├── 40-channel-hv-switching-board.gtl
+        │   ├── 40-channel-hv-switching-board.gto
+        │   ├── 40-channel-hv-switching-board.gtp
+        │   └── 40-channel-hv-switching-board.gts
+        └── position
+            ├── bottom_pos.pos
+            └── top_pos.pos
+
+4 directories, 15 files
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also generate manufacturer-specific outputs using the <code>--manufacturer</code> flag.</p>
+<div class="highlight"><pre><span></span>&gt; kh_export_man --manufacturer PCBWay --output .output
+&gt; tree .outputs
+</pre></div>
+
+</div>
+</div>
+</div>
 </div>
  
 

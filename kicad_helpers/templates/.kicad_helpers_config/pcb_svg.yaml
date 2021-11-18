@@ -1,0 +1,36 @@
+kibot:
+  version: 1
+
+outputs:
+
+  - name: print_pcb_pdf
+    comment: "Print pdf"
+    type: pdf
+    dir: .
+    options:
+      output: 'docs/pdf/%f-%i%v.%x'
+    layers:
+      - copper
+      - F.SilkS
+      - B.SilkS
+      - F.Mask
+      - B.Mask
+      - F.Paste
+      - B.Paste
+      - Edge.Cuts
+
+  - name: print_pcb_svg
+    comment: "Print svg"
+    type: svg
+    dir: .
+    options:
+      output: 'docs/svg/%f-%i%v.%x'
+    layers:
+      - copper
+      - F.SilkS
+      - B.SilkS
+      - F.Mask
+      - B.Mask
+      - F.Paste
+      - B.Paste
+      - Edge.Cuts
