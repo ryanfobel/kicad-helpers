@@ -12,6 +12,7 @@ index = {"update_templates": "00_actions.ipynb",
          "get_project_metadata": "02_utilities.ipynb",
          "get_schematic_path": "02_utilities.ipynb",
          "get_bom_path": "02_utilities.ipynb",
+         "get_board_path": "02_utilities.ipynb",
          "get_gitignore_list": "02_utilities.ipynb",
          "in_gitignore": "02_utilities.ipynb",
          "install_python_package": "02_utilities.ipynb"}
