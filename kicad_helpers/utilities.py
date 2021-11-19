@@ -2,7 +2,7 @@
 
 __all__ = ['get_git_root', 'setup_test_repo', 'get_project_name', 'get_project_metadata', 'get_schematic_path',
            'get_bom_path', 'get_board_path', 'get_manufacturers', 'get_gitignore_list', 'in_gitignore',
-           'install_python_package']
+           'install_python_package', 'run_docker_cmd', 'run_kibot_docker']
 
 # Cell
 import glob
@@ -125,3 +125,47 @@ def in_gitignore(filename):
 # Cell
 def install_python_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Cell
+def run_docker_cmd(cmd,
+                   workdir,
+                   container,
+                   v=False):
+    """
+    Run a command in a docker container under a UID mapped to the current user.
+    This ensures that the current user is owner of any files created in the
+    workdir.
+    """
+    UID = subprocess.check_output("id -u", shell=True).decode("utf-8").strip()
+    docker_cmd = (f"docker run --rm -v { workdir }:/workdir --workdir=\"/workdir\" "
+        f"{ container } "
+        f"/bin/bash -c \"useradd --shell /bin/bash -u { UID } -o -c '' -m docker && "
+        f"runuser docker -c '{ cmd }'\""
+    )
+    if v:
+        print(docker_cmd)
+    return subprocess.check_output(docker_cmd, stderr=subprocess.STDOUT, shell=True)
+
+# Cell
+def run_kibot_docker(config:Param(f"KiBot configuation file", str),
+                     root:Param("project root directory", str)=".",
+                     v:Param("verbose", bool)=False,
+                     output:Param("output path relative to ROOT")="."):
+    """
+    Run KiBot in a local docker container.
+    """
+    root = _set_root(root)
+    if os.path.abspath(output) == output:
+        print(f"OUTPUT cannot be an absolute path; it must be relative to ROOT={ root }.")
+        return 1
+
+    cmd = (f"kibot -c { config } "
+       f"-e { get_schematic_path(root)[len(root) + 1:] } "
+       f"-b { get_board_path(root)[len(root) + 1:] } "
+       f"-d { output }"
+    )
+    run_docker_cmd(cmd,
+                   workdir=os.path.abspath(root),
+                   container="setsoft/kicad_auto_test:latest",
+                   v=v
+    )
