@@ -93,7 +93,7 @@ def run_kibot_docker(config:Param(f"kibot configuation file", str),
               v:Param("verbose", bool)=False,
               output:Param("output path relative to ROOT")="."):
     """
-    Run kibot script in a local docker container.
+    Run kibot in a local docker container.
     """
     root = _set_root(root)
     if os.path.abspath(output) == output:
@@ -101,8 +101,6 @@ def run_kibot_docker(config:Param(f"kibot configuation file", str),
         return 1
 
     UID = subprocess.check_output("id -u", shell=True).decode("utf-8").strip()
-    GID = subprocess.check_output("id -g", shell=True).decode("utf-8").strip()
-
     cmd = (f"docker run --rm -v { os.path.abspath(root) }:/workdir --workdir=\"/workdir\" "
            f"setsoft/kicad_auto_test:latest "
            f"/bin/bash -c \"useradd --shell /bin/bash -u { UID } -o -c '' -m docker && "
