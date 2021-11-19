@@ -136,6 +136,8 @@ optional arguments:
 <pre>Rendering kitspace.yaml template.
 Rendering settings.ini template.
 Rendering .github/workflows/build.yml template.
+Rendering .kicad_helpers_config/drc.yaml template.
+Rendering .kicad_helpers_config/erc.yaml template.
 Rendering .kicad_helpers_config/pcb_pdf.yaml template.
 Rendering .kicad_helpers_config/pcb_svg.yaml template.
 Rendering .kicad_helpers_config/sch_pdf.yaml template.
@@ -1142,53 +1144,15 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ERC report (Fri Nov 19 19:07:57 2021, Encoding UTF8 )
+<pre>ERC report (Fri Nov 19 22:16:46 2021, Encoding UTF8 )
 
 ***** Sheet /
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(236.22 mm, 128.27 mm): Pin 5 (Power input) of component U6 is not driven (Net 2).
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(236.22 mm, 125.73 mm): Pin 6 (Power input) of component U6 is not driven (Net 4).
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(224.79 mm, 83.82 mm): Pin 2 (Bidirectional) of component U7 is not driven (Net 7).
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(209.55 mm, 99.06 mm): Pin 3 (Power input) of component U7 is not driven (Net 28).
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 68.58 mm): Pin 2 (Passive) of component P1 is unconnected.
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(220.98 mm, 123.19 mm): Pin 2 (Power input) of component U6 is not driven (Net 46).
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 99.06 mm): Pin 6 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 101.60 mm): Pin 5 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 104.14 mm): Pin 4 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 106.68 mm): Pin 3 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 109.22 mm): Pin 2 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 111.76 mm): Pin 1 (Passive) of component P2 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(224.79 mm, 91.44 mm): Pin 11 (Bidirectional) of component U7 is unconnected.
-ErrType(8): Global label not connected to any other global label
-    @(224.79 mm, 91.44 mm): Global label D7 is not connected to any other global label.
-ErrType(8): Global label not connected to any other global label
-    @(224.79 mm, 35.56 mm): Global label D10/SS is not connected to any other global label.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(224.79 mm, 35.56 mm): Pin 14 (Bidirectional) of component U7 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(82.55 mm, 76.20 mm): Pin 1 (Passive) of component P5 is unconnected.
-ErrType(2): Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(82.55 mm, 71.12 mm): Pin 1 (Passive) of component P4 is unconnected.
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(220.98 mm, 125.73 mm): Pin 3 (Power input) of component U6 is not driven (Net 125).
 
 ***** Sheet /switches_0-19/
 
 ***** Sheet /switches_20-39/
 
- ** ERC messages: 19  Errors 0  Warnings 19
+ ** ERC messages: 0  Errors 0  Warnings 0
 
 
 </pre>
@@ -1302,7 +1266,7 @@ optional arguments:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>** Drc report for /workdir/40-channel-hv-switching-board.kicad_pcb **
-** Created on 2021-11-19 19:08:12 **
+** Created on 2021-11-19 22:17:06 **
 
 ** Found 4 DRC errors **
 ErrType(45): Courtyards overlap

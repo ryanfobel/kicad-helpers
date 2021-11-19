@@ -24,6 +24,9 @@ def test_erc(root="."):
         returncode = e.returncode
         print(e.output.decode("utf-8"))
         print(f"returncode = { returncode }")
+    erc_path = os.path.join(root, get_project_name(root) + ".erc")
+    if os.path.exists(erc_path):
+        os.remove(erc_path)
     assert returncode == 0
 
 # Cell
@@ -36,6 +39,9 @@ def test_drc(root="."):
         returncode = e.returncode
         print(e.output.decode("utf-8"))
         print(f"returncode = { returncode }")
+    drc_path = os.path.join(root, "drc_result.rpt")
+    if os.path.exists(drc_path):
+        os.remove(drc_path)
     assert returncode == 0
 
 # Cell

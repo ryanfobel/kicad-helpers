@@ -111,7 +111,7 @@ def get_gitignore_list(root="."):
     root =_set_root(root)
     with open(f"{ root }/.gitignore") as f:
         gitignore = f.readlines()
-    return "|".join([line.strip() for line in gitignore])
+    return [line.strip() for line in gitignore]
 
 # Cell
 def in_gitignore(filename):

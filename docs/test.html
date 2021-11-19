@@ -94,89 +94,6 @@ nb_path: "notebooks/01_test.ipynb"
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:(W008) Unable to find KiCad configuration file (/home/docker/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
-WARNING:(W011) Missing default symbol library table (kibot.kibot.kicad.config - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:74HC595A (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:AQW214 (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:FERRITE (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:RESONATOR (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:TFM-125-02-X-DH (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:W25Q64FV (kibot.kibot.kicad.v5_sch - log.py:82)
-- Running the ERC
-WARNING:(W058) Missing KiCad main config file /home/docker/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
-ERROR:19 ERC errors detected (eeschema_do - eeschema_do:631) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(236.22 mm, 128.27 mm): Pin 5 (Power input) of component U6 is not driven (Net 2). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(236.22 mm, 125.73 mm): Pin 6 (Power input) of component U6 is not driven (Net 4). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(224.79 mm, 83.82 mm): Pin 2 (Bidirectional) of component U7 is not driven (Net 7). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(209.55 mm, 99.06 mm): Pin 3 (Power input) of component U7 is not driven (Net 28). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 68.58 mm): Pin 2 (Passive) of component P1 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(220.98 mm, 123.19 mm): Pin 2 (Power input) of component U6 is not driven (Net 46). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 99.06 mm): Pin 6 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 101.60 mm): Pin 5 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 104.14 mm): Pin 4 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 106.68 mm): Pin 3 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 109.22 mm): Pin 2 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(29.21 mm, 111.76 mm): Pin 1 (Passive) of component P2 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(224.79 mm, 91.44 mm): Pin 11 (Bidirectional) of component U7 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(8) Global label not connected to any other global label
-    @(224.79 mm, 91.44 mm): Global label D7 is not connected to any other global label. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(8) Global label not connected to any other global label
-    @(224.79 mm, 35.56 mm): Global label D10/SS is not connected to any other global label. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(224.79 mm, 35.56 mm): Pin 14 (Bidirectional) of component U7 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(82.55 mm, 76.20 mm): Pin 1 (Passive) of component P5 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(2) Pin not connected (use a &#34;no connection&#34; flag to suppress this error)
-    @(82.55 mm, 71.12 mm): Pin 1 (Passive) of component P4 is unconnected. (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(3) Pin connected to other pins, but not driven by any pin
-    @(220.98 mm, 125.73 mm): Pin 3 (Power input) of component U6 is not driven (Net 125). (eeschema_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:ERC errors: 19 (kibot.kibot.pre_erc - pre_erc.py:63)
-
-returncode = 10
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_13517/3258050556.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test_erc<span class="ansi-blue-fg">(</span>root<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/tmp/ipykernel_13517/753093040.py</span> in <span class="ansi-cyan-fg">test_erc</span><span class="ansi-blue-fg">(root)</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>         print<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>output<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;returncode = { returncode }&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> returncode <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span>
-
-<span class="ansi-red-fg">AssertionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -191,7 +108,7 @@ returncode = 10
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="test_drc" class="doc_header"><code>test_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>test_drc</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="test_drc" class="doc_header"><code>test_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>test_drc</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -225,55 +142,6 @@ returncode = 10
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>- Running the DRC
-WARNING:(W058) Missing KiCad main config file /home/docker/.config/kicad/kicad_common (pcbnew_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
-ERROR:Found 4 DRC errors and 0 unconnected pads (pcbnew_do - pcbnew_do:553) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(45) Courtyards overlap
-    @(90.400 mm, 105.600 mm): Footprint C6 on Front
-    @(88.500 mm, 105.600 mm): Footprint C7 on Front (pcbnew_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(45) Courtyards overlap
-    @(37.725 mm, 111.425 mm): Footprint R99 on Front
-    @(34.725 mm, 111.425 mm): Footprint R125 on Front (pcbnew_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(45) Courtyards overlap
-    @(37.750 mm, 113.475 mm): Footprint R100 on Front
-    @(34.725 mm, 113.475 mm): Footprint R126 on Front (pcbnew_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:(45) Courtyards overlap
-    @(44.450 mm, 110.200 mm): Footprint FB1 on Back
-    @(44.450 mm, 111.900 mm): Footprint FB3 on Back (pcbnew_do.kiauto.file_util - file_util.py:128) (kibot.kibot.kiplot - kiplot.py:145)
-ERROR:DRC errors: 4 (kibot.kibot.pre_drc - pre_drc.py:61)
-
-returncode = 5
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_13517/3036265766.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test_drc<span class="ansi-blue-fg">(</span>root<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/tmp/ipykernel_13517/2895865240.py</span> in <span class="ansi-cyan-fg">test_drc</span><span class="ansi-blue-fg">(root)</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>         print<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>output<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;returncode = { returncode }&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> returncode <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span>
-
-<span class="ansi-red-fg">AssertionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -288,7 +156,7 @@ returncode = 5
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="validate_bom" class="doc_header"><code>validate_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>validate_bom</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="validate_bom" class="doc_header"><code>validate_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>validate_bom</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -571,7 +439,7 @@ returncode = 5
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="test_notebooks" class="doc_header"><code>test_notebooks</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>test_notebooks</code>(<strong><code>fname</code></strong>:"A notebook name or glob to convert"=<em><code>None</code></em>, <strong><code>flags</code></strong>:"Space separated list of flags"=<em><code>None</code></em>, <strong><code>n_workers</code></strong>:"Number of workers to use"=<em><code>None</code></em>, <strong><code>verbose</code></strong>:"Print errors along the way"=<em><code>True</code></em>, <strong><code>timing</code></strong>:"Timing each notebook to see the ones are slow"=<em><code>False</code></em>, <strong><code>pause</code></strong>:"Pause time (in secs) between notebooks to avoid race conditions"=<em><code>0.5</code></em>, <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+<h4 id="test_notebooks" class="doc_header"><code>test_notebooks</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/test.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>test_notebooks</code>(<strong><code>fname</code></strong>:"A notebook name or glob to convert"=<em><code>None</code></em>, <strong><code>flags</code></strong>:"Space separated list of flags"=<em><code>None</code></em>, <strong><code>n_workers</code></strong>:"Number of workers to use"=<em><code>None</code></em>, <strong><code>verbose</code></strong>:"Print errors along the way"=<em><code>True</code></em>, <strong><code>timing</code></strong>:"Timing each notebook to see the ones are slow"=<em><code>False</code></em>, <strong><code>pause</code></strong>:"Pause time (in secs) between notebooks to avoid race conditions"=<em><code>0.5</code></em>, <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Test all notebooks matching <code>fname</code> in parallel, passing along <code>flags</code></p>
 
@@ -604,6 +472,23 @@ returncode = 5
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/tests.ipynb
+All tests are passing!
+
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
