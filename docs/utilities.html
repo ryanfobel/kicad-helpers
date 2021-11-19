@@ -38,7 +38,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Project-metadata/configuration">Project metadata/configuration<a class="anchor-link" href="#Project-metadata/configuration"> </a></h1><p>Metadata and configuration for the project are stored in the <code>.kicad_helpers_config</code> directory (including <a href="https://github.com/INTI-CMNB/KiBot">kibot</a> config files for producting manufacturing outputs via continuous integration). Additional metadata (e.g., project summary, website, and manufacturing details) is stored in the project's <code>kitspace.yaml</code> file which makes it easy for other people to manufacture boards using <a href="https://kitspace.org/">https://kitspace.org/</a>.</p>
+<h1 id="Project-metadata/configuration">Project metadata/configuration<a class="anchor-link" href="#Project-metadata/configuration"> </a></h1><p>Metadata and configuration for the project are stored in the <code>.kicad_helpers_config</code> directory (including <a href="https://github.com/INTI-CMNB/KiBot">KiBot</a> config files for producting manufacturing outputs via continuous integration). Additional metadata (e.g., project summary, website, and manufacturing details) is stored in the project's <code>kitspace.yaml</code> file which makes it easy for other people to manufacture boards using <a href="https://kitspace.org/">https://kitspace.org/</a>.</p>
 
 </div>
 </div>
@@ -537,6 +537,72 @@ _autosave*|*bak|*cache.*|*rescue.lib|*.xml|.ipynb_checkpoints
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
 </blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="run_docker_cmd" class="doc_header"><code>run_docker_cmd</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_docker_cmd</code>(<strong><code>cmd</code></strong>, <strong><code>workdir</code></strong>, <strong><code>container</code></strong>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+</blockquote>
+<p>Run a command in a docker container under a UID mapped to the current user.
+This ensures that the current user is owner of any files created in the
+workdir.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"KiBot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Run KiBot in a local docker container.</p>
 
 </div>
 
