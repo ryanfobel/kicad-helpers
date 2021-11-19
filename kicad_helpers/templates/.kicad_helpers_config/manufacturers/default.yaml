@@ -6,7 +6,7 @@ outputs:
   - name: gerbers
     comment: Gerbers
     type: gerber
-    dir: manufacturing/default/gerbers
+    dir: gerbers
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -38,7 +38,7 @@ outputs:
   - name: drill
     comment: Drill files
     type: excellon
-    dir: manufacturing/default/gerbers
+    dir: gerbers
     options:
       metric_units: false
       minimal_header: true
@@ -57,7 +57,7 @@ outputs:
   - name: generate_pos
     comment: "Generate position file"
     type: position
-    dir: manufacturing/default/position
+    dir: position
     options:
       format: 'ASCII' # [ASCII,CSV] Format for the position file.
       separate_files_for_front_and_back: true

@@ -10,7 +10,7 @@ outputs:
   - name: PCBWay_gerbers
     comment: Gerbers compatible with PCBWay
     type: gerber
-    dir: manufacturing/PCBWay/gerbers
+    dir: gerbers
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -42,7 +42,7 @@ outputs:
   - name: PCBWay_drill
     comment: Drill files compatible with PCBWay
     type: excellon
-    dir: manufacturing/PCBWay/gerbers
+    dir: gerbers
     options:
       metric_units: false
       minimal_header: true
@@ -61,7 +61,7 @@ outputs:
   - name: PCBWay_position
     comment: Generate position file compatible with PCBWay
     type: position
-    dir: manufacturing/PCBWay/position
+    dir: position
     options:
       format: 'ASCII' # [ASCII,CSV] Format for the position file.
       separate_files_for_front_and_back: true

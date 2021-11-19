@@ -1,6 +1,0 @@
-kibot:
-  version: 1
-
-import:
-  - PCBWay.yaml
-  - default.yaml
