@@ -25,6 +25,7 @@ jobs:
       run: |
         kh_setup_test_repo
         python -c "from kicad_helpers import get_manufacturers; print(get_manufacturers('_temp'))"
+        kh_update --overwrite --root _temp
         kh_export_man --root _temp --output _temp/outputs
         ls -l _temp/outputs
         rm -rf _temp/outputs
