@@ -650,7 +650,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export manufacturing files (gerber, drill, and position) by running kibot in a local docker container.</p>
 
@@ -763,43 +763,6 @@ optional arguments:
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ls -l </span><span class="si">{</span> <span class="n">output_path</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;whoami&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>total 0
-drwxrwxrwx 1 ryan ryan 512 Nov 18 20:31 gerbers
-drwxrwxrwx 1 ryan ryan 512 Nov 18 20:31 position
-
-ryan
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can generate manufacturer-specific outputs using the <code>--manufacturer</code> flag, e.g.:</p>
@@ -821,7 +784,7 @@ ryan
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L136" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the schematic by running kibot in a local docker container.</p>
 
@@ -892,7 +855,7 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>WARNING:(W008) Unable to find KiCad configuration file (/root/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
+<pre>WARNING:(W008) Unable to find KiCad configuration file (/home/docker/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
 WARNING:(W011) Missing default symbol library table (kibot.kibot.kicad.config - log.py:82)
 WARNING:(W042) Missing doc-lib entry for sci-bots:74HC595A (kibot.kibot.kicad.v5_sch - log.py:82)
 WARNING:(W042) Missing doc-lib entry for sci-bots:AQW214 (kibot.kibot.kicad.v5_sch - log.py:82)
@@ -900,21 +863,54 @@ WARNING:(W042) Missing doc-lib entry for sci-bots:FERRITE (kibot.kibot.kicad.v5_
 WARNING:(W042) Missing doc-lib entry for sci-bots:RESONATOR (kibot.kibot.kicad.v5_sch - log.py:82)
 WARNING:(W042) Missing doc-lib entry for sci-bots:TFM-125-02-X-DH (kibot.kibot.kicad.v5_sch - log.py:82)
 WARNING:(W042) Missing doc-lib entry for sci-bots:W25Q64FV (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
+WARNING:(W058) Missing KiCad main config file /home/docker/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
+ERROR:eeschema_do returned 1 (kibot.kibot.out_pdf_sch_print - out_pdf_sch_print.py:54)
+Traceback (most recent call last):
+  File &#34;/home/ryan/miniconda3/envs/kh/bin/kh_export_sch&#34;, line 33, in &lt;module&gt;
+    sys.exit(load_entry_point(&#39;kicad-helpers&#39;, &#39;console_scripts&#39;, &#39;kh_export_sch&#39;)())
+  File &#34;/home/ryan/miniconda3/envs/kh/lib/python3.9/site-packages/fastcore/script.py&#34;, line 107, in _f
+    tfunc(**merge(args, args_from_prog(func, xtra)))
+  File &#34;/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/actions.py&#34;, line 152, in export_sch
+    run_kibot_docker(config=config, root=root, v=v, output=output)
+  File &#34;/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/kicad_helpers/actions.py&#34;, line 116, in run_kibot_docker
+    subprocess.check_output(cmd, shell=True)
+  File &#34;/home/ryan/miniconda3/envs/kh/lib/python3.9/subprocess.py&#34;, line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File &#34;/home/ryan/miniconda3/envs/kh/lib/python3.9/subprocess.py&#34;, line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command &#39;docker run --rm -v /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp:/workdir --workdir=&#34;/workdir&#34; setsoft/kicad_auto_test:latest /bin/bash -c &#34;useradd --shell /bin/bash -u 1000 -o -c &#34;&#34; -m docker &amp;&amp; runuser docker -c &#39;kibot -c .kicad_helpers_config/sch_pdf.yaml -e 40-channel-hv-switching-board.sch -b 40-channel-hv-switching-board.kicad_pcb -d outputs&#39;&#34;&#39; returned non-zero exit status 12.
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
+<div class="output_subarea output_text output_error">
 <pre>
-.
-└── 40-channel-hv-switching-board-schematic.pdf
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_13712/1561171732.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#hide_input</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>subprocess<span class="ansi-blue-fg">.</span>check_output<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;kh_export_sch --root { root } --ext pdf --output { output_path[len(root) + 1:] }&#34;</span><span class="ansi-blue-fg">,</span> shell<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> outputs <span class="ansi-blue-fg">=</span> subprocess<span class="ansi-blue-fg">.</span>check_output<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;cd { os.path.join(root, output_path[len(root) + 1:]) } &amp;&amp; tree .&#34;</span><span class="ansi-blue-fg">,</span> shell<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;utf-8&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">assert</span> outputs <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;.\n└── 40-channel-hv-switching-board-schematic.pdf\n\n0 directories, 1 file\n&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span>outputs<span class="ansi-blue-fg">)</span>
 
-0 directories, 1 file
+<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">check_output</span><span class="ansi-blue-fg">(timeout, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    422</span>         kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;input&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> empty
+<span class="ansi-green-intense-fg ansi-bold">    423</span> 
+<span class="ansi-green-fg">--&gt; 424</span><span class="ansi-red-fg">     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+</span><span class="ansi-green-intense-fg ansi-bold">    425</span>                **kwargs).stdout
+<span class="ansi-green-intense-fg ansi-bold">    426</span> 
 
-</pre>
+<span class="ansi-green-fg">~/miniconda3/envs/kh/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    526</span>         retcode <span class="ansi-blue-fg">=</span> process<span class="ansi-blue-fg">.</span>poll<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    527</span>         <span class="ansi-green-fg">if</span> check <span class="ansi-green-fg">and</span> retcode<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 528</span><span class="ansi-red-fg">             raise CalledProcessError(retcode, process.args,
+</span><span class="ansi-green-intense-fg ansi-bold">    529</span>                                      output=stdout, stderr=stderr)
+<span class="ansi-green-intense-fg ansi-bold">    530</span>     <span class="ansi-green-fg">return</span> CompletedProcess<span class="ansi-blue-fg">(</span>process<span class="ansi-blue-fg">.</span>args<span class="ansi-blue-fg">,</span> retcode<span class="ansi-blue-fg">,</span> stdout<span class="ansi-blue-fg">,</span> stderr<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">CalledProcessError</span>: Command &#39;kh_export_sch --root /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp --ext pdf --output outputs&#39; returned non-zero exit status 1.</pre>
 </div>
 </div>
 
@@ -927,43 +923,6 @@ WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>WARNING:(W008) Unable to find KiCad configuration file (/root/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
-WARNING:(W011) Missing default symbol library table (kibot.kibot.kicad.config - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:74HC595A (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:AQW214 (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:FERRITE (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:RESONATOR (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:TFM-125-02-X-DH (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W042) Missing doc-lib entry for sci-bots:W25Q64FV (kibot.kibot.kicad.v5_sch - log.py:82)
-WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── 40-channel-hv-switching-board-schematic.svg
-├── switches_0-19-switches_0-19.svg
-└── switches_20-39-switches_20-39.svg
-
-0 directories, 3 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -979,7 +938,7 @@ WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L155" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the pcb layout by running kibot in a local docker container.</p>
 
@@ -1013,30 +972,6 @@ WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_export_pcb [-h] [--root ROOT] [--ext EXT] [--v] [--output OUTPUT]
-
-Export the pcb layout by running kibot in a local docker container.
-
-optional arguments:
-  -h, --help       show this help message and exit
-  --root ROOT      project root directory (default: .)
-  --ext EXT        svg or pdf (default: pdf)
-  --v              verbose (default: False)
-  --output OUTPUT  output path relative to ROOT (default: .)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -1044,70 +979,12 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── 40-channel-hv-switching-board-3_3V.pdf
-├── 40-channel-hv-switching-board-B_Mask.pdf
-├── 40-channel-hv-switching-board-B_Paste.pdf
-├── 40-channel-hv-switching-board-B_SilkS.pdf
-├── 40-channel-hv-switching-board-Back.pdf
-├── 40-channel-hv-switching-board-Edge_Cuts.pdf
-├── 40-channel-hv-switching-board-F_Mask.pdf
-├── 40-channel-hv-switching-board-F_Paste.pdf
-├── 40-channel-hv-switching-board-F_SilkS.pdf
-├── 40-channel-hv-switching-board-Front.pdf
-└── 40-channel-hv-switching-board-GND.pdf
-
-0 directories, 11 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── 40-channel-hv-switching-board-3_3V.svg
-├── 40-channel-hv-switching-board-B_Mask.svg
-├── 40-channel-hv-switching-board-B_Paste.svg
-├── 40-channel-hv-switching-board-B_SilkS.svg
-├── 40-channel-hv-switching-board-Back.svg
-├── 40-channel-hv-switching-board-Edge_Cuts.svg
-├── 40-channel-hv-switching-board-F_Mask.svg
-├── 40-channel-hv-switching-board-F_Paste.svg
-├── 40-channel-hv-switching-board-F_SilkS.svg
-├── 40-channel-hv-switching-board-Front.svg
-└── 40-channel-hv-switching-board-GND.svg
-
-0 directories, 11 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}

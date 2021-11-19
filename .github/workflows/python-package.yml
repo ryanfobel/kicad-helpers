@@ -21,38 +21,25 @@ jobs:
         pip install nbdev jupyter wheel twine
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         pip install -e .
+    - name: Read all notebooks
+      run: |
+        nbdev_read_nbs
+    - name: Check if all notebooks are cleaned
+      run: |
+        echo "Check we are starting with clean git checkout"
+        if [ -n "$(git status -uno -s)" ]; then echo "git status is not clean"; false; fi
+        echo "Trying to strip out notebooks"
+        nbdev_clean_nbs
+        echo "Check that strip out was unnecessary"
+        git status -s # display the status to see which nbs need cleaning up
+        if [ -n "$(git status -uno -s)" ]; then echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_git_hooks"; false; fi
+    - name: Check if there is no diff library/notebooks
+      run: |
+        if [ -n "$(nbdev_diff_nbs)" ]; then echo -e "!!! Detected difference between the notebooks and the library"; false; fi
     - name: Run tests
       run: |
         kh_setup_test_repo
-        rm _temp/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml
-        kh_update --overwrite --root _temp
-        python -c "from kicad_helpers import get_manufacturers; print(get_manufacturers('_temp'))"
-        ls -l _temp
-        pwd
-        kh_export_man --v --root _temp --output outputs
-        ls -l _temp
-        ls -l _temp/outputs
-        rm -rf _temp/outputs
-    # - name: Read all notebooks
-    #   run: |
-    #     nbdev_read_nbs
-    # - name: Check if all notebooks are cleaned
-    #   run: |
-    #     echo "Check we are starting with clean git checkout"
-    #     if [ -n "$(git status -uno -s)" ]; then echo "git status is not clean"; false; fi
-    #     echo "Trying to strip out notebooks"
-    #     nbdev_clean_nbs
-    #     echo "Check that strip out was unnecessary"
-    #     git status -s # display the status to see which nbs need cleaning up
-    #     if [ -n "$(git status -uno -s)" ]; then echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_git_hooks"; false; fi
-    # - name: Check if there is no diff library/notebooks
-    #   run: |
-    #     if [ -n "$(nbdev_diff_nbs)" ]; then echo -e "!!! Detected difference between the notebooks and the library"; false; fi
-    # - name: Run tests
-    #   run: |
-
-    #     kh_setup_test_repo
-    #     nbdev_test_nbs
+        nbdev_test_nbs
     - name: Get the version
       if: startsWith(github.ref, 'refs/tags/v')
       id: get_version
