@@ -48,9 +48,15 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
     Rendering kitspace.yaml template.
     Rendering settings.ini template.
     Rendering .github/workflows/build.yml template.
-    Rendering .kicad_helpers_config/config.kibot.yaml template.
-    Rendering .kicad_helpers_config/manufacturers/PCBWay.kibot.yaml template.
-    Rendering tests/tests.ipynb template.
+    Rendering .kicad_helpers_config/drc.yaml template.
+    Rendering .kicad_helpers_config/erc.yaml template.
+    Rendering .kicad_helpers_config/pcb_pdf.yaml template.
+    Rendering .kicad_helpers_config/pcb_svg.yaml template.
+    Rendering .kicad_helpers_config/sch_pdf.yaml template.
+    Rendering .kicad_helpers_config/sch_svg.yaml template.
+    Rendering .kicad_helpers_config/manufacturers/default.yaml template.
+    Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
+    Rendering tests/Tests.ipynb template.
     
 
 
@@ -99,9 +105,10 @@ To see the options that are available, run the command:
 > kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/tests.ipynb
     All tests are passing!
     
+    None
 
 
 ## Contributors
