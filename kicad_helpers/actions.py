@@ -100,12 +100,16 @@ def run_kibot_docker(config:Param(f"kibot configuation file", str),
         print(f"OUTPUT cannot be an absolute path; it must be relative to ROOT={ root }.")
         return 1
 
-    cmd = (f"docker run --rm -v { root }:/workdir --workdir=\"/workdir\" "
-           f"setsoft/kicad_auto_test:latest /bin/bash -c \"kibot "
-           f"-c { config } "
+    UID = subprocess.check_output("id -u", shell=True).decode("utf-8").strip()
+    GID = subprocess.check_output("id -g", shell=True).decode("utf-8").strip()
+
+    cmd = (f"docker run --rm -v { os.path.abspath(root) }:/workdir --workdir=\"/workdir\" "
+           f"setsoft/kicad_auto_test:latest "
+           f"/bin/bash -c \"useradd --shell /bin/bash -u { UID } -o -c '' -m docker && "
+           f"runuser docker -c 'kibot -c { config } "
            f"-e { get_schematic_path(root)[len(root) + 1:] } "
            f"-b { get_board_path(root)[len(root) + 1:] } "
-           f"-d { output }\""
+           f"-d { output }'\""
     )
     if v:
         print(cmd)
