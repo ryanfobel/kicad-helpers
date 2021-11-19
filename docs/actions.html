@@ -47,7 +47,7 @@ nb_path: "notebooks/00_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L20" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Install various templates from the <code>kicad_helpers/templates</code> directory
 (ignoring anything in the project's <code>.gitignore</code> list).</p>
@@ -140,7 +140,6 @@ Rendering .kicad_helpers_config/pcb_pdf.yaml template.
 Rendering .kicad_helpers_config/pcb_svg.yaml template.
 Rendering .kicad_helpers_config/sch_pdf.yaml template.
 Rendering .kicad_helpers_config/sch_svg.yaml template.
-Rendering .kicad_helpers_config/manufacturers/all.yaml template.
 Rendering .kicad_helpers_config/manufacturers/default.yaml template.
 Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
 Rendering tests/tests.ipynb template.
@@ -166,7 +165,7 @@ Rendering tests/tests.ipynb template.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update/create BOM from KiCad schematic.</p>
 
@@ -517,7 +516,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update KiCad schematic from BOM file.</p>
 
@@ -619,7 +618,39 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default", manufacturer name, or "all""=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"kibot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Run kibot script in a local docker container.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export manufacturing files (gerber, drill, and position) by running kibot in a local docker container.</p>
 
@@ -666,7 +697,7 @@ Export manufacturing files (gerber, drill, and position) by running kibot in a l
 optional arguments:
   -h, --help                   show this help message and exit
   --root ROOT                  project root directory (default: .)
-  --manufacturer MANUFACTURER  &#34;default&#34;, manufacturer name, or &#34;all&#34; (default: default)
+  --manufacturer MANUFACTURER  &#34;default&#34; or manufacturer name (default: default)
   --v                          verbose (default: False)
   --output OUTPUT              output path relative to ROOT (default: .)
 
@@ -682,9 +713,9 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Running <code>kh_export_man</code> within your project dictory will export default manufacturing outputs (e.g., gerber, drill, and position files).</p>
-<div class="highlight"><pre><span></span>&gt; kh_export_man --output .output
-&gt; tree .outputs
+<p>Running <code>kh_export_man</code> within your project directory will export manufacturing outputs (e.g., gerber, drill, and position files).</p>
+<div class="highlight"><pre><span></span>&gt; kh_export_man --output outputs
+&gt; tree outputs
 </pre></div>
 
 </div>
@@ -702,27 +733,62 @@ optional arguments:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 .
-└── manufacturing
-    └── default
-        ├── gerbers
-        │   ├── 40-channel-hv-switching-board-NPTH.drl
-        │   ├── 40-channel-hv-switching-board.drl
-        │   ├── 40-channel-hv-switching-board.gbl
-        │   ├── 40-channel-hv-switching-board.gbo
-        │   ├── 40-channel-hv-switching-board.gbp
-        │   ├── 40-channel-hv-switching-board.gbs
-        │   ├── 40-channel-hv-switching-board.gl2
-        │   ├── 40-channel-hv-switching-board.gl3
-        │   ├── 40-channel-hv-switching-board.gm1
-        │   ├── 40-channel-hv-switching-board.gtl
-        │   ├── 40-channel-hv-switching-board.gto
-        │   ├── 40-channel-hv-switching-board.gtp
-        │   └── 40-channel-hv-switching-board.gts
-        └── position
-            ├── bottom_pos.pos
-            └── top_pos.pos
+├── gerbers
+│   ├── 40-channel-hv-switching-board-NPTH.drl
+│   ├── 40-channel-hv-switching-board.drl
+│   ├── 40-channel-hv-switching-board.gbl
+│   ├── 40-channel-hv-switching-board.gbo
+│   ├── 40-channel-hv-switching-board.gbp
+│   ├── 40-channel-hv-switching-board.gbs
+│   ├── 40-channel-hv-switching-board.gl2
+│   ├── 40-channel-hv-switching-board.gl3
+│   ├── 40-channel-hv-switching-board.gm1
+│   ├── 40-channel-hv-switching-board.gtl
+│   ├── 40-channel-hv-switching-board.gto
+│   ├── 40-channel-hv-switching-board.gtp
+│   └── 40-channel-hv-switching-board.gts
+└── position
+    ├── bottom_pos.pos
+    └── top_pos.pos
 
-4 directories, 15 files
+2 directories, 15 files
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ls -l </span><span class="si">{</span> <span class="n">output_path</span> <span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;whoami&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total 0
+drwxrwxrwx 1 ryan ryan 512 Nov 18 20:31 gerbers
+drwxrwxrwx 1 ryan ryan 512 Nov 18 20:31 position
+
+ryan
 
 </pre>
 </div>
@@ -736,14 +802,316 @@ optional arguments:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also generate manufacturer-specific outputs using the <code>--manufacturer</code> flag.</p>
-<div class="highlight"><pre><span></span>&gt; kh_export_man --manufacturer PCBWay --output .output
-&gt; tree .outputs
+<p>You can generate manufacturer-specific outputs using the <code>--manufacturer</code> flag, e.g.:</p>
+<div class="highlight"><pre><span></span>&gt; kh_export_man --manufacturer PCBWay --output outputs
 </pre></div>
+<p>Support for additional manufacturers can be added by creating a <code>*.yaml</code> file in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates/.kicad_helpers_config/manufacturers">.kicad_helpers_config/manufacturers</a> directory.</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Export the schematic by running kibot in a local docker container.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function can also be called via a command line script:</p>
+<blockquote><p>kh_export_sch --help</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_export_sch [-h] [--root ROOT] [--ext EXT] [--v] [--output OUTPUT]
+
+Export the schematic by running kibot in a local docker container.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --root ROOT      project root directory (default: .)
+  --ext EXT        svg or pdf (default: pdf)
+  --v              verbose (default: False)
+  --output OUTPUT  output path relative to ROOT (default: .)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>WARNING:(W008) Unable to find KiCad configuration file (/root/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
+WARNING:(W011) Missing default symbol library table (kibot.kibot.kicad.config - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:74HC595A (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:AQW214 (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:FERRITE (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:RESONATOR (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:TFM-125-02-X-DH (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:W25Q64FV (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.
+└── 40-channel-hv-switching-board-schematic.pdf
+
+0 directories, 1 file
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>WARNING:(W008) Unable to find KiCad configuration file (/root/.config/kicad/kicad_common) (kibot.kibot.kicad.config - log.py:82)
+WARNING:(W011) Missing default symbol library table (kibot.kibot.kicad.config - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:74HC595A (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:AQW214 (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:FERRITE (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:RESONATOR (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:TFM-125-02-X-DH (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W042) Missing doc-lib entry for sci-bots:W25Q64FV (kibot.kibot.kicad.v5_sch - log.py:82)
+WARNING:(W058) Missing KiCad main config file /root/.config/kicad/kicad_common (eeschema_do - misc.py:169) (kibot.kibot.kiplot - log.py:82)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.
+├── 40-channel-hv-switching-board-schematic.svg
+├── switches_0-19-switches_0-19.svg
+└── switches_20-39-switches_20-39.svg
+
+0 directories, 3 files
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Export the pcb layout by running kibot in a local docker container.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function can also be called via a command line script:</p>
+<blockquote><p>kh_export_pcb --help</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_export_pcb [-h] [--root ROOT] [--ext EXT] [--v] [--output OUTPUT]
+
+Export the pcb layout by running kibot in a local docker container.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --root ROOT      project root directory (default: .)
+  --ext EXT        svg or pdf (default: pdf)
+  --v              verbose (default: False)
+  --output OUTPUT  output path relative to ROOT (default: .)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.
+├── 40-channel-hv-switching-board-3_3V.pdf
+├── 40-channel-hv-switching-board-B_Mask.pdf
+├── 40-channel-hv-switching-board-B_Paste.pdf
+├── 40-channel-hv-switching-board-B_SilkS.pdf
+├── 40-channel-hv-switching-board-Back.pdf
+├── 40-channel-hv-switching-board-Edge_Cuts.pdf
+├── 40-channel-hv-switching-board-F_Mask.pdf
+├── 40-channel-hv-switching-board-F_Paste.pdf
+├── 40-channel-hv-switching-board-F_SilkS.pdf
+├── 40-channel-hv-switching-board-Front.pdf
+└── 40-channel-hv-switching-board-GND.pdf
+
+0 directories, 11 files
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.
+├── 40-channel-hv-switching-board-3_3V.svg
+├── 40-channel-hv-switching-board-B_Mask.svg
+├── 40-channel-hv-switching-board-B_Paste.svg
+├── 40-channel-hv-switching-board-B_SilkS.svg
+├── 40-channel-hv-switching-board-Back.svg
+├── 40-channel-hv-switching-board-Edge_Cuts.svg
+├── 40-channel-hv-switching-board-F_Mask.svg
+├── 40-channel-hv-switching-board-F_Paste.svg
+├── 40-channel-hv-switching-board-F_SilkS.svg
+├── 40-channel-hv-switching-board-Front.svg
+└── 40-channel-hv-switching-board-GND.svg
+
+0 directories, 11 files
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 
