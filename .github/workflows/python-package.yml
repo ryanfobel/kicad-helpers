@@ -27,7 +27,7 @@ jobs:
         rm _temp/.kicad_helpers_config/manufacturers/PCBWay.kibot.yaml
         kh_update --overwrite --root _temp
         python -c "from kicad_helpers import get_manufacturers; print(get_manufacturers('_temp'))"
-        kh_export_man --root _temp --output _temp/outputs
+        kh_export_man --v --root _temp --output _temp/outputs
         ls -l _temp/outputs
         rm -rf _temp/outputs
     # - name: Read all notebooks
