@@ -12,7 +12,7 @@ jobs:
     name: Generate KiCad outputs
     runs-on: ubuntu-latest
     env:
-      PROJECT_NAME: 40-channel-hv-switching-board
+      PROJECT_NAME: {{ project_name }}{% raw %}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -95,3 +95,4 @@ jobs:
         artifacts: "*.zip,*-BOM-*.csv"
         #bodyFile: "body.md"
         token: ${{ secrets.GITHUB_TOKEN }}
+{% raw %}
