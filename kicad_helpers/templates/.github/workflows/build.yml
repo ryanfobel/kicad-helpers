@@ -12,7 +12,7 @@ jobs:
     name: Generate KiCad outputs
     runs-on: ubuntu-latest
     env:
-      PROJECT_NAME: {{ project_name }}{% raw %}
+      PROJECT_NAME: 40-channel-hv-switching-board
     steps:
     - uses: actions/checkout@v2
       with:
@@ -27,37 +27,32 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install git+https://github.com/ryanfobel/KiField.git@add-quantity
         python -m pip install kicad_helpers
-    - uses: INTI-CMNB/KiBot@v1
-      with:
-        # Required - kibot config file
-        config: .kicad_helpers_config/config.kibot.yaml
-        # optional - schematic file
-        schema: '${{ env.PROJECT_NAME }}.sch'
-        # optional - PCB design file
-        board: '${{ env.PROJECT_NAME }}.kicad_pcb'
     - name: Get the commit hash
       id: get_commit_hash
       run: echo ::set-output name=GIT_HASH::$(git rev-parse --short "$GITHUB_SHA")
-    - name: Generate BOM
-      run: |
-        sudo chown -R runner:docker manufacturing
-        mkdir -p manufacturing/default/assembly_photos
-        mkdir -p manufacturing/PCBWay/assembly_photos
-        kh_sch_to_bom
-        cp "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv" "manufacturing/PCBWay/${{ env.PROJECT_NAME }}-BOM.csv"
     - name: Run tests
       run: |
         kh_test
     - name: Copy assembly photos to manufacturing
       run: |
+        sudo chown -R runner:docker manufacturing
+        mkdir -p manufacturing/default/assembly_photos
+        mkdir -p manufacturing/PCBWay/assembly_photos
         cp docs/png/front.png manufacturing/default/assembly_photos/front.png
         cp docs/png/back.png manufacturing/default/assembly_photos/back.png
         cp -r manufacturing/default/assembly_photos/*.png manufacturing/PCBWay/assembly_photos/
+    - name: Copy default BOM to other manufacturers
+      run: |
+        cp "manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv" "manufacturing/PCBWay/${{ env.PROJECT_NAME }}-BOM.csv"
     - name: Upload BOM artifact
       uses: actions/upload-artifact@v2
       with:
         name: ${{ env.PROJECT_NAME }}-BOM-${{ steps.get_commit_hash.outputs.GIT_HASH }}
         path: manufacturing/default/${{ env.PROJECT_NAME }}-BOM.csv
+    - name: Generate manufacturing outputs
+      run: |
+        kh_export_man --manufacturer default --output manufacturing/default
+        kh_export_man --manufacturer PCBWay --output manufacturing/PCBWay
     - name: Upload default manufacturing files
       uses: actions/upload-artifact@v2
       with:
@@ -68,6 +63,12 @@ jobs:
       with:
         name: ${{ env.PROJECT_NAME }}-PCBWay-manufacturing-files-${{ steps.get_commit_hash.outputs.GIT_HASH }}
         path: manufacturing/PCBWay
+    - name: Export pdf and svg docs
+      run: |
+        kh_export_sch --ext pdf --output docs/pdf
+        kh_export_sch --ext svg --output docs/svg
+        kh_export_pcb --ext pdf --output docs/pdf
+        kh_export_pcb --ext svg --output docs/svg
     - name: Upload docs
       uses: actions/upload-artifact@v2
       with:
@@ -94,4 +95,3 @@ jobs:
         artifacts: "*.zip,*-BOM-*.csv"
         #bodyFile: "body.md"
         token: ${{ secrets.GITHUB_TOKEN }}
-{% endraw %}
