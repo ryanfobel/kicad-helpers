@@ -87,6 +87,7 @@ To see the options that are available, run the command:
 
     /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
     
+    
 
 
 ## Import data from the BOM into the KiCad schematic
@@ -97,6 +98,7 @@ To see the options that are available, run the command:
 
     /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
     
+    
 
 
 ## Run all tests in the `tests` directory
@@ -105,10 +107,10 @@ To see the options that are available, run the command:
 > kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/tests.ipynb
+    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests-DESKTOP-PJTQFDE.ipynb
+    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
     All tests are passing!
     
-    None
 
 
 ## Contributors

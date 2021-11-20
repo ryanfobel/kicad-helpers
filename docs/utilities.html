@@ -36,6 +36,13 @@ nb_path: "notebooks/02_utilities.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Project-metadata/configuration">Project metadata/configuration<a class="anchor-link" href="#Project-metadata/configuration"> </a></h1><p>Metadata and configuration for the project are stored in the <code>.kicad_helpers_config</code> directory (including <a href="https://github.com/INTI-CMNB/KiBot">KiBot</a> config files for producting manufacturing outputs via continuous integration). Additional metadata (e.g., project summary, website, and manufacturing details) is stored in the project's <code>kitspace.yaml</code> file which makes it easy for other people to manufacture boards using <a href="https://kitspace.org/">https://kitspace.org/</a>.</p>
@@ -54,7 +61,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_git_root" class="doc_header"><code>get_git_root</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_git_root</code>(<strong><code>path</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_git_root" class="doc_header"><code>get_git_root</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_git_root</code>(<strong><code>path</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -85,7 +92,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'_temp'</code></em>)</p>
+<h4 id="setup_test_repo" class="doc_header"><code>setup_test_repo</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setup_test_repo</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'_temp'</code></em>)</p>
 </blockquote>
 <p>Setup a test KiCad repository to test against.</p>
 
@@ -124,7 +131,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_project_name" class="doc_header"><code>get_project_name</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_name</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_project_name" class="doc_header"><code>get_project_name</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_name</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the project name based on the name of the KiCad <code>*.pro</code> file.</p>
 
@@ -178,7 +185,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_project_metadata" class="doc_header"><code>get_project_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L58" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_project_metadata" class="doc_header"><code>get_project_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_project_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the project metatdata from the <code>kitspace.yaml</code> file.</p>
 
@@ -235,7 +242,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_schematic_path" class="doc_header"><code>get_schematic_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_schematic_path" class="doc_header"><code>get_schematic_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the path to the KiCad schematic.</p>
 
@@ -289,7 +296,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_bom_path" class="doc_header"><code>get_bom_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bom_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_bom_path" class="doc_header"><code>get_bom_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L99" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bom_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the path to the BOM.</p>
 
@@ -343,7 +350,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_board_path" class="doc_header"><code>get_board_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_board_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_board_path" class="doc_header"><code>get_board_path</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_board_path</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the path to the KiCad board file.</p>
 
@@ -397,7 +404,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_manufacturers" class="doc_header"><code>get_manufacturers</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_manufacturers</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_manufacturers" class="doc_header"><code>get_manufacturers</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_manufacturers</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get the supported manufacturers.</p>
 
@@ -451,7 +458,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_gitignore_list" class="doc_header"><code>get_gitignore_list</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L120" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_gitignore_list</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -545,7 +552,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
+<h4 id="in_gitignore" class="doc_header"><code>in_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L127" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>in_gitignore</code>(<strong><code>filename</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -576,7 +583,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
+<h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L136" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -607,7 +614,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_docker_cmd" class="doc_header"><code>run_docker_cmd</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_docker_cmd</code>(<strong><code>cmd</code></strong>, <strong><code>workdir</code></strong>, <strong><code>container</code></strong>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="run_docker_cmd" class="doc_header"><code>run_docker_cmd</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_docker_cmd</code>(<strong><code>cmd</code></strong>, <strong><code>workdir</code></strong>, <strong><code>container</code></strong>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Run a command in a docker container under a UID mapped to the current user.
 This ensures that the current user is owner of any files created in the
@@ -641,7 +648,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"KiBot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"KiBot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Run KiBot in a local docker container.</p>
 

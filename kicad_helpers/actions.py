@@ -14,7 +14,7 @@ from fastcore.script import *
 import pandas as pd
 
 from kicad_helpers import *
-from .utilities import _set_root
+from .utilities import _set_root, _run_cmd, _print_cmd_output
 
 # Cell
 @call_parse
@@ -71,7 +71,7 @@ def sch_to_bom(root:Param("project root directory", str)=".",
     cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }"
     if v:
         print(cmd)
-    subprocess.check_output(cmd, shell=True)
+    _print_cmd_output(cmd)
 
 # Cell
 @call_parse
@@ -85,7 +85,7 @@ def bom_to_sch(root:Param("project root directory", str)=".",
     cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --fields ~quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
     if v:
         print(cmd)
-    subprocess.check_output(cmd, shell=True)
+    _print_cmd_output(cmd)
 
 # Cell
 @call_parse

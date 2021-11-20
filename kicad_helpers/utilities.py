@@ -20,6 +20,16 @@ except ImportError:
 from fastcore.script import *
 
 # Cell
+def _run_cmd(cmd):
+    try:
+        return subprocess.check_output(cmd, shell=True).decode("utf-8")
+    except subprocess.CalledProcessError as e:
+        return e.output.decode("utf-8")
+
+def _print_cmd_output(cmd):
+    print(_run_cmd(cmd))
+
+# Cell
 def get_git_root(path="."):
     # Find the current projects' root directory
     git_repo = git.Repo(path, search_parent_directories=True)
