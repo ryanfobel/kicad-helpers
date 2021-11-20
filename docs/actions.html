@@ -144,7 +144,7 @@ Rendering .kicad_helpers_config/sch_pdf.yaml template.
 Rendering .kicad_helpers_config/sch_svg.yaml template.
 Rendering .kicad_helpers_config/manufacturers/default.yaml template.
 Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
-Rendering tests/tests.ipynb template.
+Rendering tests/Tests.ipynb template.
 
 </pre>
 </div>
@@ -695,41 +695,6 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── gerbers
-│   ├── 40-channel-hv-switching-board-NPTH.drl
-│   ├── 40-channel-hv-switching-board.drl
-│   ├── 40-channel-hv-switching-board.gbl
-│   ├── 40-channel-hv-switching-board.gbo
-│   ├── 40-channel-hv-switching-board.gbp
-│   ├── 40-channel-hv-switching-board.gbs
-│   ├── 40-channel-hv-switching-board.gl2
-│   ├── 40-channel-hv-switching-board.gl3
-│   ├── 40-channel-hv-switching-board.gm1
-│   ├── 40-channel-hv-switching-board.gtl
-│   ├── 40-channel-hv-switching-board.gto
-│   ├── 40-channel-hv-switching-board.gtp
-│   └── 40-channel-hv-switching-board.gts
-└── position
-    ├── bottom_pos.pos
-    └── top_pos.pos
-
-2 directories, 15 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -788,30 +753,6 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_export_sch [-h] [--root ROOT] [--ext EXT] [--v] [--output OUTPUT]
-
-Export the schematic by running KiBot in a local docker container.
-
-optional arguments:
-  -h, --help       show this help message and exit
-  --root ROOT      project root directory (default: .)
-  --ext EXT        svg or pdf (default: pdf)
-  --v              verbose (default: False)
-  --output OUTPUT  output path relative to ROOT (default: .)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -829,24 +770,6 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.
-└── 40-channel-hv-switching-board-schematic.pdf
-
-0 directories, 1 file
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -863,26 +786,6 @@ optional arguments:
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>.
-├── 40-channel-hv-switching-board-schematic.svg
-├── switches_0-19-switches_0-19.svg
-└── switches_20-39-switches_20-39.svg
-
-0 directories, 3 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -932,30 +835,6 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_export_pcb [-h] [--root ROOT] [--ext EXT] [--v] [--output OUTPUT]
-
-Export the pcb layout by running KiBot in a local docker container.
-
-optional arguments:
-  -h, --help       show this help message and exit
-  --root ROOT      project root directory (default: .)
-  --ext EXT        svg or pdf (default: pdf)
-  --v              verbose (default: False)
-  --output OUTPUT  output path relative to ROOT (default: .)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -973,35 +852,6 @@ optional arguments:
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── 40-channel-hv-switching-board-3_3V.pdf
-├── 40-channel-hv-switching-board-B_Mask.pdf
-├── 40-channel-hv-switching-board-B_Paste.pdf
-├── 40-channel-hv-switching-board-B_SilkS.pdf
-├── 40-channel-hv-switching-board-Back.pdf
-├── 40-channel-hv-switching-board-Edge_Cuts.pdf
-├── 40-channel-hv-switching-board-F_Mask.pdf
-├── 40-channel-hv-switching-board-F_Paste.pdf
-├── 40-channel-hv-switching-board-F_SilkS.pdf
-├── 40-channel-hv-switching-board-Front.pdf
-└── 40-channel-hv-switching-board-GND.pdf
-
-0 directories, 11 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -1018,35 +868,6 @@ optional arguments:
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-.
-├── 40-channel-hv-switching-board-3_3V.svg
-├── 40-channel-hv-switching-board-B_Mask.svg
-├── 40-channel-hv-switching-board-B_Paste.svg
-├── 40-channel-hv-switching-board-B_SilkS.svg
-├── 40-channel-hv-switching-board-Back.svg
-├── 40-channel-hv-switching-board-Edge_Cuts.svg
-├── 40-channel-hv-switching-board-F_Mask.svg
-├── 40-channel-hv-switching-board-F_Paste.svg
-├── 40-channel-hv-switching-board-F_SilkS.svg
-├── 40-channel-hv-switching-board-Front.svg
-└── 40-channel-hv-switching-board-GND.svg
-
-0 directories, 11 files
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -1098,29 +919,6 @@ report to <code>stdout</code>.</p>
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_run_erc [-h] [--root ROOT] [--v]
-
-Run electrical rules check (ERC) to verify schematic connections. It checks for output pin conflicts, missing drivers
-and unconnected pins. Print the report to `stdout`.
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --root ROOT  project root directory (default: .)
-  --v          verbose (default: False)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -1137,30 +935,6 @@ optional arguments:
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ERC report (Fri Nov 19 22:16:46 2021, Encoding UTF8 )
-
-***** Sheet /
-
-***** Sheet /switches_0-19/
-
-***** Sheet /switches_20-39/
-
- ** ERC messages: 0  Errors 0  Warnings 0
-
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -1220,35 +994,13 @@ optional arguments:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_run_drc [-h] [--root ROOT] [--v]
-
-Run design rules check (DRC) and print the report to `stdout`.
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --root ROOT  project root directory (default: .)
-  --v          verbose (default: False)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The DRC report is printed to <code>stdout</code> and can be redirected to a file:</p>
-<div class="highlight"><pre><span></span>&gt; kh_run_drc --s &gt; drc_report.txt
+<div class="highlight"><pre><span></span>&gt; kh_run_drc &gt; drc_report.txt
 &gt; cat drc_report.txt
 </pre></div>
 
@@ -1258,41 +1010,6 @@ optional arguments:
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>** Drc report for /workdir/40-channel-hv-switching-board.kicad_pcb **
-** Created on 2021-11-19 22:17:06 **
-
-** Found 4 DRC errors **
-ErrType(45): Courtyards overlap
-    @(90.400 mm, 105.600 mm): Footprint C6 on Front
-    @(88.500 mm, 105.600 mm): Footprint C7 on Front
-ErrType(45): Courtyards overlap
-    @(37.725 mm, 111.425 mm): Footprint R99 on Front
-    @(34.725 mm, 111.425 mm): Footprint R125 on Front
-ErrType(45): Courtyards overlap
-    @(37.750 mm, 113.475 mm): Footprint R100 on Front
-    @(34.725 mm, 113.475 mm): Footprint R126 on Front
-ErrType(45): Courtyards overlap
-    @(44.450 mm, 110.200 mm): Footprint FB1 on Back
-    @(44.450 mm, 111.900 mm): Footprint FB3 on Back
-
-** Found 0 unconnected pads **
-
-** End of Report **
-
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
