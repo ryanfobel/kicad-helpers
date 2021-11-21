@@ -21,10 +21,7 @@ from fastcore.script import *
 
 # Cell
 def _run_cmd(cmd):
-    try:
-        return subprocess.check_output(cmd, shell=True).decode("utf-8")
-    except subprocess.CalledProcessError as e:
-        return e.output.decode("utf-8")
+    return subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True).decode("utf-8")
 
 def _print_cmd_output(cmd):
     print(_run_cmd(cmd))
@@ -166,8 +163,7 @@ def run_kibot_docker(config:Param(f"KiBot configuation file", str),
     """
     root = _set_root(root)
     if os.path.abspath(output) == output:
-        print(f"OUTPUT cannot be an absolute path; it must be relative to ROOT={ root }.")
-        return 1
+        raise RuntimeError(f"OUTPUT cannot be an absolute path; it must be relative to ROOT={ root }.")
 
     cmd = (f"kibot -c { config } "
        f"-e { get_schematic_path(root)[len(root) + 1:] } "

@@ -12,7 +12,7 @@ from nbdev.test import nbglob, num_cpus, parallel, _test_one, Path
 import pandas as pd
 import pandera as pa
 from kicad_helpers import *
-from .utilities import _set_root
+from .utilities import _set_root, _print_cmd_output
 
 # Cell
 def test_erc(root="."):

@@ -98,8 +98,7 @@ def export_manufacturing(root:Param("project root directory", str)=".",
     """
     root = _set_root(root)
     if manufacturer not in get_manufacturers(root):
-        print(f"MANUFACTURER must be one of the following: { ', '.join(get_manufacturers(root)) }.")
-        return 1
+        raise RuntimeError(f"MANUFACTURER must be one of the following: { ', '.join(get_manufacturers(root)) }.")
 
     config = f".kicad_helpers_config/manufacturers/{ manufacturer }.yaml"
     run_kibot_docker(config=config, root=root, v=v, output=output)
@@ -117,8 +116,7 @@ def export_sch(root:Param("project root directory", str)=".",
     supported_types = ["svg", "pdf"]
 
     if ext not in supported_types:
-        print(f"EXT must be one of: { ','.join(supported_types) }.")
-        return 1
+        raise RuntimeError(f"EXT must be one of: { ','.join(supported_types) }.")
 
     config = f".kicad_helpers_config/sch_{ ext }.yaml"
     run_kibot_docker(config=config, root=root, v=v, output=output)
@@ -136,8 +134,7 @@ def export_pcb(root:Param("project root directory", str)=".",
     supported_types = ["svg", "pdf"]
 
     if ext not in supported_types:
-        print(f"EXT must be one of: { ','.join(supported_types) }.")
-        return 1
+        raise RuntimeError(f"EXT must be one of: { ','.join(supported_types) }.")
 
     config = f".kicad_helpers_config/pcb_{ ext }.yaml"
     run_kibot_docker(config=config, root=root, v=v, output=output)

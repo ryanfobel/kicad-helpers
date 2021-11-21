@@ -107,7 +107,6 @@ To see the options that are available, run the command:
 > kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests-DESKTOP-PJTQFDE.ipynb
     testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
     All tests are passing!
     
