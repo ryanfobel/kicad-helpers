@@ -43,9 +43,8 @@ def update_templates(v:Param("verbose", bool),
 
                     if os.path.exists(dst_path):
                         if not overwrite:
-                            if v:
-                                print(f"{ path } already exists")
-                                exists_flag = True
+                            print(f"{ path } already exists")
+                            exists_flag = True
                             continue
 
                     with open(src_path) as f:
