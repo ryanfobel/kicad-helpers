@@ -49,8 +49,8 @@ nb_path: "notebooks/00_actions.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L20" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
-<p>Install various templates from the <code>kicad_helpers/templates</code> directory
-(ignoring anything in the project's <code>.gitignore</code> list).</p>
+<p>Install templates from the <code>kicad_helpers/templates</code> directory (ignoring
+anything in the project's <code>.gitignore</code> list).</p>
 
 </div>
 
@@ -71,13 +71,154 @@ nb_path: "notebooks/00_actions.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Similar to <a href="https://nbdev.fast.ai/tutorial.html#Set-up-Repo">nbdev_new</a>. Templates are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a> folder and are included with the python package by adding <code>graft kicad_helpers/templates</code> to the <a href="https://github.com/ryanfobel/kicad-helpers/blob/main/MANIFEST.in">MANIFEST.in</a> file.</p>
+<p>The following templates are stored in the <a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/templates">kicad_helpers/templates</a> folder and are included with the python package by adding <code>graft kicad_helpers/templates</code> to the <a href="https://github.com/ryanfobel/kicad-helpers/blob/main/MANIFEST.in">MANIFEST.in</a> file:</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>├── .github
+│   └── workflows
+│       └── build.yml
+├── .kicad_helpers_config
+│   ├── drc.yaml
+│   ├── erc.yaml
+│   ├── manufacturers
+│   │   ├── PCBWay.yaml
+│   │   └── default.yaml
+│   ├── pcb_pdf.yaml
+│   ├── pcb_svg.yaml
+│   ├── sch_pdf.yaml
+│   └── sch_svg.yaml
+├── kitspace.yaml
+├── settings.ini
+└── tests
+    └── Tests.ipynb
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="install_git_filters" class="doc_header"><code>install_git_filters</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_git_filters</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+</blockquote>
+<p>Install git filters to prevent insignificant changes to the kicad
+<code>*.pro</code> and <code>*.sch</code> files from being tracked by git.</p>
+<p>See: <a href="https://jnavila.github.io/plotkicadsch/">https://jnavila.github.io/plotkicadsch/</a></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="update_project" class="doc_header"><code>update_project</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L99" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_project</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+</blockquote>
+<p>Setup a new project (or update an existing project) with templates from
+the <code>kicad_helpers/templates</code> directory.
+Also installs git filters to prevent insignificant changes to the kicad
+<code>*.pro</code> and <code>*.sch</code> files from being tracked by git (see
+<a href="https://jnavila.github.io/plotkicadsch/">https://jnavila.github.io/plotkicadsch/</a> for more details).</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">update_project</span><span class="o">.</span><span class="vm">__doc__</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Setup a new project (or update an existing project) with templates from\n    the `kicad_helpers/templates` directory.\n    Also installs git filters to prevent insignificant changes to the kicad\n    `*.pro` and `*.sch` files from being tracked by git (see\n    https://jnavila.github.io/plotkicadsch/ for more details).\n    &#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This function is available as a command line script:</p>
 <div class="highlight"><pre><span></span>&gt; kh_update --help
 </pre></div>
 
@@ -96,8 +237,9 @@ nb_path: "notebooks/00_actions.ipynb"
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
 
-Install various templates from the `kicad_helpers/templates` directory (ignoring anything in the project&#39;s `.gitignore`
-list).
+Setup a new project (or update an existing project) with templates from the `kicad_helpers/templates` directory. Also
+installs git filters to prevent insignificant changes to the kicad `*.pro` and `*.sch` files from being tracked by git
+(see https://jnavila.github.io/plotkicadsch/ for more details).
 
 optional arguments:
   -h, --help   show this help message and exit
@@ -133,18 +275,20 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Rendering kitspace.yaml template.
-Rendering settings.ini template.
-Rendering .github/workflows/build.yml template.
-Rendering .kicad_helpers_config/drc.yaml template.
-Rendering .kicad_helpers_config/erc.yaml template.
-Rendering .kicad_helpers_config/pcb_pdf.yaml template.
-Rendering .kicad_helpers_config/pcb_svg.yaml template.
-Rendering .kicad_helpers_config/sch_pdf.yaml template.
-Rendering .kicad_helpers_config/sch_svg.yaml template.
-Rendering .kicad_helpers_config/manufacturers/default.yaml template.
-Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
-Rendering tests/Tests.ipynb template.
+<pre>Render kitspace.yaml template.
+Render settings.ini template.
+Render .github/workflows/build.yml template.
+Render .kicad_helpers_config/drc.yaml template.
+Render .kicad_helpers_config/erc.yaml template.
+Render .kicad_helpers_config/pcb_pdf.yaml template.
+Render .kicad_helpers_config/pcb_svg.yaml template.
+Render .kicad_helpers_config/sch_pdf.yaml template.
+Render .kicad_helpers_config/sch_svg.yaml template.
+Render .kicad_helpers_config/manufacturers/default.yaml template.
+Render .kicad_helpers_config/manufacturers/PCBWay.yaml template.
+Render tests/Tests.ipynb template.
+Add filters to .gitattr file
+Add filters to git config
 
 </pre>
 </div>
@@ -167,7 +311,7 @@ Rendering tests/Tests.ipynb template.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update/create BOM from KiCad schematic.</p>
 
@@ -519,7 +663,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update KiCad schematic from BOM file.</p>
 
@@ -622,9 +766,10 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L139" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
-<p>Export manufacturing files (gerber, drill, and position) by running KiBot in a local docker container.</p>
+<p>Export manufacturing files (gerber, drill, and position) by running
+KiBot in a local docker container.</p>
 
 </div>
 
@@ -756,7 +901,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L155" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the schematic by running KiBot in a local docker container.</p>
 
@@ -900,7 +1045,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L172" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the pcb layout by running KiBot in a local docker container.</p>
 
@@ -1063,11 +1208,11 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_erc" class="doc_header"><code>run_erc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L142" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_erc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="run_erc" class="doc_header"><code>run_erc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_erc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Run electrical rules check (ERC) to verify schematic connections. It checks
-for output pin conflicts, missing drivers and unconnected pins. Print the
-report to <code>stdout</code>.</p>
+<p>Run electrical rules check (ERC) to verify schematic connections. It
+checks for output pin conflicts, missing drivers and unconnected pins.
+Print the report to <code>stdout</code>.</p>
 
 </div>
 
@@ -1145,7 +1290,7 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ERC report (Sun Nov 21 03:16:03 2021, Encoding UTF8 )
+<pre>ERC report (Mon Nov 22 16:03:01 2021, Encoding UTF8 )
 
 ***** Sheet /
 
@@ -1177,7 +1322,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_drc" class="doc_header"><code>run_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L169" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_drc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="run_drc" class="doc_header"><code>run_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_drc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Run design rules check (DRC) and print the report to <code>stdout</code>.</p>
 
@@ -1267,7 +1412,7 @@ optional arguments:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>** Drc report for /workdir/40-channel-hv-switching-board.kicad_pcb **
-** Created on 2021-11-21 03:16:24 **
+** Created on 2021-11-22 16:03:16 **
 
 ** Found 4 DRC errors **
 ErrType(45): Courtyards overlap

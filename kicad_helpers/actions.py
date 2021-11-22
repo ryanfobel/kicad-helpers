@@ -50,19 +50,21 @@ def update_templates(v:Param("verbose", bool),
 
                     with open(dst_path, "w") as f:
                         if v:
-                            print(f"Rendering { path } template.")
+                            print(f"Render { path } template.")
                         f.write(template.render(**metadata))
 
     if not overwrite and exists_flag:
         print("To overwrite existing files, use the --overwrite flag.")
 
 # Cell
-def install_git_filters(root):
+def install_git_filters(root=".", v=False):
     """Install git filters to prevent insignificant changes to the kicad
     `*.pro` and `*.sch` files from being tracked by git.
 
     See: https://jnavila.github.io/plotkicadsch/
     """
+    root = _set_root(root)
+
     # Open existing `.gitattributes` file
     gitattr_path = os.path.join(root, ".gitattributes")
     if os.path.exists(gitattr_path):
@@ -75,12 +77,17 @@ def install_git_filters(root):
         if filt not in gitattr:
             gitattr.append(filt)
 
+    if v:
+        print("Add filters to .gitattr file")
+
     # Add filters for kicad project and schematic files
     add_filter(gitattr, "*.pro filter=kicad_project\n")
     add_filter(gitattr, "*.sch filter=kicad_sch\n")
-
     with open(gitattr_path, "w") as f:
         f.writelines(gitattr)
+
+    if v:
+        print("Add filters to git config")
 
     # Add filters to the project's git config
     _run_cmd(f"cd { root } && git config filter.kicad_project.clean \"sed -E 's/^update=.*$/update=Date/'\"")
@@ -93,20 +100,21 @@ def install_git_filters(root):
 def update_project(v:Param("verbose", bool),
                    overwrite:Param("overwrite existing templates", bool),
                    root:Param("project root directory", str)="."):
-    """Setup a new project with templates from the `kicad_helpers/templates`
-    directory and install git filters to prevent insignificant changes to the
-    kicad `*.pro` and `*.sch` files from being tracked by git.
+    """Setup a new project (or update an existing project) with templates from
+    the `kicad_helpers/templates` directory.
+    Also installs git filters to prevent insignificant changes to the kicad
+    `*.pro` and `*.sch` files from being tracked by git (see
+    https://jnavila.github.io/plotkicadsch/ for more details).
     """
-    update_templates(v, overwrite, root)
-    install_git_filters(root)
+    update_templates(v=v, overwrite=overwrite, root=root)
+    install_git_filters(root=root, v=v)
 
 # Cell
 @call_parse
 def sch_to_bom(root:Param("project root directory", str)=".",
                v:Param("verbose", bool)=False,
                overwrite:Param("update existing schematic", bool)=False):
-    """
-    Update/create BOM from KiCad schematic.
+    """Update/create BOM from KiCad schematic.
     """
     root = _set_root(root)
     cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }"
@@ -119,8 +127,7 @@ def sch_to_bom(root:Param("project root directory", str)=".",
 def bom_to_sch(root:Param("project root directory", str)=".",
                v:Param("verbose", bool)=False,
                overwrite:Param("update existing schematic", bool)=False):
-    """
-    Update KiCad schematic from BOM file.
+    """Update KiCad schematic from BOM file.
     """
     root = _set_root(root)
     cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --fields ~quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
@@ -134,8 +141,8 @@ def export_manufacturing(root:Param("project root directory", str)=".",
                          manufacturer:Param(f"\"default\" or manufacturer name", str)="default",
                          v:Param("verbose", bool)=False,
                          output:Param("output path relative to ROOT")="."):
-    """
-    Export manufacturing files (gerber, drill, and position) by running KiBot in a local docker container.
+    """Export manufacturing files (gerber, drill, and position) by running
+    KiBot in a local docker container.
     """
     root = _set_root(root)
     if manufacturer not in get_manufacturers(root):
@@ -150,8 +157,7 @@ def export_sch(root:Param("project root directory", str)=".",
                ext:Param(f"svg or pdf", str)="pdf",
                v:Param("verbose", bool)=False,
                output:Param("output path relative to ROOT")="."):
-    """
-    Export the schematic by running KiBot in a local docker container.
+    """Export the schematic by running KiBot in a local docker container.
     """
     root = _set_root(root)
     supported_types = ["svg", "pdf"]
@@ -168,8 +174,7 @@ def export_pcb(root:Param("project root directory", str)=".",
                ext:Param(f"svg or pdf", str)="pdf",
                v:Param("verbose", bool)=False,
                output:Param("output path relative to ROOT")="."):
-    """
-    Export the pcb layout by running KiBot in a local docker container.
+    """Export the pcb layout by running KiBot in a local docker container.
     """
     root = _set_root(root)
     supported_types = ["svg", "pdf"]
@@ -184,10 +189,9 @@ def export_pcb(root:Param("project root directory", str)=".",
 @call_parse
 def run_erc(root:Param("project root directory", str)=".",
             v:Param("verbose", bool)=False):
-    """
-    Run electrical rules check (ERC) to verify schematic connections. It checks
-    for output pin conflicts, missing drivers and unconnected pins. Print the
-    report to `stdout`.
+    """Run electrical rules check (ERC) to verify schematic connections. It
+    checks for output pin conflicts, missing drivers and unconnected pins.
+    Print the report to `stdout`.
     """
     root = _set_root(root)
     cmd = f"eeschema_do run_erc { get_schematic_path(root)[len(root) + 1:] } ."
@@ -211,8 +215,7 @@ def run_erc(root:Param("project root directory", str)=".",
 @call_parse
 def run_drc(root:Param("project root directory", str)=".",
             v:Param("verbose", bool)=False):
-    """
-    Run design rules check (DRC) and print the report to `stdout`.
+    """Run design rules check (DRC) and print the report to `stdout`.
     """
     root = _set_root(root)
     cmd = f"pcbnew_do run_drc { get_board_path(root)[len(root) + 1:] } ."
