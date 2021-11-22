@@ -28,7 +28,11 @@ index = {"update_templates": "00_actions.ipynb",
          "in_gitignore": "02_utilities.ipynb",
          "install_python_package": "02_utilities.ipynb",
          "run_docker_cmd": "02_utilities.ipynb",
-         "run_kibot_docker": "02_utilities.ipynb"}
+         "run_kibot_docker": "02_utilities.ipynb",
+         "get_board_metadata": "02_utilities.ipynb",
+         "update_board_metadata": "02_utilities.ipynb",
+         "get_schematic_metadata": "02_utilities.ipynb",
+         "update_schematic_metadata": "02_utilities.ipynb"}
 
 modules = ["actions.py",
            "test.py",

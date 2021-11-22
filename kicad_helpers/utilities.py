@@ -2,11 +2,13 @@
 
 __all__ = ['get_git_root', 'setup_test_repo', 'get_project_name', 'get_project_metadata', 'get_schematic_path',
            'get_bom_path', 'get_board_path', 'get_manufacturers', 'get_gitignore_list', 'in_gitignore',
-           'install_python_package', 'run_docker_cmd', 'run_kibot_docker']
+           'install_python_package', 'run_docker_cmd', 'run_kibot_docker', 'get_board_metadata',
+           'update_board_metadata', 'get_schematic_metadata', 'update_schematic_metadata']
 
 # Cell
 import glob
 import os
+import re
 import subprocess
 import tempfile
 from pprint import pprint
@@ -175,3 +177,86 @@ def run_kibot_docker(config:Param(f"KiBot configuation file", str),
                    container="setsoft/kicad_auto_test:latest",
                    v=v
     )
+
+# Cell
+def get_board_metadata(root="."):
+    """Get metadata from the `*.kicad_pcb` board file.
+    """
+    root = _set_root(root)
+    with open(get_board_path(root), 'r') as f:
+        board = f.read()
+    matches = re.search("\(title_block.*title (?P<title>[^\)]*)\)"
+        ".*date (?P<date>[^\)]*)\)"
+        ".*rev (?P<rev>[^\)]*)\)"
+        ".*company (?P<company>[^\)]*)\)",
+        board, re.DOTALL
+    )
+    return matches.groupdict()
+
+# Cell
+def update_board_metadata(update_dict, root="."):
+    """Update metadata in the `*.kicad_pcb` board file.
+    """
+    root = _set_root(root)
+    with open(get_board_path(root), 'r') as f:
+        board = f.read()
+
+    for key, value in update_dict.items():
+        if " " in value and not value.startswith('\"') and not value.endswith('\"'):
+            value = '\"' + value + '\"'
+        board, n = re.subn(f"(?s)(?P<pre>\(title_block.*{ key } )[^\)]*\)",
+            f"\g<pre>{ value })",
+            board
+        )
+        assert n == 1
+    with open(get_board_path(root), 'w') as f:
+        f.write(board)
+
+# Cell
+def get_schematic_metadata(root, filename=None):
+    """Get metadata from a `*.sch` schematic file.
+    """
+    if filename is None:
+        filename = get_schematic_path(root)
+    elif os.path.abspath(filename) != filename:
+        filename = os.path.join(root, filename)
+
+    with open(filename, 'r') as f:
+        schematic = f.read()
+
+    matches = re.search("Title (?P<Title>[^\n]*)\n"
+        ".*Date (?P<Date>[^\n]*)\n"
+        ".*Rev (?P<Rev>[^\n]*)\n"
+        ".*Comp (?P<Comp>[^\n]*)\n",
+        schematic, re.DOTALL
+    )
+
+    return matches.groupdict()
+
+# Cell
+def update_schematic_metadata(update_dict:dict,      # keys/values to update
+                              root:str=".",          # project root directory
+                              all_sheets:bool=True): # update subsheets
+    """Update metadata in a `*.sch` schematic file.
+    """
+    root = _set_root(root)
+
+    if all_sheets:
+        files = glob.glob(os.path.join(root, "*.sch"))
+    else:
+        files = [get_schematic_path(root)]
+
+    for file in files:
+        with open(file, 'r') as f:
+            schematic = f.read()
+
+        for key, value in update_dict.items():
+            if not value.startswith('\"') and not value.endswith('\"'):
+                value = '\"' + value + '\"'
+            schematic, n = re.subn(f"(?s)(?P<pre>{ key } )([^\n]*)\n",
+                f"\g<pre>{ value }\n",
+                schematic
+            )
+            assert n == 1
+        with open(file, 'w') as f:
+            f.write(schematic)
