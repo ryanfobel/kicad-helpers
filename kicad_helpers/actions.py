@@ -102,8 +102,10 @@ def install_git_filters(root=".", v=False):
     # Add filters to the project's git config
     _run_cmd(f"cd { root } && git config filter.kicad_project.clean \"sed -E 's/^update=.*$/update=Date/'\"")
     _run_cmd(f"cd { root } && git config filter.kicad_project.smudge cat")
-    _run_cmd(f"cd { root } && git config filter.kicad_sch.clean \"sed -E 's/#(PWR|FLG)[0-9]+/#\1?/'\"")
-    _run_cmd(f"cd { root } && git config filter.kicad_sch.smudge cat")
+
+    # This seems to break ERC checking. Disable for now...
+    #_run_cmd(f"cd { root } && git config filter.kicad_sch.clean \"sed -E 's/#(PWR|FLG)[0-9]+/#\1?/'\"")
+    #_run_cmd(f"cd { root } && git config filter.kicad_sch.smudge cat")
 
 # Cell
 

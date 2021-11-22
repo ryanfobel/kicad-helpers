@@ -57,8 +57,16 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
     Render .kicad_helpers_config/manufacturers/default.yaml template.
     Render .kicad_helpers_config/manufacturers/PCBWay.yaml template.
     Render tests/Tests.ipynb template.
-    Add filters to .gitattr file
-    Add filters to git config
+    "*.pro filter=kicad_project" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitattributes
+    "*.sch filter=kicad_sch" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitattributes
+    Add filters to git config.
+    "_autosave*" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "*bak" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "*.xml" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    ".ipynb_checkpoints" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "*-erc.txt" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "*-drc.txt" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "kibot_errors.filter" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
     
 
 
