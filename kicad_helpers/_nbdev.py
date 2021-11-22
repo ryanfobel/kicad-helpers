@@ -3,6 +3,8 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"update_templates": "00_actions.ipynb",
+         "install_git_filters": "00_actions.ipynb",
+         "update_project": "00_actions.ipynb",
          "sch_to_bom": "00_actions.ipynb",
          "bom_to_sch": "00_actions.ipynb",
          "export_manufacturing": "00_actions.ipynb",

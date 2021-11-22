@@ -45,18 +45,20 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
 > kh_update --v --overwrite
 ```
 
-    Rendering kitspace.yaml template.
-    Rendering settings.ini template.
-    Rendering .github/workflows/build.yml template.
-    Rendering .kicad_helpers_config/drc.yaml template.
-    Rendering .kicad_helpers_config/erc.yaml template.
-    Rendering .kicad_helpers_config/pcb_pdf.yaml template.
-    Rendering .kicad_helpers_config/pcb_svg.yaml template.
-    Rendering .kicad_helpers_config/sch_pdf.yaml template.
-    Rendering .kicad_helpers_config/sch_svg.yaml template.
-    Rendering .kicad_helpers_config/manufacturers/default.yaml template.
-    Rendering .kicad_helpers_config/manufacturers/PCBWay.yaml template.
-    Rendering tests/Tests.ipynb template.
+    Render kitspace.yaml template.
+    Render settings.ini template.
+    Render .github/workflows/build.yml template.
+    Render .kicad_helpers_config/drc.yaml template.
+    Render .kicad_helpers_config/erc.yaml template.
+    Render .kicad_helpers_config/pcb_pdf.yaml template.
+    Render .kicad_helpers_config/pcb_svg.yaml template.
+    Render .kicad_helpers_config/sch_pdf.yaml template.
+    Render .kicad_helpers_config/sch_svg.yaml template.
+    Render .kicad_helpers_config/manufacturers/default.yaml template.
+    Render .kicad_helpers_config/manufacturers/PCBWay.yaml template.
+    Render tests/Tests.ipynb template.
+    Add filters to .gitattr file
+    Add filters to git config
     
 
 
@@ -68,8 +70,9 @@ To see the options that are available, run the command:
 
     usage: kh_update [-h] [--v] [--overwrite] [--root ROOT]
     
-    Install various templates from the `kicad_helpers/templates` directory (ignoring anything in the project's `.gitignore`
-    list).
+    Setup a new project (or update an existing project) with templates from the `kicad_helpers/templates` directory. Also
+    installs git filters to prevent insignificant changes to the kicad `*.pro` and `*.sch` files from being tracked by git
+    (see https://jnavila.github.io/plotkicadsch/ for more details).
     
     optional arguments:
       -h, --help   show this help message and exit
