@@ -299,7 +299,7 @@ def set_date(date:Param("date (defaults to today's date)", str)=None,
 def set_revision(revision:Param("revision", str),
                  root:Param("project root directory", str)=".",
                  v:Param("verbose", bool)=False):
-    """Set the revision in all schematic and layout files.
+    """Set the revision in all schematic and board files.
     """
     root = _set_root(root)
     update_schematic_metadata({"Rev": revision},
