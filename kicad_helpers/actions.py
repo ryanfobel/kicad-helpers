@@ -162,7 +162,7 @@ def sch_to_bom(root:Param("project root directory", str)=".",
     """Update/create BOM from KiCad schematic.
     """
     root = _set_root(root)
-    cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }"
+    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }"
     if v:
         print(cmd)
     _print_cmd_output(cmd)
@@ -175,7 +175,7 @@ def bom_to_sch(root:Param("project root directory", str)=".",
     """Update KiCad schematic from BOM file.
     """
     root = _set_root(root)
-    cmd = f"{ sys.executable } -m kifield --nobackup --overwrite --fields ~quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
+    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --fields ~quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
     if v:
         print(cmd)
     _print_cmd_output(cmd)
