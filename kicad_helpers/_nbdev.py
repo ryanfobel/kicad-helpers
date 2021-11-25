@@ -3,6 +3,7 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"update_templates": "00_actions.ipynb",
+         "add_badges": "00_actions.ipynb",
          "install_git_filters": "00_actions.ipynb",
          "update_gitignore": "00_actions.ipynb",
          "update_project": "00_actions.ipynb",
@@ -34,7 +35,9 @@ index = {"update_templates": "00_actions.ipynb",
          "get_board_metadata": "02_utilities.ipynb",
          "update_board_metadata": "02_utilities.ipynb",
          "get_schematic_metadata": "02_utilities.ipynb",
-         "update_schematic_metadata": "02_utilities.ipynb"}
+         "update_schematic_metadata": "02_utilities.ipynb",
+         "github_badge": "02_utilities.ipynb",
+         "kitspace_badge": "02_utilities.ipynb"}
 
 modules = ["actions.py",
            "test.py",

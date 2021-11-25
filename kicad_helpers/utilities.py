@@ -3,7 +3,7 @@
 __all__ = ['get_git_root', 'setup_test_repo', 'get_project_name', 'get_project_metadata', 'get_schematic_path',
            'get_bom_path', 'get_board_path', 'get_manufacturers', 'get_gitignore_list', 'in_gitignore',
            'run_docker_cmd', 'run_kibot_docker', 'get_board_metadata', 'update_board_metadata',
-           'get_schematic_metadata', 'update_schematic_metadata']
+           'get_schematic_metadata', 'update_schematic_metadata', 'github_badge', 'kitspace_badge']
 
 # Cell
 import glob
@@ -12,6 +12,7 @@ import re
 import subprocess
 import tempfile
 from pprint import pprint
+import urllib.parse
 
 import git
 from yaml import load, dump
@@ -40,7 +41,9 @@ def setup_test_repo(root:Param("project root directory", str)="_temp"):
     """Setup a test KiCad repository to test against.
     """
     if not os.path.exists(root):
-        subprocess.check_call(f"git clone --recursive https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }", shell=True)
+        _run_cmd(f"git clone --recursive https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }")
+    else:
+        _run_cmd(f"cd { root } && git pull")
 
 # Cell
 def _set_root(root):
@@ -258,3 +261,21 @@ def update_schematic_metadata(update_dict:dict,      # keys/values to update
             assert n == 1
         with open(file, 'w') as f:
             f.write(schematic)
+
+# Cell
+def github_badge(root="."):
+    root = _set_root(root)
+    github_build_action = get_project_metadata(root)["site"] + "/actions/workflows/build.yml"
+    return f"[![tests]({ github_build_action }{ '/badge.svg' })]({ github_build_action })"
+
+# Cell
+def kitspace_badge(root="."):
+    root = _set_root(root)
+    kitspace_link = ("https://kitspace.org/boards/" +
+        get_project_metadata(root)["site"].replace("https://", "")
+    )
+    return ("[![kitspace](https://img.shields.io/website?down_color=red&"
+        "down_message=no&label=kitspace&up_color=sucess&up_message=ok&"
+        f"url={ urllib.parse.quote_plus(kitspace_link) })]("
+        f"{ kitspace_link })"
+    )

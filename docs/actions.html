@@ -47,7 +47,7 @@ nb_path: "notebooks/00_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+<h4 id="update_templates" class="doc_header"><code>update_templates</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_templates</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Install templates from the <code>kicad_helpers/templates</code> directory (ignoring
 anything in the project's <code>.gitignore</code> list).</p>
@@ -131,7 +131,79 @@ anything in the project's <code>.gitignore</code> list).</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="install_git_filters" class="doc_header"><code>install_git_filters</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L87" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_git_filters</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="add_badges" class="doc_header"><code>add_badges</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L86" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_badges</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>github</code></strong>:"github"=<em><code>False</code></em>, <strong><code>kitspace</code></strong>:"kitspace"=<em><code>False</code></em>)</p>
+</blockquote>
+<p>Add badges to the README.md file.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function is available as a command line script:</p>
+<div class="highlight"><pre><span></span>&gt; kh_add_badges --help
+</pre></div>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>usage: kh_add_badges [-h] [--root ROOT] [--v] [--github] [--kitspace]
+
+Add badges to the README.md file.
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --root ROOT  project root directory (default: .)
+  --v          verbose (default: False)
+  --github     github (default: False)
+  --kitspace   kitspace (default: False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="install_git_filters" class="doc_header"><code>install_git_filters</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_git_filters</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Install git filters to prevent insignificant changes to the kicad
 <code>*.pro</code> and <code>*.sch</code> files from being tracked by git.</p>
@@ -165,7 +237,7 @@ anything in the project's <code>.gitignore</code> list).</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_gitignore" class="doc_header"><code>update_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_gitignore</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="update_gitignore" class="doc_header"><code>update_gitignore</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_gitignore</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Add the following entries to the <code>.gitignore</code> file:</p>
 
@@ -205,7 +277,7 @@ anything in the project's <code>.gitignore</code> list).</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_project" class="doc_header"><code>update_project</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L143" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_project</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
+<h4 id="update_project" class="doc_header"><code>update_project</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L166" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_project</code>(<strong><code>v</code></strong>:"verbose", <strong><code>overwrite</code></strong>:"overwrite existing templates", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Setup a new project (or update an existing project) with templates from
 the <code>kicad_helpers/templates</code> directory.
@@ -291,16 +363,16 @@ optional arguments:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Render kitspace.yaml template.
 Render settings.ini template.
+Render tests/Tests.ipynb template.
 Render .github/workflows/build.yml template.
-Render .kicad_helpers_config/drc.yaml template.
-Render .kicad_helpers_config/erc.yaml template.
-Render .kicad_helpers_config/pcb_pdf.yaml template.
-Render .kicad_helpers_config/pcb_svg.yaml template.
 Render .kicad_helpers_config/sch_pdf.yaml template.
+Render .kicad_helpers_config/pcb_svg.yaml template.
+Render .kicad_helpers_config/erc.yaml template.
 Render .kicad_helpers_config/sch_svg.yaml template.
+Render .kicad_helpers_config/pcb_pdf.yaml template.
+Render .kicad_helpers_config/drc.yaml template.
 Render .kicad_helpers_config/manufacturers/default.yaml template.
 Render .kicad_helpers_config/manufacturers/PCBWay.yaml template.
-Render tests/Tests.ipynb template.
 &#34;*.pro filter=kicad_project&#34; already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitattributes
 &#34;*.sch filter=kicad_sch&#34; already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitattributes
 Add filters to git config.
@@ -333,7 +405,7 @@ Add filters to git config.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="sch_to_bom" class="doc_header"><code>sch_to_bom</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L181" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sch_to_bom</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update/create BOM from KiCad schematic.</p>
 
@@ -373,7 +445,7 @@ Add filters to git config.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_sch_to_bom [-h] [--root ROOT] [--v]
+<pre>usage: kh_sch_to_bom [-h] [--root ROOT] [--v] [--overwrite]
 
 Update/create BOM from KiCad schematic.
 
@@ -381,6 +453,7 @@ optional arguments:
   -h, --help   show this help message and exit
   --root ROOT  project root directory (default: .)
   --v          verbose (default: False)
+  --overwrite  update existing schematic (default: False)
 
 </pre>
 </div>
@@ -714,7 +787,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L171" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
+<h4 id="bom_to_sch" class="doc_header"><code>bom_to_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L194" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bom_to_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>overwrite</code></strong>:"update existing schematic"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Update KiCad schematic from BOM file.</p>
 
@@ -754,7 +827,7 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>usage: kh_bom_to_sch [-h] [--root ROOT] [--v]
+<pre>usage: kh_bom_to_sch [-h] [--root ROOT] [--v] [--overwrite]
 
 Update KiCad schematic from BOM file.
 
@@ -762,6 +835,7 @@ optional arguments:
   -h, --help   show this help message and exit
   --root ROOT  project root directory (default: .)
   --v          verbose (default: False)
+  --overwrite  update existing schematic (default: False)
 
 </pre>
 </div>
@@ -816,7 +890,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_manufacturing" class="doc_header"><code>export_manufacturing</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_manufacturing</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>manufacturer</code></strong>:""default" or manufacturer name"=<em><code>'default'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export manufacturing files (gerber, drill, and position) by running
 KiBot in a local docker container.</p>
@@ -951,7 +1025,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L200" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_sch" class="doc_header"><code>export_sch</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_sch</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the schematic by running KiBot in a local docker container.</p>
 
@@ -1095,7 +1169,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L217" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="export_pcb" class="doc_header"><code>export_pcb</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L240" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>export_pcb</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>ext</code></strong>:"svg or pdf"=<em><code>'pdf'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Export the pcb layout by running KiBot in a local docker container.</p>
 
@@ -1258,7 +1332,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_erc" class="doc_header"><code>run_erc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L234" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_erc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="run_erc" class="doc_header"><code>run_erc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L257" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_erc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Run electrical rules check (ERC) to verify schematic connections. It
 checks for output pin conflicts, missing drivers and unconnected pins.
@@ -1340,7 +1414,7 @@ optional arguments:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ERC report (Thu Nov 25 01:40:00 2021, Encoding UTF8 )
+<pre>ERC report (Thu Nov 25 18:17:54 2021, Encoding UTF8 )
 
 ***** Sheet /
 
@@ -1372,7 +1446,7 @@ optional arguments:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_drc" class="doc_header"><code>run_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L260" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_drc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="run_drc" class="doc_header"><code>run_drc</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L283" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_drc</code>(<strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Run design rules check (DRC) and print the report to <code>stdout</code>.</p>
 
@@ -1452,7 +1526,7 @@ optional arguments:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>** Drc report for /workdir/40-channel-hv-switching-board.kicad_pcb **
-** Created on 2021-11-25 01:40:15 **
+** Created on 2021-11-25 18:18:12 **
 
 ** Found 4 DRC errors **
 ErrType(45): Courtyards overlap
@@ -1494,7 +1568,7 @@ ErrType(45): Courtyards overlap
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_date" class="doc_header"><code>set_date</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L284" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_date</code>(<strong><code>date</code></strong>:"date (defaults to today's date)"=<em><code>None</code></em>, <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="set_date" class="doc_header"><code>set_date</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L307" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_date</code>(<strong><code>date</code></strong>:"date (defaults to today's date)"=<em><code>None</code></em>, <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Set the date in all schematic and board files.</p>
 
@@ -1534,8 +1608,8 @@ ErrType(45): Courtyards overlap
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>schematic_metadata = {&#39;Title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;Date&#39;: &#39;&#34;2021-11-24&#34;&#39;, &#39;Rev&#39;: &#39;&#34;3.1.1&#34;&#39;, &#39;Comp&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
-board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;date&#39;: &#39;2021-11-24&#39;, &#39;rev&#39;: &#39;3.1.1&#39;, &#39;company&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
+<pre>schematic_metadata = {&#39;Title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;Date&#39;: &#39;&#34;2021-11-25&#34;&#39;, &#39;Rev&#39;: &#39;&#34;v1.0&#34;&#39;, &#39;Comp&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
+board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;date&#39;: &#39;2021-11-25&#39;, &#39;rev&#39;: &#39;v1.0&#39;, &#39;company&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
 </pre>
 </div>
 </div>
@@ -1557,7 +1631,7 @@ board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_revision" class="doc_header"><code>set_revision</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L298" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_revision</code>(<strong><code>revision</code></strong>:"revision", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
+<h4 id="set_revision" class="doc_header"><code>set_revision</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/actions.py#L321" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_revision</code>(<strong><code>revision</code></strong>:"revision", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Set the revision in all schematic and board files.</p>
 
@@ -1597,8 +1671,8 @@ board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>schematic_metadata = {&#39;Title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;Date&#39;: &#39;&#34;2021-11-24&#34;&#39;, &#39;Rev&#39;: &#39;&#34;v1.0&#34;&#39;, &#39;Comp&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
-board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;date&#39;: &#39;2021-11-24&#39;, &#39;rev&#39;: &#39;v1.0&#39;, &#39;company&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
+<pre>schematic_metadata = {&#39;Title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;Date&#39;: &#39;&#34;2021-11-25&#34;&#39;, &#39;Rev&#39;: &#39;&#34;v1.0&#34;&#39;, &#39;Comp&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
+board_metadata = {&#39;title&#39;: &#39;&#34;40-channel HV switching board&#34;&#39;, &#39;date&#39;: &#39;2021-11-25&#39;, &#39;rev&#39;: &#39;v1.0&#39;, &#39;company&#39;: &#39;&#34;Sci-Bots Inc.&#34;&#39;}
 </pre>
 </div>
 </div>
