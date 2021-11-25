@@ -34,7 +34,7 @@ def update_templates(v:Param("verbose", bool),
         if len(files):
             for file in files:
                 path = os.path.join(root_[len(templates_path) + 1:], file)
-                if not in_gitignore(path):
+                if not in_gitignore(path, root):
                     src_path = os.path.abspath(os.path.join(templates_path, path))
                     dst_path = os.path.abspath(os.path.join(root, path))
 

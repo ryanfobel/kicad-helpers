@@ -123,9 +123,11 @@ def get_gitignore_list(root="."):
     return [line.strip() for line in gitignore]
 
 # Cell
-def in_gitignore(filename):
+def in_gitignore(filename, root="."):
+    root = _set_root(root)
     try:
-        if len(subprocess.check_output(f"echo '{ filename }' | git check-ignore --stdin --no-index", shell=True)):
+        cmd = f"cd { root } && git check-ignore --no-index { filename }"
+        if len(_run_cmd(cmd)):
             return True
     except subprocess.CalledProcessError:
         pass
