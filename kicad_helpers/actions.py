@@ -15,6 +15,7 @@ import datetime as dt
 import jinja2
 from fastcore.script import *
 import pandas as pd
+from kifield.kifield import explode
 
 from kicad_helpers import *
 from .utilities import _set_root, _run_cmd, _print_cmd_output
@@ -185,10 +186,22 @@ def sch_to_bom(root:Param("project root directory", str)=".",
     """Update/create BOM from KiCad schematic.
     """
     root = _set_root(root)
-    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --group -aq -x { get_schematic_path(root) } -i { get_bom_path(root) }"
+    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --group -x { get_schematic_path(root) } -i { get_bom_path(root) }"
     if v:
         print(cmd)
     _print_cmd_output(cmd)
+
+    # Open the BOM
+    df = pd.read_csv(get_bom_path(root))
+
+    # Calculate the quantity of each part
+    df["Quantity"] = [len(explode(refs)) for refs in df["Refs"]]
+
+    # Make quantity the second column
+    if df.columns[-1] == "Quantity":
+        df = df[[df.columns[0]] + ["Quantity"] + list(df.columns[1:-1])]
+
+    df.to_csv(get_bom_path(root), index=False)
 
 # Cell
 @call_parse
@@ -198,7 +211,7 @@ def bom_to_sch(root:Param("project root directory", str)=".",
     """Update KiCad schematic from BOM file.
     """
     root = _set_root(root)
-    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --fields ~quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
+    cmd = f"{ sys.executable } -m kifield -r --nobackup --overwrite --fields ~Quantity -x { get_bom_path(root) } -i { get_schematic_path(root) }"
     if v:
         print(cmd)
     _print_cmd_output(cmd)
