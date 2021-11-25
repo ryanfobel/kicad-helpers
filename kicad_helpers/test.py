@@ -52,7 +52,7 @@ def validate_bom(root="."):
         "Quantity": pa.Column(int),
         "MPN": pa.Column(str),
         "Manufacturer": pa.Column(str),
-        "datasheet": pa.Column(str, nullable=True),
+        "datasheet": pa.Column(str, nullable=True, coerce=True),
         "footprint": pa.Column(str),
         "value": pa.Column(str),
     })
