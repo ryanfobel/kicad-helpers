@@ -42,8 +42,6 @@ def setup_test_repo(root:Param("project root directory", str)="_temp"):
     """
     if not os.path.exists(root):
         _run_cmd(f"git clone --recursive https://github.com/sci-bots/dropbot-40-channel-HV-switching-board.kicad { root }")
-    else:
-        _run_cmd(f"cd { root } && git pull")
 
 # Cell
 def _set_root(root):
