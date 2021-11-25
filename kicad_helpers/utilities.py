@@ -2,8 +2,8 @@
 
 __all__ = ['get_git_root', 'setup_test_repo', 'get_project_name', 'get_project_metadata', 'get_schematic_path',
            'get_bom_path', 'get_board_path', 'get_manufacturers', 'get_gitignore_list', 'in_gitignore',
-           'install_python_package', 'run_docker_cmd', 'run_kibot_docker', 'get_board_metadata',
-           'update_board_metadata', 'get_schematic_metadata', 'update_schematic_metadata']
+           'run_docker_cmd', 'run_kibot_docker', 'get_board_metadata', 'update_board_metadata',
+           'get_schematic_metadata', 'update_schematic_metadata']
 
 # Cell
 import glob
@@ -32,7 +32,7 @@ def _print_cmd_output(cmd):
 def get_git_root(path="."):
     # Find the current projects' root directory
     git_repo = git.Repo(path, search_parent_directories=True)
-    return git_repo.git.rev_parse("--show-toplevel")
+    return git_repo.git.rev_parse("--show-toplevel").replace("/", os.path.sep)
 
 # Cell
 @call_parse
@@ -130,10 +130,6 @@ def in_gitignore(filename):
     except subprocess.CalledProcessError:
         pass
     return False
-
-# Cell
-def install_python_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # Cell
 def run_docker_cmd(cmd,
