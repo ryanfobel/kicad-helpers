@@ -57,16 +57,16 @@ To overwrite existing templates, run `kh_update` with the `--overwrite` flag:
     Render .kicad_helpers_config/manufacturers/default.yaml template.
     Render .kicad_helpers_config/manufacturers/PCBWay.yaml template.
     Render tests/Tests.ipynb template.
-    "*.pro filter=kicad_project" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitattributes
-    "*.sch filter=kicad_sch" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitattributes
+    "*.pro filter=kicad_project" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitattributes
+    "*.sch filter=kicad_sch" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitattributes
     Add filters to git config.
-    "_autosave*" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    "*bak" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    "*.xml" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    ".ipynb_checkpoints" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    "*-erc.txt" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    "*-drc.txt" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
-    "kibot_errors.filter" already exists in /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/.gitignore
+    "_autosave*" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    "*bak" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    "*.xml" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    ".ipynb_checkpoints" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    "*-erc.txt" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    "*-drc.txt" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
+    "kibot_errors.filter" already exists in /home/ryan/dev/python/kicad-helpers/_temp/.gitignore
     
 
 
@@ -96,7 +96,7 @@ To see the options that are available, run the command:
 > kh_sch_to_bom --v
 ```
 
-    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --group -aq -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
+    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield -r --nobackup --overwrite --group -aq -x /home/ryan/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch -i /home/ryan/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
     
     
 
@@ -107,7 +107,7 @@ To see the options that are available, run the command:
 > kh_sch_to_bom --v
 ```
 
-    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield --nobackup --overwrite --fields ~quantity -x /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
+    /home/ryan/miniconda3/envs/kh/bin/python3.9 -m kifield -r --nobackup --overwrite --fields ~quantity -x /home/ryan/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv -i /home/ryan/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
     
     
 
@@ -118,7 +118,7 @@ To see the options that are available, run the command:
 > kh_test
 ```
 
-    testing /mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
+    testing /home/ryan/dev/python/kicad-helpers/_temp/tests/Tests.ipynb
     All tests are passing!
     
 

@@ -274,7 +274,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&gt; get_schematic_path()
-/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
+/home/ryan/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.sch
 </pre>
 </div>
 </div>
@@ -328,7 +328,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&gt; get_bom_path()
-/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
+/home/ryan/dev/python/kicad-helpers/_temp/manufacturing/default/40-channel-hv-switching-board-BOM.csv
 </pre>
 </div>
 </div>
@@ -382,7 +382,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&gt; get_board_path()
-/mnt/c/Users/ryan/OneDrive/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.kicad_pcb
+/home/ryan/dev/python/kicad-helpers/_temp/40-channel-hv-switching-board.kicad_pcb
 </pre>
 </div>
 </div>
@@ -581,38 +581,7 @@ nb_path: "notebooks/02_utilities.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="install_python_package" class="doc_header"><code>install_python_package</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>install_python_package</code>(<strong><code>package</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_docker_cmd" class="doc_header"><code>run_docker_cmd</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L139" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_docker_cmd</code>(<strong><code>cmd</code></strong>, <strong><code>workdir</code></strong>, <strong><code>container</code></strong>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="run_docker_cmd" class="doc_header"><code>run_docker_cmd</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_docker_cmd</code>(<strong><code>cmd</code></strong>, <strong><code>workdir</code></strong>, <strong><code>container</code></strong>, <strong><code>v</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Run a command in a docker container under a UID mapped to the current user.
 This ensures that the current user is owner of any files created in the
@@ -646,7 +615,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"KiBot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
+<h4 id="run_kibot_docker" class="doc_header"><code>run_kibot_docker</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L155" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_kibot_docker</code>(<strong><code>config</code></strong>:"KiBot configuation file", <strong><code>root</code></strong>:"project root directory"=<em><code>'.'</code></em>, <strong><code>v</code></strong>:"verbose"=<em><code>False</code></em>, <strong><code>output</code></strong>:"output path relative to ROOT"=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Run KiBot in a local docker container.</p>
 
@@ -678,7 +647,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_board_metadata" class="doc_header"><code>get_board_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L182" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_board_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="get_board_metadata" class="doc_header"><code>get_board_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_board_metadata</code>(<strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Get metadata from the <code>*.kicad_pcb</code> board file.</p>
 
@@ -746,7 +715,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_board_metadata" class="doc_header"><code>update_board_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L197" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_board_metadata</code>(<strong><code>update_dict</code></strong>, <strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
+<h4 id="update_board_metadata" class="doc_header"><code>update_board_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_board_metadata</code>(<strong><code>update_dict</code></strong>, <strong><code>root</code></strong>=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Update metadata in the <code>*.kicad_pcb</code> board file.</p>
 
@@ -844,7 +813,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_schematic_metadata" class="doc_header"><code>get_schematic_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L216" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_metadata</code>(<strong><code>root</code></strong>, <strong><code>filename</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_schematic_metadata" class="doc_header"><code>get_schematic_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L212" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_schematic_metadata</code>(<strong><code>root</code></strong>, <strong><code>filename</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get metadata from a <code>*.sch</code> schematic file.</p>
 
@@ -948,7 +917,7 @@ workdir.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_schematic_metadata" class="doc_header"><code>update_schematic_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L237" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_schematic_metadata</code>(<strong><code>update_dict</code></strong>:<code>dict</code>, <strong><code>root</code></strong>:<code>str</code>=<em><code>'.'</code></em>, <strong><code>all_sheets</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="update_schematic_metadata" class="doc_header"><code>update_schematic_metadata</code><a href="https://github.com/ryanfobel/kicad-helpers/tree/main/kicad_helpers/utilities.py#L233" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_schematic_metadata</code>(<strong><code>update_dict</code></strong>:<code>dict</code>, <strong><code>root</code></strong>:<code>str</code>=<em><code>'.'</code></em>, <strong><code>all_sheets</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Update metadata in a <code>*.sch</code> schematic file.</p>
 
