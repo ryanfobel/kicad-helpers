@@ -201,6 +201,8 @@ def sch_to_bom(root:Param("project root directory", str)=".",
     if df.columns[-1] == "Quantity":
         df = df[[df.columns[0]] + ["Quantity"] + list(df.columns[1:-1])]
 
+    # Sort alphabetically by Ref
+    df.sort_values(by="Refs", inplace=True)
     df.to_csv(get_bom_path(root), index=False)
 
 # Cell
